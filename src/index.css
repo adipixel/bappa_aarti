@@ -953,7 +953,11 @@ a {
 }
 
 .sheet__version {
-  margin: 18px 0 0;
+  display: block;
+  width: 100%;
+  /* Generous padding: it doubles as the (hidden) tap target for the readout. */
+  margin: 10px 0 0;
+  padding: 10px 0 2px;
   text-align: center;
   font-size: 12px;
   line-height: 1.6;

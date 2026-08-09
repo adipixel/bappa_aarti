@@ -118,6 +118,20 @@ Four Gajar and two Shlok recordings from the email listing are deliberately
 onto any song title with confidence, and the wrong track playing under the
 wrong lyrics would be worse than no track at all.
 
+## Diagnosing a layout problem on a phone
+
+Every layout bug so far has appeared only in the installed app and been
+invisible in a desktop browser. Settings carries a viewport readout for that:
+`window.inner`, `doc.client`, `visualViewport` and `screen` sizes, the shell's
+height, **any gap beneath it**, and the safe-area insets.
+
+**Open Settings and tap the version line five times.** It stays on until you
+tap five more times, and survives relaunching the app — the installed app has
+no address bar and always launches at `start_url`, so `?debug` cannot be typed
+where it is actually needed. (In a browser tab, `?debug` still works.)
+
+If `gap below .app` reads anything other than `0`, that number is the bug.
+
 ## Versioning
 
 The current version is shown at the bottom of the settings sheet, with the
@@ -159,6 +173,8 @@ commit it yourself alongside the change.
 | 1.3.0 | Cued refrains written out in full |
 | 1.3.1 | Correct refrain detection in aartis that only imply it |
 | 1.4.0 | Version shown in settings |
+| 1.5.0 | Fill the screen when installed; viewport readout behind `?debug` |
+| 1.5.1 | Reveal the readout by tapping the version, reachable in the installed app |
 
 ## Develop
 

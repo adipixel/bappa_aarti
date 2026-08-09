@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   FONT_MAX,
   FONT_MIN,
@@ -7,7 +7,7 @@ import {
   useSettings,
   type Theme,
 } from '../state/settings';
-import { BUILD, debugEnabled } from '../config';
+import { BUILD, DEBUG_TAPS, debugEnabled, setDebug } from '../config';
 import { DebugPanel } from './DebugPanel';
 import { Close } from './icons';
 
@@ -18,6 +18,26 @@ const THEMES: { id: Theme; label: string }[] = [
 
 export function SettingsSheet({ onClose }: { onClose: () => void }) {
   const { theme, fontSize, scrollSpeed, keepAwake, set } = useSettings();
+  const [debug, setDebugShown] = useState(debugEnabled());
+  const taps = useRef(0);
+  const tapTimer = useRef<number>();
+
+  // Tap the version line a few times to reveal the viewport readout. Hidden
+  // rather than a switch because it is a diagnostic, not a setting.
+  const tapVersion = () => {
+    taps.current += 1;
+    window.clearTimeout(tapTimer.current);
+    tapTimer.current = window.setTimeout(() => {
+      taps.current = 0;
+    }, 1500);
+    if (taps.current < DEBUG_TAPS) return;
+    taps.current = 0;
+    const next = !debug;
+    setDebug(next);
+    setDebugShown(next);
+  };
+
+  useEffect(() => () => window.clearTimeout(tapTimer.current), []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
@@ -159,14 +179,20 @@ export function SettingsSheet({ onClose }: { onClose: () => void }) {
           </div>
         </div>
 
-        {debugEnabled() && <DebugPanel />}
+        {debug && <DebugPanel />}
 
-        <p className="sheet__version">
+        <button
+          className="sheet__version"
+          onClick={tapVersion}
+          aria-label={`Bappa Aarti version ${BUILD.version}. Tap ${DEBUG_TAPS} times to ${
+            debug ? 'hide' : 'show'
+          } the viewport readout.`}
+        >
           Bappa Aarti v{BUILD.version}
           <span className="sheet__build">
             {BUILD.commit} · {BUILD.built}
           </span>
-        </p>
+        </button>
       </div>
     </>
   );

@@ -30,16 +30,37 @@ export const BUILD = {
  * carry query strings and the layout worth measuring is on the song page, not
  * the one you land on.
  */
-const DEBUG = /* captured at startup, while the query string is still there */ (() => {
+const DEBUG_KEY = 'ba:debug';
+
+let debug = /* captured at startup, while the query string is still there */ (() => {
   try {
     if (new URLSearchParams(location.search).has('debug')) {
-      sessionStorage.setItem('ba:debug', '1');
+      localStorage.setItem(DEBUG_KEY, '1');
       return true;
     }
-    return sessionStorage.getItem('ba:debug') === '1';
+    return localStorage.getItem(DEBUG_KEY) === '1';
   } catch {
     return false;
   }
 })();
 
-export const debugEnabled = () => DEBUG;
+export const debugEnabled = () => debug;
+
+/**
+ * Installed to the home screen there is no address bar, and the app always
+ * launches at start_url — so `?debug` cannot be typed where it is needed. The
+ * settings sheet turns it on by tapping the version line instead. Kept in
+ * localStorage so it survives relaunching the app mid-investigation.
+ */
+export function setDebug(on: boolean) {
+  debug = on;
+  try {
+    if (on) localStorage.setItem(DEBUG_KEY, '1');
+    else localStorage.removeItem(DEBUG_KEY);
+  } catch {
+    /* private mode — it just won't persist */
+  }
+}
+
+/** Taps on the version line needed to flip the viewport readout. */
+export const DEBUG_TAPS = 5;
