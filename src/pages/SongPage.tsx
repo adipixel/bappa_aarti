@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { AudioPlayer } from '../components/AudioPlayer';
@@ -20,6 +20,7 @@ export function SongPage() {
   const { fontSize, scrollSpeed, keepAwake } = useSettings();
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
+  const scrollerRef = useRef<HTMLElement>(null);
 
   const found = getSong(playlistId, songId);
 
@@ -47,7 +48,7 @@ export function SongPage() {
 
   // New song: back to the top, and never carry auto-scroll across.
   useEffect(() => {
-    window.scrollTo(0, 0);
+    scrollerRef.current?.scrollTo(0, 0);
     setScrolling(false);
   }, [playlistId, songId]);
 
@@ -65,7 +66,7 @@ export function SongPage() {
   }, [goTo, next, prev]);
 
   const stopScrolling = useCallback(() => setScrolling(false), []);
-  useAutoScroll(scrolling, scrollSpeed, fontSize * LINE_HEIGHT_RATIO, stopScrolling);
+  useAutoScroll(scrolling, scrollSpeed, fontSize * LINE_HEIGHT_RATIO, stopScrolling, scrollerRef);
 
   if (!found) return <Navigate to="/" replace />;
   const { playlist, song, index } = found;
@@ -79,7 +80,7 @@ export function SongPage() {
         onOpenSettings={() => setSettingsOpen(true)}
       />
 
-      <main className="song" {...swipe}>
+      <main className="scroll-area song" ref={scrollerRef} {...swipe}>
         {AUDIO_ENABLED && song.audio && (
           <AudioPlayer src={song.audio} title={song.title} onEnded={() => goTo(next?.id)} />
         )}

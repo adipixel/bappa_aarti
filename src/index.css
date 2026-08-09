@@ -57,6 +57,15 @@ html {
   scroll-behavior: auto;
 }
 
+/* The document itself never scrolls — .scroll-area does. Pinning both to the
+   viewport stops iOS rubber-banding the whole page (and with it the bars)
+   when a swipe runs past the end of the lyrics. */
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   background: var(--bg);
@@ -80,25 +89,48 @@ a {
   text-decoration: none;
 }
 
+/*
+ * The shell is a fixed-height flex column: header, a single scrolling region,
+ * and (on a song) the controls. Nothing is position:fixed.
+ *
+ * An earlier version scrolled the window with a sticky header and a fixed
+ * bottom bar. On iOS those two failed to repaint during momentum scrolling and
+ * were painted at a stale position — the bar ended up stranded mid-screen with
+ * lyrics running underneath it. Keeping both bars outside the scrolling region
+ * makes that impossible rather than merely unlikely.
+ */
 .app {
   max-width: 560px;
   margin: 0 auto;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   position: relative;
+}
+
+/* The one scrolling element in the app. */
+.scroll-area {
+  flex: 1 1 auto;
+  /* Without this, flex refuses to shrink the region below its content height
+     and the whole shell grows instead of scrolling. */
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* ---------- Header ---------- */
 
 .header {
-  position: sticky;
-  top: 0;
+  flex: 0 0 auto;
   z-index: 40;
   display: flex;
   align-items: center;
   gap: 4px;
   padding: calc(var(--safe-top) + 8px) 8px 8px;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: blur(14px);
+  background: var(--bg);
   border-bottom: 1px solid var(--border);
 }
 
@@ -529,24 +561,18 @@ a {
   background: var(--border);
 }
 
-/* Leaves room for the fixed footer controls plus the home indicator. */
+/* A little breathing room past the last verse. */
 .song__spacer {
-  height: calc(var(--safe-bottom) + 120px);
+  height: 28px;
 }
 
 /* ---------- Song footer controls ---------- */
 
 .song-bar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  flex: 0 0 auto;
   z-index: 45;
-  margin: 0 auto;
-  max-width: 560px;
   padding: 8px 10px calc(var(--safe-bottom) + 8px);
-  background: color-mix(in srgb, var(--bg) 96%, transparent);
-  backdrop-filter: blur(14px);
+  background: var(--bg);
   border-top: 1px solid var(--border);
 }
 

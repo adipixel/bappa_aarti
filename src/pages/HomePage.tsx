@@ -13,7 +13,7 @@ export function HomePage() {
     <>
       <AppHeader title="आरती संग्रह" subtitle="Bappa Aarti" onOpenSettings={() => setSettingsOpen(true)} />
 
-      <main className="home">
+      <main className="scroll-area home">
         <div className="home__hero">
           <img className="home__mark" src="/favicon.svg" alt="" width={76} height={76} />
           <h2 className="home__title">गणपती बाप्पा मोरया</h2>

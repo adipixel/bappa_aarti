@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { SettingsSheet } from '../components/SettingsSheet';
@@ -10,8 +10,10 @@ export function PlaylistPage() {
   const { playlistId } = useParams();
   const playlist = getPlaylist(playlistId);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const scrollerRef = useRef<HTMLElement>(null);
 
-  useEffect(() => window.scrollTo(0, 0), [playlistId]);
+  // Switching playlists reuses this component, so reset the scroll by hand.
+  useEffect(() => scrollerRef.current?.scrollTo(0, 0), [playlistId]);
 
   if (!playlist) return <Navigate to="/" replace />;
 
@@ -24,7 +26,7 @@ export function PlaylistPage() {
         onOpenSettings={() => setSettingsOpen(true)}
       />
 
-      <main className="tracks">
+      <main className="scroll-area tracks" ref={scrollerRef}>
         <ol style={{ listStyle: 'none', margin: 0, padding: 0 }}>
           {playlist.songs.map((song) => (
             <li key={song.id}>

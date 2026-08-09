@@ -21,7 +21,7 @@ export function SearchPage() {
     <>
       <AppHeader title="शोधा" subtitle="Search" back="/" showSearch={false} />
 
-      <main className="search">
+      <main className="scroll-area search">
         <div className="search__field">
           <Search />
           <input

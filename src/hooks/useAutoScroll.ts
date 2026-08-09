@@ -1,9 +1,12 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type RefObject } from 'react';
 
 /**
- * Scrolls the window at a steady, sub-pixel-accurate rate so hands stay free
+ * Scrolls the lyrics at a steady, sub-pixel-accurate rate so hands stay free
  * for the aarti thali. Any manual touch/wheel/keyboard scroll is treated as the
  * user taking over and pauses it via `onInterrupt`.
+ *
+ * Drives the app's scrolling region rather than the window — the shell is a
+ * fixed-height flex column, so the window never scrolls.
  */
 export function useAutoScroll(
   active: boolean,
@@ -11,31 +14,33 @@ export function useAutoScroll(
   linesPerMinute: number,
   lineHeightPx: number,
   onInterrupt: () => void,
+  scrollerRef: RefObject<HTMLElement>,
 ) {
   const interruptRef = useRef(onInterrupt);
   interruptRef.current = onInterrupt;
 
   useEffect(() => {
-    if (!active) return;
+    const scroller = scrollerRef.current;
+    if (!active || !scroller) return;
 
     const pxPerSecond = (linesPerMinute * lineHeightPx) / 60;
     let frame = 0;
     let last = performance.now();
-    // Tracked separately from scrollY because scrollY is integer-rounded, and
-    // slow speeds would otherwise never accumulate enough to move.
-    let target = window.scrollY;
-    // Set by our own scrollTo, so the scroll listener can tell self-inflicted
-    // scrolling apart from the user's finger.
-    let expected = window.scrollY;
+    // Tracked separately from scrollTop because scrollTop is integer-rounded,
+    // and slow speeds would otherwise never accumulate enough to move.
+    let target = scroller.scrollTop;
+    // Set by our own scrolling, so the scroll listener can tell self-inflicted
+    // movement apart from the user's finger.
+    let expected = scroller.scrollTop;
 
     const step = (now: number) => {
       const dt = (now - last) / 1000;
       last = now;
 
-      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const max = scroller.scrollHeight - scroller.clientHeight;
       target = Math.min(target + pxPerSecond * dt, max);
-      window.scrollTo(0, target);
-      expected = window.scrollY;
+      scroller.scrollTop = target;
+      expected = scroller.scrollTop;
 
       if (target >= max) {
         interruptRef.current();
@@ -45,17 +50,20 @@ export function useAutoScroll(
     };
 
     const onManualScroll = () => {
-      if (Math.abs(window.scrollY - expected) > 2) interruptRef.current();
+      if (Math.abs(scroller.scrollTop - expected) > 2) interruptRef.current();
     };
+    const takeOver = () => interruptRef.current();
 
     frame = requestAnimationFrame(step);
-    window.addEventListener('scroll', onManualScroll, { passive: true });
-    window.addEventListener('wheel', () => interruptRef.current(), { passive: true });
-    window.addEventListener('touchstart', () => interruptRef.current(), { passive: true });
+    scroller.addEventListener('scroll', onManualScroll, { passive: true });
+    scroller.addEventListener('wheel', takeOver, { passive: true });
+    scroller.addEventListener('touchstart', takeOver, { passive: true });
 
     return () => {
       cancelAnimationFrame(frame);
-      window.removeEventListener('scroll', onManualScroll);
+      scroller.removeEventListener('scroll', onManualScroll);
+      scroller.removeEventListener('wheel', takeOver);
+      scroller.removeEventListener('touchstart', takeOver);
     };
-  }, [active, linesPerMinute, lineHeightPx]);
+  }, [active, linesPerMinute, lineHeightPx, scrollerRef]);
 }
