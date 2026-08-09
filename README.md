@@ -64,7 +64,13 @@ The build resolves each cue and writes the refrain out in full where it
 belongs. Resolution is deliberately conservative: **a cue is expanded only when
 another, longer line in the same song begins with exactly those letters**
 (compared on letters alone, since cues vary — `जय देव` vs `जयदेव`). Anything
-that cannot be resolved that way is left exactly as written. In practice that
+that cannot be resolved that way is left exactly as written.
+
+What disqualifies a cue is ambiguity, not brevity — there is no minimum length.
+`येई` is a perfectly good pointer to `येई हो विठ्ठले …`. A cue is only rejected
+when it could mean two genuinely different lines; a line that repeats the
+refrain's opening with a verse number after it, as the last verse of
+जय जय दिनदयाळा does, is an echo of the refrain rather than a rival meaning. In practice that
 skips things like `॥ महाकैवल्यतेजा ॥`, which is ordinary line punctuation
 rather than a cue, and `डाव मांडीला...`, which names the *end* of a line rather
 than its start.
@@ -207,6 +213,7 @@ commit it yourself alongside the change.
 | 1.5.3 | Opaque black status bar, so iOS lays the app out below it rather than under it |
 | 1.5.4 | Readout reports the cached launch configuration |
 | 1.5.5 | Readout measures gaps against the viewport only |
+| 1.5.6 | Resolve short refrain cues such as `येई …` |
 
 ## Develop
 

@@ -183,11 +183,29 @@ function findRefrain(stanzas) {
     const cue = cueOf(line);
     if (!cue) continue;
     const key = bare(cue.text);
-    if (key.length < 4) continue;
-    const anchor = flat.find(
+    if (!key) continue;
+
+    const anchors = flat.filter(
       (f) => !(f.si === si && f.li === li) && bare(f.line).startsWith(key) && bare(f.line).length > key.length,
     );
-    if (!anchor) continue; // Unresolvable shorthand — leave the line alone.
+    if (!anchors.length) continue; // Unresolvable shorthand — leave the line alone.
+
+    // A short cue is fine — "येई" points at "येई हो विठ्ठले …" perfectly well —
+    // as long as it points somewhere definite. What makes shorthand unusable is
+    // ambiguity, not brevity, so test for that directly rather than imposing a
+    // minimum length.
+    //
+    // Every candidate must be the same line, allowing for a suffix: the last
+    // verse of जय जय दिनदयाळा closes by repeating the refrain's opening with a
+    // verse number after it, which is an echo of the refrain rather than a
+    // rival meaning. Two genuinely different lines sharing the opening would
+    // make the shorthand ambiguous, and it is left alone.
+    const shortest = anchors.reduce((a, f) => (bare(f.line).length < bare(a.line).length ? f : a));
+    if (!anchors.every((f) => bare(f.line).startsWith(bare(shortest.line)))) continue;
+
+    // The refrain is printed once and cued thereafter, so the first occurrence
+    // in the song is the canonical one.
+    const anchor = anchors[0];
     const id = `${anchor.si}:${anchor.li}`;
     votes.set(id, (votes.get(id) ?? 0) + 1);
   }
@@ -274,8 +292,12 @@ function buildBlocks(lyrics) {
         continue;
       }
 
+      // Shorthand for this song's refrain: the cue's letters open it, and stop
+      // short of it. Length alone says nothing — "येई" is as good a pointer to
+      // "येई हो विठ्ठले …" as a longer one would be.
       const cue = cueOf(line);
-      const isCue = cue && bare(cue.text).length >= 4 && refrainKey.startsWith(bare(cue.text));
+      const cueKey = cue ? bare(cue.text) : '';
+      const isCue = Boolean(cueKey) && cueKey !== refrainKey && refrainKey.startsWith(cueKey);
 
       if (isCue && cue.kind === 'whole') {
         // The whole line is shorthand — replace it with the refrain.
