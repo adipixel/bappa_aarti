@@ -7,7 +7,8 @@ import {
   useSettings,
   type Theme,
 } from '../state/settings';
-import { BUILD } from '../config';
+import { BUILD, debugEnabled } from '../config';
+import { DebugPanel } from './DebugPanel';
 import { Close } from './icons';
 
 const THEMES: { id: Theme; label: string }[] = [
@@ -157,6 +158,8 @@ export function SettingsSheet({ onClose }: { onClose: () => void }) {
             </button>
           </div>
         </div>
+
+        {debugEnabled() && <DebugPanel />}
 
         <p className="sheet__version">
           Bappa Aarti v{BUILD.version}

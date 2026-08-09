@@ -22,3 +22,24 @@ export const BUILD = {
   commit: __APP_COMMIT__,
   built: __APP_BUILT__,
 };
+
+/**
+ * Viewport readout in settings, switched on with `?debug`.
+ *
+ * The flag sticks for the rest of the session, because in-app links do not
+ * carry query strings and the layout worth measuring is on the song page, not
+ * the one you land on.
+ */
+const DEBUG = /* captured at startup, while the query string is still there */ (() => {
+  try {
+    if (new URLSearchParams(location.search).has('debug')) {
+      sessionStorage.setItem('ba:debug', '1');
+      return true;
+    }
+    return sessionStorage.getItem('ba:debug') === '1';
+  } catch {
+    return false;
+  }
+})();
+
+export const debugEnabled = () => DEBUG;

@@ -110,6 +110,32 @@ a {
   position: relative;
 }
 
+/*
+ * Installed to the home screen, iOS reports a viewport shorter than the real
+ * screen, so 100dvh left a strip of background sitting under the controls.
+ *
+ * There is no browser chrome to resize around once installed, so pinning the
+ * shell to the viewport edges is both stable and exact — it sidesteps the unit
+ * altogether. In a browser tab 100dvh is still the right answer, because it
+ * tracks the address bar sliding in and out.
+ *
+ * The class is set before first paint from navigator.standalone, which older
+ * iOS reports even where the display-mode query does not match.
+ */
+@media all and (display-mode: standalone) {
+  .app {
+    position: fixed;
+    inset: 0;
+    height: auto;
+  }
+}
+
+:root.is-standalone .app {
+  position: fixed;
+  inset: 0;
+  height: auto;
+}
+
 /* The one scrolling element in the app. */
 .scroll-area {
   flex: 1 1 auto;
@@ -899,6 +925,31 @@ a {
 .switch[aria-checked='true'] .switch__knob {
   background: var(--accent-contrast);
   transform: translateX(21px);
+}
+
+.debug {
+  margin: 12px 0 0;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--bg-sunk);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.debug__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 3px 0;
+}
+
+.debug__row dt {
+  color: var(--text-faint);
+}
+
+.debug__row dd {
+  margin: 0;
+  color: var(--text);
 }
 
 .sheet__version {
