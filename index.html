@@ -15,7 +15,16 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#1a1110" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <!--
+      "black" gives an opaque black status bar with the web view laid out below
+      it, which suits a dark app and — unlike "black-translucent" — gets the
+      geometry right. Asked for a translucent bar, iOS placed the web view at
+      the very top of the screen but sized it short by the status bar's height,
+      leaving 62px along the bottom edge that belonged to nothing and could not
+      be painted. Measured on an iPhone 17: screen 874, innerHeight 812,
+      safe-area-inset-top 62, shell top 0.
+    -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-title" content="Bappa Aarti" />
     <meta name="mobile-web-app-capable" content="yes" />
     <script>

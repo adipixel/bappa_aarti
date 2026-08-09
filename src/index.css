@@ -125,23 +125,15 @@ a {
 @media all and (display-mode: standalone) {
   .app {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: auto;
-    /* Set from JS — see viewport.ts. iOS under-reports the viewport here, so
-       this can exceed 100dvh in order to reach the bottom of the screen. */
-    height: var(--app-height, 100dvh);
+    inset: 0;
+    height: auto;
   }
 }
 
 :root.is-standalone .app {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: auto;
-  height: var(--app-height, 100dvh);
+  inset: 0;
+  height: auto;
 }
 
 /* The one scrolling element in the app. */

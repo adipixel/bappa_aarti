@@ -4,11 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { registerSW } from 'virtual:pwa-register';
 import App from './App';
 import { SettingsProvider } from './state/settings';
-import { trackViewportHeight } from './viewport';
 import './index.css';
-
-// Must run before first paint so the shell is never laid out at the wrong height.
-trackViewportHeight();
 
 // Ship updates without a prompt — nobody wants a dialog mid-aarti. The new
 // version is picked up on the next launch.

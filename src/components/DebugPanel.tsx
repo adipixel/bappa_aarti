@@ -37,8 +37,8 @@ export function DebugPanel() {
         ['visualViewport', vv ? `${Math.round(vv.width)} × ${Math.round(vv.height)}` : '—'],
         ['screen', `${window.screen.width} × ${window.screen.height}`],
         ['viewport shortfall', `${window.screen.height - window.innerHeight}`],
-        ['--app-height', getComputedStyle(document.documentElement).getPropertyValue('--app-height').trim() || '(unset)'],
         ['.app height', app ? `${Math.round(app.height)} (top ${Math.round(app.top)})` : '—'],
+        ['gap: inner − bar', bar ? `${Math.round(window.innerHeight - bar.bottom)}` : '(no bar)'],
         // Measured against the screen, not innerHeight: iOS under-reports the
         // viewport here, so an innerHeight-relative gap reads 0 even when the
         // shell visibly stops short of the bottom of the screen.
