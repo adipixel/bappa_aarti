@@ -107,11 +107,14 @@ const DHRU = /ध्रु|धृ/;
 const ENDS_WITH_VERSE_NUMBER = /॥\s*[०-९]+\s*॥\s*$/;
 
 /** A line that is nothing but a trailing-off phrase: "जयदेव…", "आरती..". */
-const standaloneCue = (line) => {
+const wholeLineCue = (line) => {
   if (/[।॥]/.test(line)) return null;
   const m = line.match(/^(.{2,45}?)\s*[.…]+$/);
   return m ? m[1].trim() : null;
 };
+
+/** Shorthand trailing after the verse marker: "... ॥ १ ॥ जयदेव जयदेव...". */
+const SUFFIX_CUE = /([।॥])\s*([^।॥]{2,45}?)\s*[.…]+\s*$/;
 
 /** A `॥ phrase ॥` group inside a line that is neither a verse number nor the ध्रु mark. */
 const inlineCue = (line) => {
@@ -123,12 +126,34 @@ const inlineCue = (line) => {
   return null;
 };
 
+/**
+ * The three shapes a refrain cue takes in this collection.
+ *  whole  — the line is only shorthand, so the refrain replaces it
+ *  suffix — shorthand tacked on after the verse number; strip it, keep the verse
+ *  inline — "॥ जय देव ॥" sitting before the verse number
+ */
 const cueOf = (line) => {
-  const s = standaloneCue(line);
-  if (s) return { text: s, standalone: true };
-  const i = inlineCue(line);
-  return i ? { text: i.text, token: i.token, standalone: false } : null;
+  const whole = wholeLineCue(line);
+  if (whole) return { text: whole, kind: 'whole' };
+  const suffix = line.match(SUFFIX_CUE);
+  if (suffix) return { text: suffix[2].trim(), kind: 'suffix' };
+  const inline = inlineCue(line);
+  return inline ? { text: inline.text, kind: 'inline', token: inline.token } : null;
 };
+
+/** Strip a cue from a line, keeping the verse text and its number. */
+const stripCue = (line, cue) =>
+  (cue.kind === 'suffix' ? line.replace(SUFFIX_CUE, '$1') : line.replace(cue.token, '॥'))
+    .replace(/ {2,}/g, ' ')
+    .trim();
+
+/**
+ * The dhruvapada of a Marathi aarti conventionally opens "जयदेव जयदेव जय …".
+ * Where a song carries no cue to go on, that couplet is the refrain — more
+ * reliably than the ध्रु mark, which in this collection sometimes sits at the
+ * end of the first verse instead.
+ */
+const CLASSIC_REFRAIN = /^(जयदेव|जय देव|जय देवी|जय जी)\s/;
 
 /**
  * How far the refrain runs from its opening line. Stops at whichever comes
@@ -140,7 +165,7 @@ function refrainEnd(stanza, start) {
   const key = bare(stanza[start]);
   for (let i = start; i < stanza.length && i - start < 4; i++) {
     const line = stanza[i];
-    if (i > start && standaloneCue(line)) return i - 1;
+    if (i > start && wholeLineCue(line)) return i - 1;
     if (DHRU.test(line) || ENDS_WITH_VERSE_NUMBER.test(line)) return i;
     const inline = inlineCue(line);
     if (i > start && inline && key.startsWith(bare(inline.text))) return i;
@@ -173,8 +198,18 @@ function findRefrain(stanzas) {
     return { si, from: li, to: refrainEnd(stanzas[si], li) };
   }
 
-  // No cues to go on: fall back to the ध्रु mark, taking the run of lines that
-  // ends there rather than the whole stanza it happens to sit in.
+  // No cues. Next best evidence is the conventional "जयदेव जयदेव जय …" opening.
+  for (let si = 0; si < stanzas.length; si++) {
+    for (let li = 0; li < stanzas[si].length; li++) {
+      const line = stanzas[si][li];
+      if (CLASSIC_REFRAIN.test(line) && !cueOf(line) && bare(line).length > 12) {
+        return { si, from: li, to: refrainEnd(stanzas[si], li) };
+      }
+    }
+  }
+
+  // Then the ध्रु mark, taking the run of lines that ends there rather than the
+  // whole stanza it happens to sit in.
   for (let si = 0; si < stanzas.length; si++) {
     const li = stanzas[si].findIndex((l) => DHRU.test(l));
     if (li === -1) continue;
@@ -186,6 +221,20 @@ function findRefrain(stanzas) {
       }
     }
     return { si, from: Math.max(from, li - 3), to: li };
+  }
+
+  // Last resort, structural: the opening stanza is the mukhda when it is short,
+  // there are verses after it, and either the verses are numbered while it is
+  // not ("शेवट गोड करी", "आरती ज्ञानराजा") or it trails off in an ellipsis
+  // ("विठ्ठल विठ्ठल विठ्ठला").
+  const opener = stanzas[0];
+  if (opener && stanzas.length >= 3 && opener.length <= 4) {
+    const numbered = stanzas.filter((st) => ENDS_WITH_VERSE_NUMBER.test(st.at(-1) ?? '')).length;
+    const unnumberedOpener = !opener.some((l) => ENDS_WITH_VERSE_NUMBER.test(l));
+    const trailsOff = /[.…]+\s*$/.test(opener.at(-1) ?? '');
+    if (unnumberedOpener && (numbered >= 2 || trailsOff)) {
+      return { si: 0, from: 0, to: opener.length - 1 };
+    }
   }
   return null;
 }
@@ -228,17 +277,17 @@ function buildBlocks(lyrics) {
       const cue = cueOf(line);
       const isCue = cue && bare(cue.text).length >= 4 && refrainKey.startsWith(bare(cue.text));
 
-      if (isCue && cue.standalone) {
+      if (isCue && cue.kind === 'whole') {
         // The whole line is shorthand — replace it with the refrain.
         push('verse', verse);
         verse = [];
         push('refrain', refrainLines, true);
         continue;
       }
-      if (isCue && !cue.standalone) {
-        // Keep the verse text and the verse number, drop the shorthand, and
-        // bring the refrain back after the stanza.
-        verse.push(line.replace(cue.token, '॥').replace(/ {2,}/g, ' ').trim());
+      if (isCue) {
+        // Keep the verse text and its number, drop the shorthand, and bring the
+        // refrain back after the stanza.
+        verse.push(stripCue(line, cue));
         repeatAfter = true;
         continue;
       }
