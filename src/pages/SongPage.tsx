@@ -92,7 +92,7 @@ export function SongPage() {
             {AUDIO_ENABLED && song.audio && ' You can still play the recording above.'}
           </p>
         ) : (
-          <Lyrics text={song.lyrics} fontSize={fontSize} />
+          <Lyrics blocks={song.blocks ?? []} fontSize={fontSize} />
         )}
 
         {!song.lyricsPending && <p className="song__end">॥ शुभं भवतु ॥</p>}

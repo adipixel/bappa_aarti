@@ -22,6 +22,7 @@ only by the diya, and a song that cannot be paused to fiddle with settings.
 | **Dark theme by default** | Most aartis are sung at dawn or after sunset. Applied before first paint so there is no white flash. |
 | **Stanza-aware layout** | Blank lines in the source become real stanza breaks, so verses are visually separated no matter how ragged the original text was. |
 | **Highlighted refrain** | The ध्रु/धृ stanza — the bit that comes back after every verse — is marked with an accent rule, so you can find your way back to it mid-song. |
+| **Cued refrains written out** | Aartis print the chorus once, then cue it back with shorthand (`॥ जय देव ॥`, `जयदेव…`). Those are resolved and laid out in full, marked ↻ — so with auto-scroll running you never have to scroll back to find the words. |
 | **Dimmed notation** | Danda marks and verse numbers (`।`, `॥ २ ॥`) are rendered faintly. They stay readable, but the eye lands on the words. |
 | **Hanging indent** | A long line that wraps is indented, so it is never mistaken for the next line of the verse. |
 | **Works offline** | Temples and pandals have bad signal. Lyrics, styles and shell are precached — the whole collection works with no network. |
@@ -51,6 +52,27 @@ as `।।१॥`, `॥ १ ॥`, `।। १ ।।` and `॥१॥`. The build
 single `॥ N ॥` form, and evens out the spacing around every danda. **Only
 punctuation and whitespace are touched** — the build is checked against the
 source with all notation stripped, so no word or spelling can drift.
+
+### Refrains
+
+An aarti prints its chorus once and afterwards only cues it — inline as
+`... ॥ जय देव ॥ २ ॥`, or as a trailing-off line of its own (`जयदेव…`,
+`आरती..`). A singer knows to repeat the whole thing; someone reading along on a
+phone, with auto-scroll running and no way to scroll back, does not.
+
+The build resolves each cue and writes the refrain out in full where it
+belongs. Resolution is deliberately conservative: **a cue is expanded only when
+another, longer line in the same song begins with exactly those letters**
+(compared on letters alone, since cues vary — `जय देव` vs `जयदेव`). Anything
+that cannot be resolved that way is left exactly as written. In practice that
+skips things like `॥ महाकैवल्यतेजा ॥`, which is ordinary line punctuation
+rather than a cue, and `डाव मांडीला...`, which names the *end* of a line rather
+than its start.
+
+Each song therefore carries two fields: `lyrics`, the canonical text as
+collected (and what search runs over), and `blocks`, the singing arrangement
+with every cued refrain expanded. The build asserts that no original line is
+lost in the process.
 
 `src/data/songs.json` is generated, not hand-edited. To rebuild it:
 

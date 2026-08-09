@@ -1,11 +1,21 @@
 import raw from './songs.json';
 
+export interface Block {
+  role: 'verse' | 'refrain';
+  /** A refrain the original only cued with shorthand, laid out in full here. */
+  repeat?: boolean;
+  lines: string[];
+}
+
 export interface Song {
   id: string;
   track: number;
   title: string;
   titleEn: string;
+  /** The lyrics as collected — the canonical text, and what search runs over. */
   lyrics: string;
+  /** The singing arrangement: the same lyrics with every cued refrain written out. */
+  blocks?: Block[];
   lyricsPending?: boolean;
   audio?: string;
 }

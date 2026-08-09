@@ -514,6 +514,7 @@ a {
 
 /* The refrain comes back after every verse, so make it findable at a glance. */
 .song__stanza--refrain {
+  position: relative;
   border-left: 3px solid var(--accent);
   padding-left: 0.7em;
   margin-left: -0.1em;
@@ -522,6 +523,28 @@ a {
 
 :root[data-theme='light'] .song__stanza--refrain {
   color: var(--accent);
+}
+
+/* A refrain the original only cued. Dashed rule and a repeat glyph so it reads
+   as the chorus coming back, not as a new verse. */
+.song__stanza--repeat {
+  border-left-style: dashed;
+}
+
+.song__repeat {
+  position: absolute;
+  left: -0.72em;
+  top: -0.15em;
+  width: 1.15em;
+  height: 1.15em;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--accent);
+  font-family: var(--font-ui);
+  font-size: 0.62em;
+  line-height: 1;
 }
 
 .song__pending {
