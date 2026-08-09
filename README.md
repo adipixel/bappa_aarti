@@ -130,14 +130,22 @@ tap five more times, and survives relaunching the app — the installed app has
 no address bar and always launches at `start_url`, so `?debug` cannot be typed
 where it is actually needed. (In a browser tab, `?debug` still works.)
 
-Read the two gaps together — that is what makes them useful:
+The gaps are **viewport-relative**, and that is the only honest way to measure
+them: `getBoundingClientRect` is measured from the top of the web view, and the
+page cannot know where on the screen the web view starts. Subtracting a
+viewport-relative bottom from `screen.height` reports a 62px gap on a perfectly
+healthy layout — a mistake that cost two rounds of debugging here.
 
-| `inner − bar` | `screen − bar` | Meaning |
-| --- | --- | --- |
-| 0 | 0 | Correct. |
-| 0 | > 0 | The layout is right; iOS gave the app a viewport shorter than the screen. Nothing in CSS can reach the remainder — see below. |
-| > 0 | — | A real layout bug: the shell is not filling the viewport it was given. |
-| < 0 | — | The shell overshoots the viewport and the controls are clipped. |
+| `inner − bar` | Meaning |
+| --- | --- |
+| 0 | The shell fills the viewport it was given. This is correct, whatever `screen` says. |
+| > 0 | A real layout bug: the shell is not filling its viewport. |
+| < 0 | The shell overshoots its viewport, and the controls are clipped off the bottom. |
+
+`viewport shortfall` and `safe top/bottom` explain the rest. A shortfall equal
+to `safe top` with `safe top` non-zero means the app is being drawn *under* the
+status bar; with `safe top` at 0 it means the app sits *below* it, which is what
+you want on iOS.
 
 ### iOS caches the launch configuration
 
@@ -193,8 +201,12 @@ commit it yourself alongside the change.
 | 1.3.0 | Cued refrains written out in full |
 | 1.3.1 | Correct refrain detection in aartis that only imply it |
 | 1.4.0 | Version shown in settings |
-| 1.5.0 | Fill the screen when installed; viewport readout behind `?debug` |
+| 1.5.0 | Pin the shell to the viewport when installed; viewport readout behind `?debug` |
 | 1.5.1 | Reveal the readout by tapping the version, reachable in the installed app |
+| 1.5.2 | Withdrawn — grew the shell past its viewport and clipped the controls |
+| 1.5.3 | Opaque black status bar, so iOS lays the app out below it rather than under it |
+| 1.5.4 | Readout reports the cached launch configuration |
+| 1.5.5 | Readout measures gaps against the viewport only |
 
 ## Develop
 

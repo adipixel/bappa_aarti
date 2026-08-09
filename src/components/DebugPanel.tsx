@@ -38,12 +38,12 @@ export function DebugPanel() {
         ['screen', `${window.screen.width} × ${window.screen.height}`],
         ['viewport shortfall', `${window.screen.height - window.innerHeight}`],
         ['.app height', app ? `${Math.round(app.height)} (top ${Math.round(app.top)})` : '—'],
+        // Viewport-relative only. A screen-relative gap cannot be computed:
+        // getBoundingClientRect is measured from the top of the web view, and
+        // the page has no way to know where on the screen that sits. Comparing
+        // the two reads as a 62px gap on a perfectly healthy layout.
+        ['gap: inner − .app', app ? `${Math.round(window.innerHeight - app.bottom)}` : '—'],
         ['gap: inner − bar', bar ? `${Math.round(window.innerHeight - bar.bottom)}` : '(no bar)'],
-        // Measured against the screen, not innerHeight: iOS under-reports the
-        // viewport here, so an innerHeight-relative gap reads 0 even when the
-        // shell visibly stops short of the bottom of the screen.
-        ['gap: screen − .app', app ? `${Math.round(window.screen.height - app.bottom)}` : '—'],
-        ['gap: screen − bar', bar ? `${Math.round(window.screen.height - bar.bottom)}` : '(no bar)'],
         ['safe top/bottom', `${insets.top} / ${insets.bottom}`],
         // iOS reads these when the app is added to the home screen and caches
         // them for the life of the icon. If the page says one thing and the
