@@ -30,13 +30,20 @@ export function DebugPanel() {
       const insets = safeAreaInsets();
       const app = document.querySelector('.app')?.getBoundingClientRect();
       const vv = window.visualViewport;
+      const bar = document.querySelector('.song-bar')?.getBoundingClientRect();
       setRows([
         ['window.inner', `${window.innerWidth} × ${window.innerHeight}`],
         ['doc.client', `${document.documentElement.clientWidth} × ${document.documentElement.clientHeight}`],
         ['visualViewport', vv ? `${Math.round(vv.width)} × ${Math.round(vv.height)}` : '—'],
         ['screen', `${window.screen.width} × ${window.screen.height}`],
+        ['viewport shortfall', `${window.screen.height - window.innerHeight}`],
+        ['--app-height', getComputedStyle(document.documentElement).getPropertyValue('--app-height').trim() || '(unset)'],
         ['.app height', app ? `${Math.round(app.height)} (top ${Math.round(app.top)})` : '—'],
-        ['gap below .app', app ? `${Math.round(window.innerHeight - app.bottom)}` : '—'],
+        // Measured against the screen, not innerHeight: iOS under-reports the
+        // viewport here, so an innerHeight-relative gap reads 0 even when the
+        // shell visibly stops short of the bottom of the screen.
+        ['gap: screen − .app', app ? `${Math.round(window.screen.height - app.bottom)}` : '—'],
+        ['gap: screen − bar', bar ? `${Math.round(window.screen.height - bar.bottom)}` : '(no bar)'],
         ['safe top/bottom', `${insets.top} / ${insets.bottom}`],
         ['standalone', `${document.documentElement.classList.contains('is-standalone')}`],
         ['display-mode', `${window.matchMedia('(display-mode: standalone)').matches}`],
