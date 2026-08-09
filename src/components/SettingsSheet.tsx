@@ -7,6 +7,7 @@ import {
   useSettings,
   type Theme,
 } from '../state/settings';
+import { BUILD } from '../config';
 import { Close } from './icons';
 
 const THEMES: { id: Theme; label: string }[] = [
@@ -156,6 +157,13 @@ export function SettingsSheet({ onClose }: { onClose: () => void }) {
             </button>
           </div>
         </div>
+
+        <p className="sheet__version">
+          Bappa Aarti v{BUILD.version}
+          <span className="sheet__build">
+            {BUILD.commit} · {BUILD.built}
+          </span>
+        </p>
       </div>
     </>
   );

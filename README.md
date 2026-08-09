@@ -118,6 +118,48 @@ Four Gajar and two Shlok recordings from the email listing are deliberately
 onto any song title with confidence, and the wrong track playing under the
 wrong lyrics would be worse than no track at all.
 
+## Versioning
+
+The current version is shown at the bottom of the settings sheet, with the
+commit and build date under it:
+
+```
+Bappa Aarti v1.4.0
+81c5cdd · 2026-08-09
+```
+
+It is worth having because the service worker updates silently — without it
+there is no way to tell which build a phone is actually running, which matters
+when a fix can only be confirmed on someone else's device.
+
+The number comes from `package.json`; the commit comes from
+`VERCEL_GIT_COMMIT_SHA` on Vercel, or `git rev-parse` locally.
+
+**Bump it in the same commit as the change**, matching what changed:
+
+| Change | Bump | Command |
+| --- | --- | --- |
+| Bug fix, wording, styling touch-up | patch — `1.4.0` → `1.4.1` | `npm run bump:patch` |
+| New feature, new songs, changed behaviour | minor — `1.4.0` → `1.5.0` | `npm run bump:minor` |
+| Redesign, or anything that resets saved settings | major — `1.4.0` → `2.0.0` | `npm run bump:major` |
+
+The scripts pass `--no-git-tag-version`, so they only edit `package.json` —
+commit it yourself alongside the change.
+
+### History
+
+| Version | Change |
+| --- | --- |
+| 1.0.0 | First release: three playlists, 43 songs, offline PWA |
+| 1.0.1 | Canonical SPA rewrite for Vercel |
+| 1.0.2 | Dropped `crossOrigin` so audio needs HTTPS but not CORS |
+| 1.1.0 | Lyrics-only; audio behind `VITE_AUDIO_ENABLED` |
+| 1.2.0 | Install prompt, credit line, Noto Serif Devanagari, lyric typography |
+| 1.2.1 | Fixed the song controls drifting mid-screen on iOS |
+| 1.3.0 | Cued refrains written out in full |
+| 1.3.1 | Correct refrain detection in aartis that only imply it |
+| 1.4.0 | Version shown in settings |
+
 ## Develop
 
 ```bash
