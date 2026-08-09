@@ -4,6 +4,7 @@ import { AppHeader } from '../components/AppHeader';
 import { AudioPlayer } from '../components/AudioPlayer';
 import { SettingsSheet } from '../components/SettingsSheet';
 import { ChevronLeft, ChevronRight, Pause, ScrollDown } from '../components/icons';
+import { AUDIO_ENABLED } from '../config';
 import { getSong } from '../data/songs';
 import { useAutoScroll } from '../hooks/useAutoScroll';
 import { useSwipe } from '../hooks/useSwipe';
@@ -85,7 +86,7 @@ export function SongPage() {
       />
 
       <main className="song" {...swipe}>
-        {song.audio && (
+        {AUDIO_ENABLED && song.audio && (
           <AudioPlayer src={song.audio} title={song.title} onEnded={() => goTo(next?.id)} />
         )}
 
@@ -93,7 +94,7 @@ export function SongPage() {
           <p className="song__pending">
             <span className="deva">लवकरच…</span>
             Lyrics for this one aren't in the collection yet.
-            {song.audio && ' You can still play the recording above.'}
+            {AUDIO_ENABLED && song.audio && ' You can still play the recording above.'}
           </p>
         ) : (
           <div className="song__lyrics" style={{ fontSize }}>

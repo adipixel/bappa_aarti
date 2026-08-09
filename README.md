@@ -21,17 +21,17 @@ only by the diya, and a song that cannot be paused to fiddle with settings.
 | **Swipe left / right** | Same navigation without aiming at a button. |
 | **Dark theme by default** | Most aartis are sung at dawn or after sunset. Applied before first paint so there is no white flash. |
 | **Stanza-aware layout** | Blank lines in the source become real stanza breaks, so verses are visually separated no matter how ragged the original text was. |
-| **Works offline** | Temples and pandals have bad signal. Lyrics, styles and shell are precached. |
+| **Works offline** | Temples and pandals have bad signal. Lyrics, styles and shell are precached — the whole collection works with no network. |
 | **Bilingual search** | `घालीन` and `ghalin` both find घालीन लोटांगण. Lyric lines are searchable too, so a half-remembered line finds the song. |
 | **44px touch targets** | Eyes are on the murti, not the screen. |
 
 ## The collection
 
-| Playlist | Songs | Recordings |
-| --- | --- | --- |
-| आरत्या (Aarti) | 31 | 26 |
-| गजर (Gajar) | 5 | 1 |
-| श्लोक (Shlok) | 7 | 3 |
+| Playlist | Songs |
+| --- | --- |
+| आरत्या (Aarti) | 31 |
+| गजर (Gajar) | 5 |
+| श्लोक (Shlok) | 7 |
 
 Song order is the curated order from the original collection — `सुखकर्ता दु:खहर्ता`
 first through `घालीन लोटांगण` last — not alphabetical.
@@ -52,19 +52,35 @@ npm run build:data -- /path/to/legacy/database.json
 Editing lyrics is fine to do directly in `songs.json` — just keep the change in
 mind if you ever regenerate.
 
-## Audio
+## Audio is off
 
-Recordings are streamed from `adityamhamunkar.com/bappamusic/` over HTTPS and
-cached by the service worker after first play (up to 40 tracks).
+**This app is lyrics-only by default.** No player, no "has recording" badges,
+no audio requests.
 
-**One thing to verify after deploying:** that host must serve the MP3s over
-**HTTPS** with CORS allowed. The original links were `http://`, and a browser
-will block plain-HTTP audio on an HTTPS page. If the recordings do not play,
-that is the reason — the lyrics are unaffected, and a failed track collapses to
-a short note instead of a broken player.
+The recordings live on `adityamhamunkar.com`, which serves plain HTTP. Browsers
+block HTTP media on an HTTPS page, so every play button would fail — and 26 dead
+controls are worse than none. The URLs are still in `songs.json`; only the UI is
+switched off.
 
-To move the audio elsewhere, change `AUDIO_BASE` in `scripts/build-data.mjs`,
-regenerate, and update the `runtimeCaching` URL pattern in `vite.config.ts`.
+### Turning it back on
+
+Once the recordings are reachable over **HTTPS**, set one environment variable
+in Vercel (Project → Settings → Environment Variables) and redeploy:
+
+```
+VITE_AUDIO_ENABLED=true
+```
+
+If you also moved the files, change `AUDIO_BASE` in `scripts/build-data.mjs`
+and re-run `npm run build:data -- <path-to-database.json>`.
+
+CORS headers are *not* required — the player deliberately does not set
+`crossOrigin`, since it only plays the audio and never reads its samples.
+HTTPS is the only requirement.
+
+Audio **always streams and is never cached for offline use**, by design. Only
+the lyrics and app shell are precached, so installing the app costs a few
+hundred KB rather than a hundred megabytes.
 
 Four Gajar and two Shlok recordings from the email listing are deliberately
 **not** wired up: their filenames (`3-gajar1`, `4-udala-udala`, …) do not map
@@ -86,8 +102,7 @@ This repo is ready to deploy — `vercel.json` sets the framework, build command
 SPA rewrites and cache headers. No environment variables are needed.
 
 1. Go to [vercel.com/new](https://vercel.com/new) and import `adipixel/bappa_aarti`.
-2. Pick the branch to deploy (`claude/aarti-sangraha-pwa-mqwrsq`, or merge it
-   first and deploy the default branch).
+2. Production Branch: `next` (the default branch, which carries the app).
 3. Leave every build setting on its default — Vercel reads `vercel.json`.
    Framework preset: **Vite**, build: `npm run build`, output: `dist`.
 4. Deploy. Select the **Hobby** plan when prompted.
@@ -115,9 +130,9 @@ chrome, which is what you want propped up next to the murti.
   fast, fully offline, and correctly shaped on both platforms.
 - **Wake lock** needs Chrome/Edge on Android, or Safari 16.4+ on iOS. Where it
   is unsupported the settings sheet says so instead of silently doing nothing.
-- **आरती रामजी तुम्हारी** is in the Aarti list with its recording but no lyrics
-  yet — the source collection has a `लवकरच…` placeholder. It shows a clear
-  "coming soon" state rather than an empty screen.
+- **आरती रामजी तुम्हारी** is in the Aarti list but has no lyrics yet — the source
+  collection has a `लवकरच…` placeholder. It shows a clear "coming soon" state
+  rather than an empty screen.
 - **मंगलाष्टके (11 mangalashtaks)** also exist in the legacy database. They are
   not part of this app, since the ask was for three playlists — adding them is a
   one-line change in `scripts/build-data.mjs`.

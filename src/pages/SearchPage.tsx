@@ -2,6 +2,7 @@ import { useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { Close, Music, Search } from '../components/icons';
+import { AUDIO_ENABLED } from '../config';
 import { searchSongs } from '../data/songs';
 
 /** Pull the matching lyric line out so the user sees why a result matched. */
@@ -66,7 +67,7 @@ export function SearchPage() {
                       <span className="search__snippet">{snippet(song.lyrics, trimmed)}</span>
                     )}
                   </span>
-                  {song.audio && (
+                  {AUDIO_ENABLED && song.audio && (
                     <span className="track__badge">
                       <Music />
                     </span>

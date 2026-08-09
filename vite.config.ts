@@ -28,20 +28,10 @@ export default defineConfig({
         ],
       },
       workbox: {
+        // Lyrics, styles and the app shell are precached so the collection is
+        // fully usable offline. Audio is deliberately excluded: it always
+        // streams, and never occupies the user's storage.
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
-        // Audio lives on a third-party host and is large; stream it, never precache.
-        runtimeCaching: [
-          {
-            urlPattern: /^https:\/\/adityamhamunkar\.com\/bappamusic\/.*\.mp3$/,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'bappa-audio',
-              expiration: { maxEntries: 40, maxAgeSeconds: 60 * 60 * 24 * 60 },
-              rangeRequests: true,
-              cacheableResponse: { statuses: [0, 200] },
-            },
-          },
-        ],
       },
     }),
   ],

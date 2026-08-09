@@ -3,6 +3,7 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { SettingsSheet } from '../components/SettingsSheet';
 import { Music } from '../components/icons';
+import { AUDIO_ENABLED } from '../config';
 import { getPlaylist } from '../data/songs';
 
 export function PlaylistPage() {
@@ -36,7 +37,7 @@ export function PlaylistPage() {
                     {song.lyricsPending && ' · लवकरच'}
                   </span>
                 </span>
-                {song.audio && (
+                {AUDIO_ENABLED && song.audio && (
                   <span className="track__badge" title="Recording available">
                     <Music />
                   </span>
