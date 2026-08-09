@@ -70,10 +70,11 @@ What disqualifies a cue is ambiguity, not brevity — there is no minimum length
 `येई` is a perfectly good pointer to `येई हो विठ्ठले …`. A cue is only rejected
 when it could mean two genuinely different lines; a line that repeats the
 refrain's opening with a verse number after it, as the last verse of
-जय जय दिनदयाळा does, is an echo of the refrain rather than a rival meaning. In practice that
-skips things like `॥ महाकैवल्यतेजा ॥`, which is ordinary line punctuation
-rather than a cue, and `डाव मांडीला...`, which names the *end* of a line rather
-than its start.
+जय जय दिनदयाळा does, is an echo of the refrain rather than a rival meaning.
+
+In practice this leaves alone `॥ महाकैवल्यतेजा ॥`, which is ordinary line
+punctuation rather than a cue, and `डाव मांडीला...`, which names the *end* of a
+line rather than its start.
 
 Each song therefore carries two fields: `lyrics`, the canonical text as
 collected (and what search runs over), and `blocks`, the singing arrangement
