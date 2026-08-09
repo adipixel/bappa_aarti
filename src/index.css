@@ -1,3 +1,15 @@
+/* Self-hosted so the lyrics look identical on every phone and still render
+   with no network. Variable weight 400-600 from one 124 KB Devanagari subset. */
+@font-face {
+  font-family: 'Noto Serif Devanagari';
+  src: url('/fonts/noto-serif-devanagari.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC,
+    U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+
 :root {
   /* Dark is the default: most aartis are sung at dawn or after sunset. */
   --bg: #1a1110;
@@ -15,10 +27,10 @@
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 
   --font-ui: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
-  /* System Devanagari faces render far better than any webfont we could ship,
-     and cost nothing to download: Kohinoor on iOS, Noto Sans on Android. */
-  --font-deva: 'Nirmala UI', 'Kohinoor Devanagari', 'Noto Sans Devanagari', 'Noto Serif Devanagari',
-    'Mangal', system-ui, sans-serif;
+  /* A traditional serif reads warmer than the system sans and holds its weight
+     on a dark screen at arm's length. System faces stay as the fallback. */
+  --font-deva: 'Noto Serif Devanagari', 'Kohinoor Devanagari', 'Noto Sans Devanagari',
+    'Nirmala UI', 'Mangal', serif;
 }
 
 :root[data-theme='light'] {
@@ -232,8 +244,124 @@ a {
   color: var(--text-faint);
 }
 
+/* ---------- Install prompt ---------- */
+
+/* Deliberately the loudest thing after the playlists: most people should end
+   up launching this from their home screen, not a browser tab. */
+.install {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  margin-top: 22px;
+  padding: 15px 16px;
+  text-align: left;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--bg-raised), var(--bg-raised)) padding-box,
+    linear-gradient(135deg, var(--accent-strong), var(--accent)) border-box;
+  box-shadow: 0 6px 22px rgba(255, 157, 60, 0.13);
+}
+
+.install:active {
+  transform: scale(0.985);
+}
+
+.install__icon {
+  flex: 0 0 44px;
+  border-radius: 11px;
+}
+
+.install__body {
+  display: block;
+  flex: 1;
+  min-width: 0;
+}
+
+.install__title {
+  display: block;
+  font-family: var(--font-deva);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.install__sub {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-faint);
+}
+
+.install__cta {
+  flex: 0 0 auto;
+  padding: 8px 15px;
+  border-radius: 11px;
+  background: linear-gradient(150deg, var(--accent-strong), var(--accent));
+  color: var(--accent-contrast);
+  font-family: var(--font-deva);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.steps {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.step:last-child {
+  border-bottom: none;
+}
+
+.step__num {
+  display: grid;
+  place-items: center;
+  flex: 0 0 24px;
+  height: 24px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.step__icon {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--accent);
+}
+
+.step__text {
+  flex: 1;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.steps__note {
+  margin: 14px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  text-align: center;
+}
+
+/* ---------- Footer ---------- */
+
 .home__footer {
-  margin-top: 32px;
+  margin-top: 30px;
   text-align: center;
   font-size: 12.5px;
   line-height: 1.9;
@@ -244,6 +372,17 @@ a {
   font-family: var(--font-deva);
   font-size: 14px;
   color: var(--text-dim);
+}
+
+.home__credit {
+  margin-top: 3px;
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.home__credit .heart {
+  color: var(--accent);
+  font-style: normal;
 }
 
 /* ---------- Track list ---------- */
@@ -312,7 +451,6 @@ a {
 
 .song__lyrics {
   font-family: var(--font-deva);
-  white-space: pre-wrap;
   overflow-wrap: break-word;
   /* Loose leading: the eye has to find the next line while singing. */
   line-height: 1.85;
@@ -322,7 +460,36 @@ a {
 
 /* Blank lines separate stanzas; give them a visible beat. */
 .song__stanza + .song__stanza {
-  margin-top: 1.1em;
+  margin-top: 1.15em;
+}
+
+/* One verse line per block, with a hanging indent so a line that wraps is
+   never mistaken for the next line of the verse. */
+.song__line {
+  display: block;
+  padding-left: 1.15em;
+  text-indent: -1.15em;
+}
+
+/* Danda and verse numbers are notation, not lyrics — keep them legible but
+   let the eye slide past them to the next line. */
+.song__mark {
+  color: var(--accent);
+  opacity: 0.55;
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+/* The refrain comes back after every verse, so make it findable at a glance. */
+.song__stanza--refrain {
+  border-left: 3px solid var(--accent);
+  padding-left: 0.7em;
+  margin-left: -0.1em;
+  color: var(--accent-strong);
+}
+
+:root[data-theme='light'] .song__stanza--refrain {
+  color: var(--accent);
 }
 
 .song__pending {

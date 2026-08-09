@@ -79,6 +79,29 @@ export const Music = ({ size = 17 }: IconProps) => (
   </svg>
 );
 
+export const Share = ({ size = 18 }: IconProps) => (
+  <svg {...base(size)}>
+    <path d="M12 15V4" />
+    <path d="M8.5 7.5L12 4l3.5 3.5" />
+    <path d="M6 12H5v8h14v-8h-1" />
+  </svg>
+);
+
+export const PlusSquare = ({ size = 18 }: IconProps) => (
+  <svg {...base(size)}>
+    <rect x="4" y="4" width="16" height="16" rx="4" />
+    <path d="M12 8.5v7M8.5 12h7" />
+  </svg>
+);
+
+export const DotsVertical = ({ size = 18 }: IconProps) => (
+  <svg {...base(size)} fill="currentColor" stroke="none">
+    <circle cx="12" cy="5" r="1.8" />
+    <circle cx="12" cy="12" r="1.8" />
+    <circle cx="12" cy="19" r="1.8" />
+  </svg>
+);
+
 export const Home = ({ size = 21 }: IconProps) => (
   <svg {...base(size)}>
     <path d="M4 10.5L12 4l8 6.5" />

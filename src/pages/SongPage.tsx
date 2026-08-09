@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { AudioPlayer } from '../components/AudioPlayer';
+import { Lyrics } from '../components/Lyrics';
 import { SettingsSheet } from '../components/SettingsSheet';
 import { ChevronLeft, ChevronRight, Pause, ScrollDown } from '../components/icons';
 import { AUDIO_ENABLED } from '../config';
@@ -66,13 +67,6 @@ export function SongPage() {
   const stopScrolling = useCallback(() => setScrolling(false), []);
   useAutoScroll(scrolling, scrollSpeed, fontSize * LINE_HEIGHT_RATIO, stopScrolling);
 
-  // Blank lines in the source mark stanza breaks; render them as real groups
-  // so spacing stays even no matter how ragged the original text was.
-  const stanzas = useMemo(
-    () => (found?.song.lyrics ?? '').split(/\n{2,}/).filter(Boolean),
-    [found?.song.lyrics],
-  );
-
   if (!found) return <Navigate to="/" replace />;
   const { playlist, song, index } = found;
 
@@ -97,13 +91,7 @@ export function SongPage() {
             {AUDIO_ENABLED && song.audio && ' You can still play the recording above.'}
           </p>
         ) : (
-          <div className="song__lyrics" style={{ fontSize }}>
-            {stanzas.map((stanza, i) => (
-              <p className="song__stanza" key={i} style={{ margin: 0 }}>
-                {stanza}
-              </p>
-            ))}
-          </div>
+          <Lyrics text={song.lyrics} fontSize={fontSize} />
         )}
 
         {!song.lyricsPending && <p className="song__end">॥ शुभं भवतु ॥</p>}

@@ -21,6 +21,9 @@ only by the diya, and a song that cannot be paused to fiddle with settings.
 | **Swipe left / right** | Same navigation without aiming at a button. |
 | **Dark theme by default** | Most aartis are sung at dawn or after sunset. Applied before first paint so there is no white flash. |
 | **Stanza-aware layout** | Blank lines in the source become real stanza breaks, so verses are visually separated no matter how ragged the original text was. |
+| **Highlighted refrain** | The ध्रु/धृ stanza — the bit that comes back after every verse — is marked with an accent rule, so you can find your way back to it mid-song. |
+| **Dimmed notation** | Danda marks and verse numbers (`।`, `॥ २ ॥`) are rendered faintly. They stay readable, but the eye lands on the words. |
+| **Hanging indent** | A long line that wraps is indented, so it is never mistaken for the next line of the verse. |
 | **Works offline** | Temples and pandals have bad signal. Lyrics, styles and shell are precached — the whole collection works with no network. |
 | **Bilingual search** | `घालीन` and `ghalin` both find घालीन लोटांगण. Lyric lines are searchable too, so a half-remembered line finds the song. |
 | **44px touch targets** | Eyes are on the murti, not the screen. |
@@ -42,6 +45,12 @@ Lyrics and playlist order were recovered from the earlier `morya` project's
 `database.json`. Audio filenames were cross-checked against the "Aarti music
 file names" email listing, which corrected one double-extension typo and
 recovered four recordings the database never referenced.
+
+The lyrics were collected by hand over years, so the same verse ending appeared
+as `।।१॥`, `॥ १ ॥`, `।। १ ।।` and `॥१॥`. The build normalises all of it to a
+single `॥ N ॥` form, and evens out the spacing around every danda. **Only
+punctuation and whitespace are touched** — the build is checked against the
+source with all notation stripped, so no word or spelling can drift.
 
 `src/data/songs.json` is generated, not hand-edited. To rebuild it:
 
@@ -125,9 +134,15 @@ chrome, which is what you want propped up next to the murti.
 
 ## Notes
 
-- **Fonts:** Devanagari renders with the system font (Kohinoor on iOS, Noto
-  Sans Devanagari on Android). No webfont is downloaded — that keeps the app
-  fast, fully offline, and correctly shaped on both platforms.
+- **Font:** Devanagari is set in **Noto Serif Devanagari**, self-hosted as a
+  124 KB variable subset (`public/fonts/`) covering weights 400–600. A serif
+  reads warmer than the system sans and holds its weight on a dark screen at
+  arm's length. Self-hosting means it renders identically on every phone and
+  still works offline. System faces remain the fallback. Latin text keeps the
+  system UI font, which costs nothing.
+  Tiro Devanagari Marathi was the runner-up — more elegant, but too light on a
+  dark background and it ships no bold. Swapping is a one-line change to
+  `--font-deva`.
 - **Wake lock** needs Chrome/Edge on Android, or Safari 16.4+ on iOS. Where it
   is unsupported the settings sheet says so instead of silently doing nothing.
 - **आरती रामजी तुम्हारी** is in the Aarti list but has no lyrics yet — the source

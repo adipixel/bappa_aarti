@@ -41,12 +41,39 @@ const romanize = (id) =>
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(' ');
 
+/**
+ * Puts every verse into the same shape.
+ *
+ * The lyrics were collected by hand over years, so the same verse ending shows
+ * up as `।।१॥`, `॥ १ ॥`, `।। १ ।।` and `॥१॥`. This normalises the danda marks
+ * and the space around them so each line ends consistently.
+ *
+ * Only punctuation and whitespace are touched — never a word, never a spelling.
+ */
+function formatLine(line) {
+  return (
+    line
+      // A doubled single danda is a double danda written the long way.
+      .replace(/।।/g, '॥')
+      // One space either side of each danda. (। U+0964 and ॥ U+0965 are
+      // distinct characters, so these two passes cannot interfere.)
+      .replace(/\s*॥\s*/g, ' ॥ ')
+      .replace(/\s*।\s*/g, ' । ')
+      // A single danda butted against a double one is redundant: "। ॥ ६ ॥"
+      .replace(/।\s+॥/g, '॥')
+      .replace(/ {2,}/g, ' ')
+      .trim()
+      // Close a verse number that was left hanging: "॥ ६" -> "॥ ६ ॥"
+      .replace(/॥\s*([०-९]+)\s*$/, '॥ $1 ॥')
+  );
+}
+
 /** Collapse the ragged whitespace the lyrics were pasted in with. */
 const cleanLyrics = (raw) =>
   (raw ?? '')
     .replace(/\r\n/g, '\n')
     .split('\n')
-    .map((line) => line.replace(/[ \t]+/g, ' ').trim())
+    .map((line) => formatLine(line.replace(/[ \t]+/g, ' ').trim()))
     .join('\n')
     .replace(/\n{3,}/g, '\n\n')
     .trim();

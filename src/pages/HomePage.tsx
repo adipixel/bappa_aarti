@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
+import { InstallCard } from '../components/InstallCard';
 import { SettingsSheet } from '../components/SettingsSheet';
 import { ChevronRight } from '../components/icons';
 import { playlists } from '../data/songs';
@@ -36,10 +37,13 @@ export function HomePage() {
           ))}
         </nav>
 
+        <InstallCard />
+
         <footer className="home__footer">
           <span className="deva">भक्तांसाठी भक्तांकडून</span>
-          <br />
-          Works offline · Add to Home Screen for full screen
+          <p className="home__credit">
+            Made with <i className="heart">♥</i> by Aditya Mhamunkar
+          </p>
         </footer>
       </main>
 
