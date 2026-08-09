@@ -45,6 +45,14 @@ export function DebugPanel() {
         ['gap: screen − .app', app ? `${Math.round(window.screen.height - app.bottom)}` : '—'],
         ['gap: screen − bar', bar ? `${Math.round(window.screen.height - bar.bottom)}` : '(no bar)'],
         ['safe top/bottom', `${insets.top} / ${insets.bottom}`],
+        // iOS reads these when the app is added to the home screen and caches
+        // them for the life of the icon. If the page says one thing and the
+        // geometry says another, the icon predates the change.
+        [
+          'status-bar meta',
+          document.querySelector<HTMLMetaElement>('meta[name="apple-mobile-web-app-status-bar-style"]')
+            ?.content ?? '(none)',
+        ],
         ['standalone', `${document.documentElement.classList.contains('is-standalone')}`],
         ['display-mode', `${window.matchMedia('(display-mode: standalone)').matches}`],
         ['dpr', `${window.devicePixelRatio}`],

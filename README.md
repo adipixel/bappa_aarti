@@ -130,7 +130,27 @@ tap five more times, and survives relaunching the app — the installed app has
 no address bar and always launches at `start_url`, so `?debug` cannot be typed
 where it is actually needed. (In a browser tab, `?debug` still works.)
 
-If `gap below .app` reads anything other than `0`, that number is the bug.
+Read the two gaps together — that is what makes them useful:
+
+| `inner − bar` | `screen − bar` | Meaning |
+| --- | --- | --- |
+| 0 | 0 | Correct. |
+| 0 | > 0 | The layout is right; iOS gave the app a viewport shorter than the screen. Nothing in CSS can reach the remainder — see below. |
+| > 0 | — | A real layout bug: the shell is not filling the viewport it was given. |
+| < 0 | — | The shell overshoots the viewport and the controls are clipped. |
+
+### iOS caches the launch configuration
+
+`apple-mobile-web-app-status-bar-style` and the manifest are read **when the
+app is added to the home screen**, and cached for the life of that icon.
+Reloading the installed app, or deploying a new build, never re-reads them — so
+a change to either only takes effect after **deleting the home-screen icon and
+adding it again**.
+
+The readout prints the status-bar value from the page. If it disagrees with the
+geometry — the page says `black` while `safe-area-inset-top` is still non-zero
+and the shell sits at `top 0` — the icon predates the change and needs
+reinstalling.
 
 ## Versioning
 
