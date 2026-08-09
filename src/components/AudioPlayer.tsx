@@ -77,7 +77,10 @@ export function AudioPlayer({ src, title, onEnded }: Props) {
         ref={ref}
         src={src}
         preload="none"
-        crossOrigin="anonymous"
+        // No crossOrigin: we only play the audio, never read its samples, so
+        // requesting CORS would make the host need permissive headers on top
+        // of HTTPS for no benefit. The service worker caches the opaque
+        // response instead (see cacheableResponse status 0 in vite.config).
         onTimeUpdate={(e) => setTime(e.currentTarget.currentTime)}
         onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
         onEnded={() => {
