@@ -22,6 +22,8 @@ export function SongPage() {
   const [scrolling, setScrolling] = useState(false);
   const scrollerRef = useRef<HTMLElement>(null);
 
+  if (!playlistId || !songId) return <Navigate to="/" replace />;
+
   const found = getSong(playlistId, songId);
 
   useWakeLock(keepAwake && !!found);
