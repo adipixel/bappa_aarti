@@ -20,6 +20,7 @@ const commit = (() => {
 })();
 
 export default defineConfig({
+  base: '/bappa/',
   define: {
     __APP_VERSION__: JSON.stringify(pkg.version),
     __APP_COMMIT__: JSON.stringify(commit),
@@ -40,8 +41,8 @@ export default defineConfig({
         background_color: '#1a1110',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '/',
-        scope: '/',
+        start_url: '/bappa/',
+        scope: '/bappa/',
         categories: ['lifestyle', 'music'],
         icons: [
           { src: 'icon-192.png', sizes: '192x192', type: 'image/png' },
