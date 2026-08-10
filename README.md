@@ -429,6 +429,7 @@ commit it yourself alongside the change.
 | 1.14.1 | Lyric corrections in five aartis |
 | 1.15.0 | Verse numbers and the ध्रु mark made consistent across the aartis |
 | 1.16.0 | Playlist cards carry an instrument mark instead of an initial |
+| 1.17.0 | Marks redrawn; the amber badge behind them dropped |
 
 ## Develop
 

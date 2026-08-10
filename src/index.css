@@ -354,13 +354,11 @@ a {
 .playlist-card__icon {
   display: grid;
   place-items: center;
-  flex: 0 0 52px;
-  height: 52px;
-  border-radius: 15px;
-  background: linear-gradient(150deg, var(--accent-strong), var(--accent));
-  /* The marks are line drawings, so they take the contrast colour as a stroke
-     rather than as a fill the way the old initial did. */
-  color: var(--accent-contrast);
+  flex: 0 0 42px;
+  height: 42px;
+  /* No badge behind it: the mark sits on the card in the accent, which leaves
+     the amber to the one thing on the row that is meant to draw the eye. */
+  color: var(--accent);
 }
 
 .playlist-card__body {
