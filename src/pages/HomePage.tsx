@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { InstallCard } from '../components/InstallCard';
 import { SettingsSheet } from '../components/SettingsSheet';
-import { ChevronRight } from '../components/icons';
+import { ChevronRight, Dholak, Namaste, Taal } from '../components/icons';
 import { playlists } from '../data/songs';
 import { trackPageView, trackSupport } from '../utils/analytics';
 
@@ -15,6 +15,17 @@ import { trackPageView, trackSupport } from '../utils/analytics';
  * every screen someone might be looking at mid-aarti.
  */
 const SUPPORT_URL = 'https://razorpay.me/@adityamhamunkar';
+
+/**
+ * What each playlist is for, as a picture: the drum an aarti is sung to, the
+ * cymbals that carry a gajar, the joined palms a shlok is recited in. Better
+ * than the first letter of the title, which is already written beside it.
+ */
+const PLAYLIST_ICON: Record<string, JSX.Element> = {
+  aarti: <Dholak />,
+  gajar: <Taal />,
+  shlok: <Namaste />,
+};
 
 export function HomePage() {
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -37,8 +48,8 @@ export function HomePage() {
         <nav aria-label="Playlists">
           {playlists.map((playlist) => (
             <Link key={playlist.id} className="playlist-card" to={`/${playlist.id}`}>
-              <span className="playlist-card__num" aria-hidden>
-                {playlist.title.charAt(0)}
+              <span className="playlist-card__icon" aria-hidden>
+                {PLAYLIST_ICON[playlist.id] ?? playlist.title.charAt(0)}
               </span>
               <span className="playlist-card__body">
                 <span className="playlist-card__title">{playlist.title}</span>

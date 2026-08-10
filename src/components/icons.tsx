@@ -100,3 +100,49 @@ export const Home = ({ size = 21 }: IconProps) => (
     <path d="M6 9.5V20h12V9.5" />
   </svg>
 );
+
+/*
+ * Playlist marks. Each names what the songs in it are for, rather than
+ * repeating the first letter of a title the reader can already see.
+ */
+
+/** Dholak — the two-headed barrel drum an aarti is sung to. */
+export const Dholak = ({ size = 26 }: IconProps) => (
+  <svg {...base(size)}>
+    <ellipse cx="5.8" cy="12" rx="2.3" ry="5" />
+    <path d="M5.8 7h12.4c1.3 0 2.3 2.2 2.3 5s-1 5-2.3 5H5.8" />
+    <path d="M10.3 7.6v8.8M15 7.6v8.8" />
+  </svg>
+);
+
+/**
+ * Taal — the pair of hand cymbals that carry a gajar: two discs caught
+ * overlapping as they clash, each with the raised boss the cord threads through.
+ *
+ * Drawn any more literally it stops being cymbals. Two circles bridged by a
+ * cord is a pair of binoculars, the discs facing each other edge-on is a
+ * bracket, and stacked one above the other they make an eye. Overlapping them
+ * leaves nothing else for the shape to be mistaken for.
+ */
+export const Taal = ({ size = 26 }: IconProps) => (
+  <svg {...base(size)}>
+    <circle cx="8.6" cy="12" r="5.1" />
+    <circle cx="15.4" cy="12" r="5.1" />
+    <circle cx="8.6" cy="12" r="1.1" fill="currentColor" stroke="none" />
+    <circle cx="15.4" cy="12" r="1.1" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+/**
+ * Añjali — palms together, the gesture a shlok is recited in. The thumbs and
+ * the wrists are what make it read as hands; without them the silhouette is
+ * just a pointed almond.
+ */
+export const Namaste = ({ size = 26 }: IconProps) => (
+  <svg {...base(size)}>
+    <path d="M12 3.6c-2.3 3.1-3.7 6.4-3.7 9.8V18h7.4v-4.6c0-3.4-1.4-6.7-3.7-9.8z" />
+    <path d="M12 4.8V18" />
+    <path d="M8.3 12.6c-1.2.5-1.9 1.5-1.9 2.7V18M15.7 12.6c1.2.5 1.9 1.5 1.9 2.7V18" />
+    <path d="M6.4 20.4h11.2" />
+  </svg>
+);

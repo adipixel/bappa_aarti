@@ -351,17 +351,16 @@ a {
   border-color: var(--accent);
 }
 
-.playlist-card__num {
+.playlist-card__icon {
   display: grid;
   place-items: center;
   flex: 0 0 52px;
   height: 52px;
   border-radius: 15px;
   background: linear-gradient(150deg, var(--accent-strong), var(--accent));
+  /* The marks are line drawings, so they take the contrast colour as a stroke
+     rather than as a fill the way the old initial did. */
   color: var(--accent-contrast);
-  font-family: var(--font-deva);
-  font-size: 25px;
-  font-weight: 700;
 }
 
 .playlist-card__body {
