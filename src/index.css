@@ -145,8 +145,89 @@ a {
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
-  /* Ensure content is visible in all browsers, especially on macOS Chrome */
-  contain: layout style paint;
+}
+
+/* ---------- Crash screen ---------- */
+
+/*
+ * Shown only by AppErrorBoundary. Deliberately plain: no stack, no jargon, and
+ * both ways out reachable with one thumb.
+ */
+.crash {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 32px 26px calc(var(--safe-bottom) + 32px);
+  text-align: center;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.crash__deva {
+  margin: 0;
+  font-family: var(--font-deva);
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.crash__title {
+  margin: 0;
+  font-family: var(--font-deva);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.crash__body {
+  margin: 4px 0 0;
+  max-width: 30ch;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-dim);
+}
+
+.crash__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 24px;
+}
+
+.crash__btn {
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  color: var(--text);
+  font-family: var(--font-deva);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.crash__btn--primary {
+  border-color: transparent;
+  background: linear-gradient(150deg, var(--accent-strong), var(--accent));
+  color: var(--accent-contrast);
+}
+
+.crash__btn:active {
+  opacity: 0.85;
+}
+
+.crash__note {
+  margin: 18px 0 0;
+  max-width: 32ch;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-faint);
 }
 
 /* ---------- Header ---------- */
@@ -507,9 +588,6 @@ a {
 
 .song {
   padding: 8px 22px 0;
-  /* Ensure the scroll container always has space for content; if lyrics don't
-     render, something went wrong in the component, not the layout. */
-  min-height: 1px;
 }
 
 .song__lyrics {

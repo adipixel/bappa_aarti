@@ -80,8 +80,36 @@ export function trackAudioPlay(songTitle: string) {
   });
 }
 
+/**
+ * Report a crash.
+ *
+ * Crashes in this app have so far only ever happened on other people's phones,
+ * where there is no console to read. Sending them here is the only way the real
+ * message and location are ever seen.
+ */
+export function reportError(error: unknown, componentStack?: string) {
+  if (!ANALYTICS_ENABLED || typeof window.gtag !== 'function') return;
+  const err = error instanceof Error ? error : new Error(String(error));
+  window.gtag('event', 'exception', {
+    description: `${err.name}: ${err.message} @ ${location.pathname}`,
+    fatal: true,
+    // Truncated: GA drops long parameter values outright.
+    error_stack: (err.stack ?? '').slice(0, 400),
+    component_stack: (componentStack ?? '').slice(0, 300),
+  });
+}
+
+/**
+ * Catch what the error boundary cannot: failures outside React's render pass —
+ * a chunk that will not load, a listener that throws, a rejected promise.
+ */
+export function installGlobalErrorReporting() {
+  window.addEventListener('error', (e) => reportError(e.error ?? e.message));
+  window.addEventListener('unhandledrejection', (e) => reportError(e.reason));
+}
+
 declare global {
   interface Window {
-    gtag: (command: string, eventName: string, eventParams?: Record<string, unknown>) => void;
+    gtag?: (command: string, eventName: string, eventParams?: Record<string, unknown>) => void;
   }
 }

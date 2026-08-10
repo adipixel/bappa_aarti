@@ -27,9 +27,6 @@ function Line({ text }: { text: string }) {
 }
 
 export function Lyrics({ blocks, fontSize }: { blocks: Block[]; fontSize: number }) {
-  if (!Array.isArray(blocks)) {
-    return <div className="song__lyrics" />;
-  }
   return (
     <div className="song__lyrics" style={{ fontSize }}>
       {blocks.map((block, i) => {

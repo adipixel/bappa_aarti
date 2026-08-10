@@ -20,6 +20,11 @@ const commit = (() => {
 })();
 
 export default defineConfig({
+  // Crashes have only ever shown up on other people's devices, where the stack
+  // is minified to single letters and says nothing. Sourcemaps make a screenshot
+  // of the console actionable. Nothing here is secret; the cost is a few hundred
+  // KB of .map files that only load when DevTools is open.
+  build: { sourcemap: true },
   define: {
     __APP_VERSION__: JSON.stringify(pkg.version),
     __APP_COMMIT__: JSON.stringify(commit),

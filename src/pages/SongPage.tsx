@@ -23,8 +23,6 @@ export function SongPage() {
   const [scrolling, setScrolling] = useState(false);
   const scrollerRef = useRef<HTMLElement>(null);
 
-  if (!playlistId || !songId) return <Navigate to="/" replace />;
-
   const found = getSong(playlistId, songId);
 
   useWakeLock(keepAwake && !!found);
@@ -50,14 +48,16 @@ export function SongPage() {
   );
 
   // New song: back to the top, and never carry auto-scroll across.
+  // Keyed on the ids alone — `found` is rebuilt every render, and depending on
+  // it would re-report the same song view on every keystroke of a setting.
+  const title = found?.song.title;
   useEffect(() => {
     scrollerRef.current?.scrollTo(0, 0);
     setScrolling(false);
-    if (found) {
-      trackSongView(playlistId!, found.song.title);
-      trackPageView(`/${playlistId}/${songId}`, found.song.title);
-    }
-  }, [playlistId, songId, found]);
+    if (!playlistId || !songId || !title) return;
+    trackSongView(playlistId, title);
+    trackPageView(`/${playlistId}/${songId}`, title);
+  }, [playlistId, songId, title]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
