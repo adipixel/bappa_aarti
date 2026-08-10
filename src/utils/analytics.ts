@@ -81,6 +81,19 @@ export function trackAudioPlay(songTitle: string) {
 }
 
 /**
+ * Track a tap on the दक्षिणा card — the click through to Razorpay, not a
+ * payment. Razorpay knows what was actually paid; this only says how many
+ * people got that far, which is the number the card's wording is judged on.
+ */
+export function trackSupport() {
+  if (!ANALYTICS_ENABLED || typeof window.gtag !== 'function') return;
+  window.gtag('event', 'select_content', {
+    content_type: 'support',
+    item_id: 'dakshina_razorpay',
+  });
+}
+
+/**
  * Report a crash.
  *
  * Crashes in this app have so far only ever happened on other people's phones,

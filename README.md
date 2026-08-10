@@ -199,6 +199,22 @@ Four Gajar and two Shlok recordings from the email listing are deliberately
 onto any song title with confidence, and the wrong track playing under the
 wrong lyrics would be worse than no track at all.
 
+## Support link
+
+One word — **Support** — in the footer of the home screen, under the credit
+line, linking to a Razorpay page (`SUPPORT_URL` in `src/pages/HomePage.tsx`).
+It is the only place money is mentioned anywhere in the app.
+
+It sits in the footer rather than in a card of its own because that is already
+the part of the screen about who made this, and it is on the home screen only —
+**never on a playlist or a song page**. Nobody holding an aarti thali should be
+asked for anything. If ads are ever added, the same rule holds: home screen or
+nowhere.
+
+A tap sends a `select_content` event to analytics. That counts click-throughs,
+not payments — Razorpay knows what was actually paid — which is the number the
+wording should be judged on.
+
 ## The icon
 
 The mark is **one shape at seven scales**: a quarter disc, whose radius equals
@@ -348,6 +364,7 @@ commit it yourself alongside the change.
 | 1.8.0 | New aarti `उंदरावरि बैसोनि` at 21 |
 | 1.9.0 | `songs.mjs` — add, move, remove, preview, with inferred titles and ids |
 | 1.9.1 | Two shloks: `गणाधीश जो ईश`, `वक्रतुंड महाकाय` |
+| 1.10.0 | Support link in the home-screen footer |
 
 ## Develop
 
