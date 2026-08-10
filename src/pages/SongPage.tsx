@@ -11,6 +11,7 @@ import { useAutoScroll } from '../hooks/useAutoScroll';
 import { useSwipe } from '../hooks/useSwipe';
 import { useWakeLock } from '../hooks/useWakeLock';
 import { useSettings } from '../state/settings';
+import { trackSongView, trackPageView } from '../utils/analytics';
 
 const LINE_HEIGHT_RATIO = 1.85; // keep in sync with .song__lyrics line-height
 
@@ -52,7 +53,11 @@ export function SongPage() {
   useEffect(() => {
     scrollerRef.current?.scrollTo(0, 0);
     setScrolling(false);
-  }, [playlistId, songId]);
+    if (found) {
+      trackSongView(playlistId!, found.song.title);
+      trackPageView(`/${playlistId}/${songId}`, found.song.title);
+    }
+  }, [playlistId, songId, found]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

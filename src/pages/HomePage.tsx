@@ -1,13 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { InstallCard } from '../components/InstallCard';
 import { SettingsSheet } from '../components/SettingsSheet';
 import { ChevronRight } from '../components/icons';
 import { playlists } from '../data/songs';
+import { trackPageView } from '../utils/analytics';
 
 export function HomePage() {
   const [settingsOpen, setSettingsOpen] = useState(false);
+
+  useEffect(() => {
+    trackPageView('/', 'आरती संग्रह / Bappa Aarti Home');
+  }, []);
 
   return (
     <>

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Pause, Play } from './icons';
+import { trackAudioPlay } from '../utils/analytics';
 
 const fmt = (s: number) => {
   if (!Number.isFinite(s) || s < 0) return '0:00';
@@ -56,6 +57,7 @@ export function AudioPlayer({ src, title, onEnded }: Props) {
       if (el.paused) {
         await el.play();
         setPlaying(true);
+        trackAudioPlay(title);
       } else {
         el.pause();
         setPlaying(false);

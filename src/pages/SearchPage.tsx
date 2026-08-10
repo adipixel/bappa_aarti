@@ -1,9 +1,10 @@
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { Close, Music, Search } from '../components/icons';
 import { AUDIO_ENABLED } from '../config';
 import { searchSongs } from '../data/songs';
+import { trackSearch, trackPageView } from '../utils/analytics';
 
 /** Pull the matching lyric line out so the user sees why a result matched. */
 function snippet(lyrics: string, query: string): string {
@@ -16,6 +17,16 @@ export function SearchPage() {
   const inputRef = useRef<HTMLInputElement>(null);
   const hits = useMemo(() => searchSongs(query), [query]);
   const trimmed = query.trim();
+
+  useEffect(() => {
+    trackPageView('/search', 'शोधा / Search');
+  }, []);
+
+  useEffect(() => {
+    if (trimmed.length >= 2) {
+      trackSearch(trimmed, hits.length);
+    }
+  }, [trimmed, hits.length]);
 
   return (
     <>
