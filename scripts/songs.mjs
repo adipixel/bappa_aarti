@@ -91,15 +91,32 @@ function summarise(song) {
   const refrains = song.blocks.filter((b) => b.role === 'refrain');
   const verses = song.blocks.filter((b) => b.role === 'verse').length;
   console.log(
-    `\n  ${verses} verses, ` +
+    `\n  ${verses} ${verses === 1 ? 'verse' : 'verses'}, ` +
       (refrains.length
         ? `a refrain of ${refrains[0].lines.length} lines repeated ${refrains.filter((b) => b.repeat).length}×`
         : 'no refrain'),
   );
-  if (!refrains.length) {
+
+  // Only worth flagging where a refrain could plausibly have been missed. A
+  // shlok is a single stanza and has nothing to come back to, so saying "no
+  // refrain found" there would be noise on every one of them.
+  if (!refrains.length && song.blocks.length > 1) {
     console.log(
-      '  ! No refrain was found. If this song has one, its cue is in a shape\n' +
-        '    the resolver does not know — check the layout above before committing.',
+      '  ! No refrain was found, in a song of several stanzas. If it has one,\n' +
+        '    its cue is in a shape the resolver does not know — check the layout.',
+    );
+  }
+
+  // Pasted lyrics often arrive as one long line per stanza. Splitting them into
+  // one pada per line is what the rest of the collection does, and what the
+  // hanging indent in the app is designed around.
+  const crowded = song.blocks
+    .flatMap((b) => b.lines)
+    .filter((l) => l.length > 55 && (l.match(/[।॥]/g) ?? []).length > 1);
+  if (crowded.length) {
+    console.log(
+      `  ! ${crowded.length} line(s) look like several padas run together.\n` +
+        '    Split them at the danda marks, one per line, and re-run.',
     );
   }
 }

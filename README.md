@@ -35,7 +35,7 @@ only by the diya, and a song that cannot be paused to fiddle with settings.
 | --- | --- |
 | आरत्या (Aarti) | 32 |
 | गजर (Gajar) | 5 |
-| श्लोक (Shlok) | 7 |
+| श्लोक (Shlok) | 9 |
 
 Song order is the curated order from the original collection — `सुखकर्ता दु:खहर्ता`
 first through `घालीन लोटांगण` last — not alphabetical.
@@ -347,6 +347,7 @@ commit it yourself alongside the change.
 | 1.7.2 | Fixed the blank page on leaving a playlist (effect returning a non-function) |
 | 1.8.0 | New aarti `उंदरावरि बैसोनि` at 21 |
 | 1.9.0 | `songs.mjs` — add, move, remove, preview, with inferred titles and ids |
+| 1.9.1 | Two shloks: `गणाधीश जो ईश`, `वक्रतुंड महाकाय` |
 
 ## Develop
 
