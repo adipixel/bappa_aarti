@@ -76,6 +76,23 @@ In practice this leaves alone `॥ महाकैवल्यतेजा ॥`,
 punctuation rather than a cue, and `डाव मांडीला...`, which names the *end* of a
 line rather than its start.
 
+A refrain can also cue *itself*: जय जय दिनदयाळा is printed as two lines, the
+second ending `॥ जय जय ॥`, which is not a terminator but shorthand for the
+first line coming back round to close it —
+
+```
+जय जय दिनदयाळा सत्यनारायण देवा
+पंचारती ओवाळू श्रीपती तुज भक्तिभावा ॥ जय जय ॥
+```
+
+becomes
+
+```
+जय जय दिनदयाळा सत्यनारायण देवा
+पंचारती ओवाळू श्रीपती तुज भक्तिभावा
+जय जय दिनदयाळा सत्यनारायण देवा ॥
+```
+
 Each song therefore carries two fields: `lyrics`, the canonical text as
 collected (and what search runs over), and `blocks`, the singing arrangement
 with every cued refrain expanded. The build asserts that no original line is
@@ -215,6 +232,7 @@ commit it yourself alongside the change.
 | 1.5.4 | Readout reports the cached launch configuration |
 | 1.5.5 | Readout measures gaps against the viewport only |
 | 1.5.6 | Resolve short refrain cues such as `येई …` |
+| 1.5.7 | Expand a refrain that closes by cueing its own opening line |
 
 ## Develop
 

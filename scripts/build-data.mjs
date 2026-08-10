@@ -258,6 +258,46 @@ function findRefrain(stanzas) {
 }
 
 /**
+ * A refrain that closes by cueing its own opening sings that opening again.
+ *
+ * जय जय दिनदयाळा is printed as two lines, the second ending "॥ जय जय ॥" — which
+ * is not a terminator but shorthand for the first line coming back round:
+ *
+ *   जय जय दिनदयाळा सत्यनारायण देवा
+ *   पंचारती ओवाळू श्रीपती तुज भक्तिभावा ॥ जय जय ॥
+ *
+ * becomes
+ *
+ *   जय जय दिनदयाळा सत्यनारायण देवा
+ *   पंचारती ओवाळू श्रीपती तुज भक्तिभावा
+ *   जय जय दिनदयाळा सत्यनारायण देवा ॥
+ *
+ * The danda that separated the line from its shorthand goes with it, since the
+ * expansion now stands on its own line.
+ */
+function expandSelfCue(lines) {
+  if (lines.length < 2) return lines;
+
+  const last = lines.at(-1);
+  const cue = cueOf(last);
+  if (!cue) return lines;
+
+  const key = bare(cue.text);
+  const head = bare(lines[0]);
+  // Shorthand for this refrain's own opening: opens it, without being all of it.
+  if (!key || key === head || !head.startsWith(key)) return lines;
+
+  const token = cue.kind === 'inline' ? cue.token : last.match(SUFFIX_CUE)?.[0];
+  if (!token) return lines;
+
+  const trimmed = last.replace(token, '').replace(/[\s।॥]+$/, '').trim();
+  if (!trimmed) return lines;
+
+  const close = /[।॥]\s*$/.test(lines[0]) ? lines[0] : `${lines[0]} ॥`;
+  return [...lines.slice(0, -1), trimmed, close];
+}
+
+/**
  * Turns lyrics into the blocks the app renders: verses, the refrain, and a
  * copy of the refrain wherever it was only cued.
  */
@@ -266,7 +306,7 @@ function buildBlocks(lyrics) {
   const refrain = findRefrain(stanzas);
   if (!refrain) return stanzas.map((lines) => ({ role: 'verse', lines }));
 
-  const refrainLines = stanzas[refrain.si].slice(refrain.from, refrain.to + 1);
+  const refrainLines = expandSelfCue(stanzas[refrain.si].slice(refrain.from, refrain.to + 1));
   const refrainKey = bare(refrainLines[0]);
   const blocks = [];
   const push = (role, lines, repeat) => {
