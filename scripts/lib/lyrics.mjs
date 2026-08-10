@@ -27,6 +27,10 @@ export const romanize = (id) =>
 export function formatLine(line) {
   return (
     line
+      // Lyrics get typed on keyboards that have no danda, so `|` and `||` stand
+      // in for । and ॥. Nothing in the collection uses a pipe for anything else.
+      .replace(/\|\|/g, '॥')
+      .replace(/\|/g, '।')
       // A doubled single danda is a double danda written the long way.
       .replace(/।।/g, '॥')
       // One space either side of each danda. (। U+0964 and ॥ U+0965 are

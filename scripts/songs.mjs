@@ -8,6 +8,7 @@
  *   node scripts/songs.mjs move    <id> <position>
  *   node scripts/songs.mjs reorder <file|->
  *   node scripts/songs.mjs rename  <id> --title "..."
+ *   node scripts/songs.mjs lyrics  <id> <file|->
  *   node scripts/songs.mjs remove  <id>
  *
  * `add` needs nothing but the lyrics: the playlist defaults to aarti, the
@@ -253,6 +254,37 @@ async function cmdAdd(data, positional, flags) {
   console.log(`\n  Added at ${at} of ${playlist.count} in ${playlist.id}.\n`);
 }
 
+/**
+ * Give lyrics to a song that is holding a place without any — the other half of
+ * `add --pending`. Title, id and position are left exactly as they are; only
+ * the words arrive.
+ */
+async function cmdLyrics(data, [songId, source], flags) {
+  if (!songId) die('usage: songs.mjs lyrics <id> <file|->');
+  const { playlist, song } = locate(data, songId);
+
+  const lyrics = cleanLyrics(await readLyrics(source));
+  if (!lyrics) die('those lyrics are empty once cleaned up');
+
+  const updated = { ...song, lyrics, blocks: buildBlocks(lyrics) };
+  delete updated.lyricsPending;
+
+  console.log(`\n  ${playlist.id}/${song.id} — ${song.title}`);
+  printBlocks(updated.blocks);
+  summarise(updated);
+
+  if (flags['dry-run']) {
+    console.log('\n  Dry run — nothing written.\n');
+    return;
+  }
+
+  playlist.songs[playlist.songs.indexOf(song)] = updated;
+  write(data);
+  mkdirSync(fileURLToPath(LYRICS_DIR), { recursive: true });
+  writeFileSync(new URL(`${song.id}.txt`, LYRICS_DIR), lyrics + '\n');
+  console.log(`\n  ${song.title} has its words now.\n`);
+}
+
 function cmdRename(data, [songId], flags) {
   if (!songId || !flags.title) die('usage: songs.mjs rename <id> --title "..."');
   const { playlist, song } = locate(data, songId);
@@ -363,6 +395,7 @@ const USAGE = `
     move    <id> <position>         renumber within its playlist
     reorder <file|->                reorder a whole playlist from a written-out list
     rename  <id> --title "..."      change the displayed title, keeping the id
+    lyrics  <id> <file|->           give words to a song added with --pending
     remove  <id>                    take one out
 
   add / preview flags
@@ -415,6 +448,9 @@ switch (command) {
     break;
   case 'rename':
     cmdRename(data, positional, flags);
+    break;
+  case 'lyrics':
+    await cmdLyrics(data, positional, flags);
     break;
   case 'remove':
     cmdRemove(data, positional);

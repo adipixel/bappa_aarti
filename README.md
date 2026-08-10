@@ -123,6 +123,7 @@ node scripts/songs.mjs           # the commands, and their flags
 | `move <id> <position>` | Renumber within its playlist |
 | `reorder <file\|->` | Rearrange a whole playlist from a written-out list |
 | `rename <id> --title "..."` | Change the displayed title, keeping the id |
+| `lyrics <id> <file\|->` | Give words to a song added with `--pending` |
 | `remove <id>` | Take one out |
 
 Adding needs nothing but the lyrics — one verse per block, a blank line between
@@ -163,6 +164,16 @@ shape the app renders as "लवकरच…":
 ```bash
 node scripts/songs.mjs add --pending --title "आरती तुकारामा" --at 14
 ```
+
+When the words turn up, `lyrics` fills them in without disturbing the title,
+id or position:
+
+```bash
+node scripts/songs.mjs lyrics aarti-tukarama words.txt
+```
+
+Lyrics typed on a keyboard with no danda key are fine: `|` and `||` are read
+as । and ॥.
 
 ### Rearranging
 
@@ -394,6 +405,7 @@ commit it yourself alongside the change.
 | 1.10.0 | Support link in the home-screen footer |
 | 1.10.1 | Shlok `नेत्री दोन हिरे` at 8 |
 | 1.11.0 | `reorder`, `rename` and `add --pending`; aartis rearranged |
+| 1.12.0 | Lyrics for `आरती तुकारामा` and `नमो गजानन नमो हनुमान`; `lyrics` command |
 
 ## Develop
 
