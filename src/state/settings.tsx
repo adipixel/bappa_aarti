@@ -14,18 +14,14 @@ export interface Settings {
   theme: Theme;
   /** Lyric font size in px. Deliberately large — this is read at arm's length. */
   fontSize: number;
-  /** Lines per minute for auto-scroll. */
-  scrollSpeed: number;
   /** Hold the screen awake while an aarti is open. */
   keepAwake: boolean;
 }
 
-const DEFAULTS: Settings = { theme: 'dark', fontSize: 26, scrollSpeed: 14, keepAwake: true };
+const DEFAULTS: Settings = { theme: 'dark', fontSize: 26, keepAwake: true };
 
 export const FONT_MIN = 18;
 export const FONT_MAX = 46;
-export const SPEED_MIN = 6;
-export const SPEED_MAX = 40;
 
 const STORAGE_KEY = 'ba:settings';
 

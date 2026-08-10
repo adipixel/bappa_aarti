@@ -57,14 +57,6 @@ export const Pause = ({ size = 20 }: IconProps) => (
   </svg>
 );
 
-export const ScrollDown = ({ size = 19 }: IconProps) => (
-  <svg {...base(size)}>
-    <path d="M12 4v14" />
-    <path d="M6 13l6 6 6-6" />
-    <path d="M4 21h16" />
-  </svg>
-);
-
 export const Close = ({ size = 21 }: IconProps) => (
   <svg {...base(size)}>
     <path d="M6 6l12 12M18 6L6 18" />

@@ -53,7 +53,7 @@
 }
 
 html {
-  /* Let auto-scroll drive smoothly; instant jumps are handled explicitly. */
+  /* Jumping to the top of a new song should be instant, not animated. */
   scroll-behavior: auto;
 }
 
@@ -796,7 +796,9 @@ a {
   color: var(--text-dim);
   background: var(--bg-raised);
   border: 1px solid var(--border);
-  max-width: 40%;
+  /* Two buttons share the bar now that auto-scroll's is gone, so each can take
+     nearly half of it and show more of the song's name before truncating. */
+  max-width: 48%;
 }
 
 .nav-btn__label {
@@ -814,26 +816,6 @@ a {
 .nav-btn:active:not(:disabled) {
   border-color: var(--accent);
   color: var(--accent);
-}
-
-.scroll-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  height: 44px;
-  padding: 0 18px;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  background: var(--bg-raised);
-  border: 1px solid var(--border);
-  color: var(--text-dim);
-}
-
-.scroll-btn.is-active {
-  background: linear-gradient(150deg, var(--accent-strong), var(--accent));
-  border-color: transparent;
-  color: var(--accent-contrast);
 }
 
 /* ---------- Audio ---------- */

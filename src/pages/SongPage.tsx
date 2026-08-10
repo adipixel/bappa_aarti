@@ -4,23 +4,19 @@ import { AppHeader } from '../components/AppHeader';
 import { AudioPlayer } from '../components/AudioPlayer';
 import { Lyrics } from '../components/Lyrics';
 import { SettingsSheet } from '../components/SettingsSheet';
-import { ChevronLeft, ChevronRight, Pause, ScrollDown } from '../components/icons';
+import { ChevronLeft, ChevronRight } from '../components/icons';
 import { AUDIO_ENABLED } from '../config';
 import { getSong } from '../data/songs';
-import { useAutoScroll } from '../hooks/useAutoScroll';
 import { useSwipe } from '../hooks/useSwipe';
 import { useWakeLock } from '../hooks/useWakeLock';
 import { useSettings } from '../state/settings';
 import { trackSongView, trackPageView } from '../utils/analytics';
 
-const LINE_HEIGHT_RATIO = 1.85; // keep in sync with .song__lyrics line-height
-
 export function SongPage() {
   const { playlistId, songId } = useParams();
   const navigate = useNavigate();
-  const { fontSize, scrollSpeed, keepAwake } = useSettings();
+  const { fontSize, keepAwake } = useSettings();
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [scrolling, setScrolling] = useState(false);
   const scrollerRef = useRef<HTMLElement>(null);
 
   const found = getSong(playlistId, songId);
@@ -36,7 +32,6 @@ export function SongPage() {
   const goTo = useCallback(
     (targetId?: string) => {
       if (!targetId || !playlistId) return;
-      setScrolling(false);
       navigate(`/${playlistId}/${targetId}`);
     },
     [navigate, playlistId],
@@ -47,13 +42,12 @@ export function SongPage() {
     () => goTo(prev?.id),
   );
 
-  // New song: back to the top, and never carry auto-scroll across.
+  // New song: back to the top.
   // Keyed on the ids alone — `found` is rebuilt every render, and depending on
   // it would re-report the same song view on every keystroke of a setting.
   const title = found?.song.title;
   useEffect(() => {
     scrollerRef.current?.scrollTo(0, 0);
-    setScrolling(false);
     if (!playlistId || !songId || !title) return;
     trackSongView(playlistId, title);
     trackPageView(`/${playlistId}/${songId}`, title);
@@ -63,17 +57,10 @@ export function SongPage() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight') goTo(next?.id);
       if (e.key === 'ArrowLeft') goTo(prev?.id);
-      if (e.key === ' ') {
-        e.preventDefault();
-        setScrolling((s) => !s);
-      }
     };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [goTo, next, prev]);
-
-  const stopScrolling = useCallback(() => setScrolling(false), []);
-  useAutoScroll(scrolling, scrollSpeed, fontSize * LINE_HEIGHT_RATIO, stopScrolling, scrollerRef);
 
   if (!found) return <Navigate to="/" replace />;
   const { playlist, song, index } = found;
@@ -111,18 +98,6 @@ export function SongPage() {
           <button className="nav-btn" onClick={() => goTo(prev?.id)} disabled={!prev}>
             <ChevronLeft size={18} />
             <span className="nav-btn__label">{prev ? prev.title : 'सुरुवात'}</span>
-          </button>
-
-          <span className="song-bar__spacer" />
-
-          <button
-            className={`scroll-btn${scrolling ? ' is-active' : ''}`}
-            onClick={() => setScrolling((s) => !s)}
-            aria-pressed={scrolling}
-            disabled={song.lyricsPending}
-          >
-            {scrolling ? <Pause size={17} /> : <ScrollDown />}
-            {scrolling ? 'थांबवा' : 'स्क्रोल'}
           </button>
 
           <span className="song-bar__spacer" />

@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import {
   FONT_MAX,
   FONT_MIN,
-  SPEED_MAX,
-  SPEED_MIN,
   useSettings,
   type Theme,
 } from '../state/settings';
@@ -17,7 +15,7 @@ const THEMES: { id: Theme; label: string }[] = [
 ];
 
 export function SettingsSheet({ onClose }: { onClose: () => void }) {
-  const { theme, fontSize, scrollSpeed, keepAwake, set } = useSettings();
+  const { theme, fontSize, keepAwake, set } = useSettings();
   const [debug, setDebugShown] = useState(debugEnabled());
   const taps = useRef(0);
   const tapTimer = useRef<number>();
@@ -114,46 +112,6 @@ export function SettingsSheet({ onClose }: { onClose: () => void }) {
                 {t.label}
               </button>
             ))}
-          </div>
-        </div>
-
-        <div className="setting">
-          <div className="setting__head">
-            <div>
-              <div className="setting__label">स्क्रोल वेग · Auto-scroll speed</div>
-              <div className="setting__hint">
-                Lines per minute once you start auto-scroll. Touching the screen pauses it.
-              </div>
-            </div>
-            <span className="setting__value">{scrollSpeed}</span>
-          </div>
-          <div className="stepper">
-            <button
-              className="stepper__btn"
-              onClick={() => set('scrollSpeed', Math.max(SPEED_MIN, scrollSpeed - 2))}
-              disabled={scrollSpeed <= SPEED_MIN}
-              aria-label="Slower"
-            >
-              −
-            </button>
-            <input
-              className="stepper__track"
-              type="range"
-              min={SPEED_MIN}
-              max={SPEED_MAX}
-              step={1}
-              value={scrollSpeed}
-              onChange={(e) => set('scrollSpeed', Number(e.target.value))}
-              aria-label="Auto-scroll speed"
-            />
-            <button
-              className="stepper__btn"
-              onClick={() => set('scrollSpeed', Math.min(SPEED_MAX, scrollSpeed + 2))}
-              disabled={scrollSpeed >= SPEED_MAX}
-              aria-label="Faster"
-            >
-              +
-            </button>
           </div>
         </div>
 

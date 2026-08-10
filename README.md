@@ -2,7 +2,7 @@
 
 A mobile-first PWA for singing along during Ganpati puja. Three playlists —
 **आरत्या (Aarti)**, **गजर (Gajar)**, **श्लोक (Shlok)** — with large, readable
-Devanagari lyrics, hands-free auto-scroll, and full offline support.
+Devanagari lyrics and full offline support.
 
 Built with Vite + React + TypeScript. Deploys to Vercel as a static site.
 
@@ -16,13 +16,12 @@ only by the diya, and a song that cannot be paused to fiddle with settings.
 | --- | --- |
 | **Adjustable text size** (18–46px) | The phone is at arm's length, not reading distance. Set once, persists. |
 | **Keep screen awake** | A phone locking mid-verse is the single most disruptive thing that can happen. Uses the Screen Wake Lock API and re-acquires the lock when you switch back to the app. |
-| **Auto-scroll** with speed control | Hands are busy. Any touch pauses it instantly so you can take over. |
 | **Prev / next with song names** | The next aarti is one thumb-reach away, labelled, so nobody loses the order. |
 | **Swipe left / right** | Same navigation without aiming at a button. |
 | **Dark theme by default** | Most aartis are sung at dawn or after sunset. Applied before first paint so there is no white flash. |
 | **Stanza-aware layout** | Blank lines in the source become real stanza breaks, so verses are visually separated no matter how ragged the original text was. |
 | **Highlighted refrain** | The ध्रु/धृ stanza — the bit that comes back after every verse — is marked with an accent rule, so you can find your way back to it mid-song. |
-| **Cued refrains written out** | Aartis print the chorus once, then cue it back with shorthand (`॥ जय देव ॥`, `जयदेव…`). Those are resolved and laid out in full, marked ↻ — so with auto-scroll running you never have to scroll back to find the words. |
+| **Cued refrains written out** | Aartis print the chorus once, then cue it back with shorthand (`॥ जय देव ॥`, `जयदेव…`). Those are resolved and laid out in full, marked ↻ — so you never have to scroll back to find the words. |
 | **…and folded away** | Written out at every cue, five copies of the same chorus bury the verses that actually change. Each repeat shows only its opening two words and expands on a tap, which takes 8–25% off the length of a song. The first printing is never folded — that is where the words are learnt. |
 | **Dimmed notation** | Danda marks and verse numbers (`।`, `॥ २ ॥`) are rendered faintly. They stay readable, but the eye lands on the words. |
 | **Hanging indent** | A long line that wraps is indented, so it is never mistaken for the next line of the verse. |
@@ -60,7 +59,7 @@ source with all notation stripped, so no word or spelling can drift.
 An aarti prints its chorus once and afterwards only cues it — inline as
 `... ॥ जय देव ॥ २ ॥`, or as a trailing-off line of its own (`जयदेव…`,
 `आरती..`). A singer knows to repeat the whole thing; someone reading along on a
-phone, with auto-scroll running and no way to scroll back, does not.
+phone, thumbing back up the page to find the chorus, does not.
 
 The build resolves each cue and writes the refrain out in full where it
 belongs. Resolution is deliberately conservative: **a cue is expanded only when
@@ -408,6 +407,7 @@ commit it yourself alongside the change.
 | 1.11.0 | `reorder`, `rename` and `add --pending`; aartis rearranged |
 | 1.12.0 | Lyrics for `आरती तुकारामा` and `नमो गजानन नमो हनुमान`; `lyrics` command |
 | 1.13.0 | Repeated refrains fold to their opening words, tap to expand |
+| 1.14.0 | Auto-scroll removed |
 
 ## Develop
 
