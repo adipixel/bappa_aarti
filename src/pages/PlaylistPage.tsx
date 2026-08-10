@@ -13,7 +13,16 @@ export function PlaylistPage() {
   const scrollerRef = useRef<HTMLElement>(null);
 
   // Switching playlists reuses this component, so reset the scroll by hand.
-  useEffect(() => scrollerRef.current?.scrollTo(0, 0), [playlistId]);
+  //
+  // The braces matter. Written as a concise arrow body this returns whatever
+  // scrollTo returns, and React keeps that as the effect's cleanup function.
+  // It is undefined in a stock browser, so the bug hid — but anything that
+  // patches Element.prototype.scrollTo and returns a value (a smooth-scroll
+  // polyfill, some extensions) makes React call a non-function on unmount.
+  // Leaving the playlist for a song then threw, and the whole app went blank.
+  useEffect(() => {
+    scrollerRef.current?.scrollTo(0, 0);
+  }, [playlistId]);
 
   if (!playlist) return <Navigate to="/" replace />;
 
