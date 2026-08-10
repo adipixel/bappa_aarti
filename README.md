@@ -23,6 +23,7 @@ only by the diya, and a song that cannot be paused to fiddle with settings.
 | **Stanza-aware layout** | Blank lines in the source become real stanza breaks, so verses are visually separated no matter how ragged the original text was. |
 | **Highlighted refrain** | The ध्रु/धृ stanza — the bit that comes back after every verse — is marked with an accent rule, so you can find your way back to it mid-song. |
 | **Cued refrains written out** | Aartis print the chorus once, then cue it back with shorthand (`॥ जय देव ॥`, `जयदेव…`). Those are resolved and laid out in full, marked ↻ — so with auto-scroll running you never have to scroll back to find the words. |
+| **…and folded away** | Written out at every cue, five copies of the same chorus bury the verses that actually change. Each repeat shows only its opening two words and expands on a tap, which takes 8–25% off the length of a song. The first printing is never folded — that is where the words are learnt. |
 | **Dimmed notation** | Danda marks and verse numbers (`।`, `॥ २ ॥`) are rendered faintly. They stay readable, but the eye lands on the words. |
 | **Hanging indent** | A long line that wraps is indented, so it is never mistaken for the next line of the verse. |
 | **Works offline** | Temples and pandals have bad signal. Lyrics, styles and shell are precached — the whole collection works with no network. |
@@ -406,6 +407,7 @@ commit it yourself alongside the change.
 | 1.10.1 | Shlok `नेत्री दोन हिरे` at 8 |
 | 1.11.0 | `reorder`, `rename` and `add --pending`; aartis rearranged |
 | 1.12.0 | Lyrics for `आरती तुकारामा` and `नमो गजानन नमो हनुमान`; `lyrics` command |
+| 1.13.0 | Repeated refrains fold to their opening words, tap to expand |
 
 ## Develop
 

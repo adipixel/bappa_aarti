@@ -621,6 +621,14 @@ a {
   padding-bottom: 24px;
 }
 
+/* Browsers give <p> a 1em margin all round; the stanza spacing below is the
+   only vertical rhythm this wants. Kept here rather than inline on the element,
+   where it used to sit — an inline margin outranks the sibling rule underneath,
+   so every stanza gap silently collapsed to nothing. */
+.song__stanza {
+  margin: 0;
+}
+
 /* Blank lines separate stanzas; give them a visible beat. */
 .song__stanza + .song__stanza {
   margin-top: 1.15em;
@@ -660,6 +668,42 @@ a {
    as the chorus coming back, not as a new verse. */
 .song__stanza--repeat {
   border-left-style: dashed;
+}
+
+/*
+ * A repeat folded to its opening words. It is a button, so it needs the type
+ * defaults undone — everything else it inherits from .song__stanza, which keeps
+ * a folded refrain and an open one looking like the same thing.
+ */
+.song__stanza--fold {
+  display: block;
+  width: 100%;
+  text-align: left;
+  /* Size and face only — no `color`, or it would beat .song__stanza--refrain
+     on specificity and paint the folded chorus in the body colour instead of
+     the accent. The button colour reset is already handled globally. */
+  font: inherit;
+  /* The whole strip is the target, so there is nothing small to aim at. */
+  cursor: pointer;
+  /*
+   * Undo the button defaults so a folded refrain occupies exactly the box a
+   * <p> stanza would; margin comes from .song__stanza like every other one.
+   */
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+.song__stanza--fold:active {
+  opacity: 0.65;
+}
+
+/* The ellipsis is the only thing saying "there is more here", so it carries
+   the affordance on its own. */
+.song__fold {
+  padding-left: 0.1em;
+  letter-spacing: 0.08em;
+  opacity: 0.75;
 }
 
 .song__repeat {
