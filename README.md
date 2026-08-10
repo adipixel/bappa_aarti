@@ -408,6 +408,7 @@ commit it yourself alongside the change.
 | 1.12.0 | Lyrics for `आरती तुकारामा` and `नमो गजानन नमो हनुमान`; `lyrics` command |
 | 1.13.0 | Repeated refrains fold to their opening words, tap to expand |
 | 1.14.0 | Auto-scroll removed |
+| 1.14.1 | Lyric corrections in five aartis |
 
 ## Develop
 
