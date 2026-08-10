@@ -144,23 +144,54 @@ wrong lyrics would be worse than no track at all.
 
 ## The icon
 
-The app icon is a geometric mark built entirely from quarter-circle arcs —
-seven pieces, each a right-angle corner with the opposite edge rounded off,
-arranged so the flat edges of adjacent pieces meet exactly. It replaced an
-earlier diya (oil lamp) icon.
+The mark is **one shape at seven scales**: a quarter disc, whose radius equals
+the side of the square cell holding it. The cells are a golden subdivision,
+which is what lets them tile with nothing left over:
 
-It was reconstructed from a screenshot, not supplied as vector source, so the
-geometry was recovered by measurement rather than guessed: the source image
-was thresholded into a white/red mask, and every piece's corner and radius was
-found by least-squares circle-fitting the boundary pixels (fit residual
-under 0.3px on the largest piece). `public/favicon.svg` is the result —
-seven `<path>` elements, each `M`‑`L`‑`A`‑`Z`, no filters or raster data. The
-background is the measured colour, `#D6392C`.
+```
+1/φ + 1/φ² = 1     exactly
+```
 
-Checked against the source at publish time: the reconstruction's white-shape
-mask, normalized to the same bounding box, overlaps the original's at 94% IoU.
-It also holds up legibly at 32px, the smallest size it's actually displayed
-at.
+So the big lobe's square splits into one cell of `R/φ` beside a column of
+`R/φ²` and `R/φ³`, with no remainder. **The gaps therefore are not slack in the
+layout** — the layout has none. Every cell is inset by the same half-gap on all
+four sides, which is what keeps the spacing even everywhere.
+
+```
+┌───────┬───────────────┐
+│ petal │               │   petals: two R/2 cells stacked,
+├───────┤   big lobe    │   so the pair is exactly as tall
+│ petal │      (R)      │   as the big lobe
+├───┬───┼───────────────┤
+│sml│   │               │   sml = R/φ³   p3 = R/φ²
+├───┘p3 │    piece2     │   piece2 = R/φ
+│       │     (R/φ)     │
+└───────┴───────────────┘
+```
+
+`public/favicon.svg` is generated, not hand-edited — run `npm run build:icon`.
+The PNGs (`icon-192`, `icon-512`, `apple-touch-icon`) are rasterised from it.
+
+Colours come from the app's own tokens rather than a separate palette: the
+background is the `--accent-strong` → `--accent` gradient used on buttons and
+the playlist badges, and the mark is `--accent-contrast`, the token meaning
+"sits on top of accent". An earlier version used a coral red sampled from the
+reference image, which clashed with the amber UI — including the amber glow the
+home page already draws behind the icon.
+
+### Reconstructing it
+
+The design arrived as a screenshot, so the geometry was recovered by
+measurement: the image was thresholded into a mask, and each piece's corner and
+radius found by least-squares circle-fitting the boundary pixels. That gave the
+sizes, and the ratios between them turned out to be `1/φ` to within a pixel or
+two — the residuals being, exactly, one gap width, because a traced size is the
+*inset* size. The construction above is that finding, rebuilt from the ratio
+rather than from the traced pixels.
+
+Checked at publish time against the reference: **0.917 IoU** on the mark's
+silhouette, aspect ratio 0.923 against a measured 0.921, all four internal gaps
+uniform to the pixel, and legible down to 32px.
 
 ## Diagnosing a layout problem on a phone
 
@@ -254,6 +285,7 @@ commit it yourself alongside the change.
 | 1.5.6 | Resolve short refrain cues such as `येई …` |
 | 1.5.7 | Expand a refrain that closes by cueing its own opening line |
 | 1.6.0 | New geometric app icon, reconstructed from a reference image |
+| 1.7.0 | Icon rebuilt from its golden construction, recoloured to the app's palette |
 
 ## Develop
 
