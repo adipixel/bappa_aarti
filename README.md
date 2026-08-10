@@ -142,6 +142,26 @@ Four Gajar and two Shlok recordings from the email listing are deliberately
 onto any song title with confidence, and the wrong track playing under the
 wrong lyrics would be worse than no track at all.
 
+## The icon
+
+The app icon is a geometric mark built entirely from quarter-circle arcs —
+seven pieces, each a right-angle corner with the opposite edge rounded off,
+arranged so the flat edges of adjacent pieces meet exactly. It replaced an
+earlier diya (oil lamp) icon.
+
+It was reconstructed from a screenshot, not supplied as vector source, so the
+geometry was recovered by measurement rather than guessed: the source image
+was thresholded into a white/red mask, and every piece's corner and radius was
+found by least-squares circle-fitting the boundary pixels (fit residual
+under 0.3px on the largest piece). `public/favicon.svg` is the result —
+seven `<path>` elements, each `M`‑`L`‑`A`‑`Z`, no filters or raster data. The
+background is the measured colour, `#D6392C`.
+
+Checked against the source at publish time: the reconstruction's white-shape
+mask, normalized to the same bounding box, overlaps the original's at 94% IoU.
+It also holds up legibly at 32px, the smallest size it's actually displayed
+at.
+
 ## Diagnosing a layout problem on a phone
 
 Every layout bug so far has appeared only in the installed app and been
@@ -233,6 +253,7 @@ commit it yourself alongside the change.
 | 1.5.5 | Readout measures gaps against the viewport only |
 | 1.5.6 | Resolve short refrain cues such as `येई …` |
 | 1.5.7 | Expand a refrain that closes by cueing its own opening line |
+| 1.6.0 | New geometric app icon, reconstructed from a reference image |
 
 ## Develop
 
