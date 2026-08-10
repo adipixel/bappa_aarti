@@ -145,6 +145,8 @@ a {
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+  /* Ensure content is visible in all browsers, especially on macOS Chrome */
+  contain: layout style paint;
 }
 
 /* ---------- Header ---------- */
@@ -505,6 +507,9 @@ a {
 
 .song {
   padding: 8px 22px 0;
+  /* Ensure the scroll container always has space for content; if lyrics don't
+     render, something went wrong in the component, not the layout. */
+  min-height: 1px;
 }
 
 .song__lyrics {
