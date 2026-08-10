@@ -13,7 +13,7 @@ registerSW({ immediate: true });
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <SettingsProvider>
-      <BrowserRouter basename="/bappa">
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     </SettingsProvider>
