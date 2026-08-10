@@ -103,7 +103,7 @@ const inlineCue = (line) => {
  *  suffix — shorthand tacked on after the verse number; strip it, keep the verse
  *  inline — "॥ जय देव ॥" sitting before the verse number
  */
-const cueOf = (line) => {
+export const cueOf = (line) => {
   const whole = wholeLineCue(line);
   if (whole) return { text: whole, kind: 'whole' };
   const suffix = line.match(SUFFIX_CUE);
@@ -144,8 +144,15 @@ function refrainEnd(stanza, start) {
   return Math.min(start + 3, stanza.length - 1);
 }
 
-/** Locate the song's refrain: the line a cue points back to, and its extent. */
-function findRefrain(stanzas) {
+/**
+ * Locate the song's refrain: the line a cue points back to, and its extent.
+ *
+ * Returned in source coordinates — stanza index, first and last line — which is
+ * what a caller needs to edit the lyrics themselves. The blocks buildBlocks
+ * produces are not a safe guide: expandSelfCue may have rewritten the refrain,
+ * so its lines no longer appear verbatim in the source.
+ */
+export function findRefrain(stanzas) {
   const flat = [];
   stanzas.forEach((st, si) => st.forEach((line, li) => flat.push({ line, si, li })));
 

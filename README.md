@@ -54,6 +54,24 @@ single `॥ N ॥` form, and evens out the spacing around every danda. **Only
 punctuation and whitespace are touched** — the build is checked against the
 source with all notation stripped, so no word or spelling can drift.
 
+### Verse numbers and the ध्रु mark
+
+Every aarti closes its refrain `॥ धृ ॥` and each verse `॥ N ॥`, counting the
+opening verse as १. Seventeen were transcribed without some of it — or with
+the first verse's number left sitting on the refrain, which is where it lands
+when the refrain is printed in full underneath verse one.
+
+`scripts/lib/notation.mjs` brings a song up to that convention. It only ever
+rewrites the notation at the end of a line, and exports `wordsOf` so a caller
+can prove no word moved. Two things it will not touch:
+
+- a line that is nothing but shorthand (`द्वारकेचा राणा … विठ्ठला..`), which is
+  not a verse ending and whose trailing-off is what makes the resolver treat
+  that stanza as the refrain at all;
+- **गजर and श्लोक**, which are left as they are. A gajar is a chant, not
+  numbered verses — numbering गजर माला १–२९ would be inventing a structure it
+  does not have — and a shlok is a single stanza with nothing to count.
+
 ### Refrains
 
 An aarti prints its chorus once and afterwards only cues it — inline as
@@ -409,6 +427,7 @@ commit it yourself alongside the change.
 | 1.13.0 | Repeated refrains fold to their opening words, tap to expand |
 | 1.14.0 | Auto-scroll removed |
 | 1.14.1 | Lyric corrections in five aartis |
+| 1.15.0 | Verse numbers and the ध्रु mark made consistent across the aartis |
 
 ## Develop
 
