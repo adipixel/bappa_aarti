@@ -108,30 +108,61 @@ That import needs a `database.json` which does not live in this repo, so
 **`songs.json` is the source of truth now**. Editing lyrics in it directly is
 fine.
 
-### Adding a song
-
-Put the lyrics in a file — one verse per block, blank line between verses,
-exactly as they are sung — and insert it at the track number it should take:
+### Managing the collection
 
 ```bash
-node scripts/add-song.mjs \
-  --playlist aarti --track 21 \
-  --id undaravari-baisoni --title "उंदरावरि बैसोनि" \
-  --lyrics data/lyrics/undaravari-baisoni.txt
+node scripts/songs.mjs           # the commands, and their flags
 ```
 
-Tracks after that point shift up by one and the playlist count follows. The
-lyrics go through the same normaliser and refrain resolver the legacy import
-used — both live in `scripts/lib/lyrics.mjs` — so a song added today is laid
-out exactly like the ones that came in at the start. `--titleEn` is optional;
-without it the id is romanised (`undaravari-baisoni` → `Undaravari Baisoni`).
+| Command | Does |
+| --- | --- |
+| `list [playlist]` | Everything, with track numbers — run this to pick a position |
+| `preview <file\|->` | Show the layout it would produce, write nothing |
+| `add <file\|->` | Add a song |
+| `move <id> <position>` | Renumber within its playlist |
+| `remove <id>` | Take one out |
 
-Read back what it produced before committing. Refrain resolution is inference,
-and a song whose chorus is cued in an unfamiliar shape may need the lyrics file
-adjusted rather than the algorithm.
+Adding needs nothing but the lyrics — one verse per block, a blank line between
+verses, exactly as they are sung:
 
-The lyric files under `data/lyrics/` are kept as the input each song was built
-from; they are not read at runtime.
+```bash
+node scripts/songs.mjs add data/lyrics/undaravari-baisoni.txt --at 21
+```
+
+The playlist defaults to `aarti`, the position to the end, and the title and id
+are read off the first line. Lyrics can also come in on stdin, so pasting
+works:
+
+```bash
+pbpaste | node scripts/songs.mjs add - --at 21
+```
+
+Tracks after the insertion point shift up by one and the count follows; `move`
+does the same arithmetic. The cleaned lyrics are saved to `data/lyrics/<id>.txt`
+so a song can be rebuilt later. Those files are not read at runtime.
+
+**Check the guesses.** Titles and ids are inferred, and the collection is not
+consistent enough to infer them reliably — measured against the songs already
+here, the title is right about half the time and the id about a third, because
+Marathi drops internal vowels in ways no letter-by-letter scheme predicts
+(लवथवती is `lavthavti`, not `lavathavati`). Both are printed, marked
+`(guessed)`, and both take an override:
+
+```bash
+node scripts/songs.mjs add lyrics.txt --at 21 \
+  --title "अष्टविनायक" --id ashtavinayak
+```
+
+**Check the refrain too.** Working out which stanza is the chorus is inference,
+so `add` prints the finished arrangement — verses, the refrain, and each place
+it is repeated (`↻`) — and says so loudly when it found no refrain at all. Use
+`preview`, or `add --dry-run`, to see that before anything is written. A song
+whose chorus is cued in an unfamiliar shape usually needs its lyrics file
+adjusted rather than the resolver changed.
+
+Normalisation and refrain resolution live in `scripts/lib/lyrics.mjs`, shared
+with the legacy import, so a song added today is laid out exactly like the ones
+that came in at the start. Naming lives in `scripts/lib/naming.mjs`.
 
 ## Audio is off
 
@@ -314,7 +345,8 @@ commit it yourself alongside the change.
 | 1.7.0 | Icon rebuilt from its golden construction, recoloured to the app's palette |
 | 1.7.1 | Graceful crash screen, crash reporting, production sourcemaps |
 | 1.7.2 | Fixed the blank page on leaving a playlist (effect returning a non-function) |
-| 1.8.0 | `add-song` script; new aarti `उंदरावरि बैसोनि` at 21 |
+| 1.8.0 | New aarti `उंदरावरि बैसोनि` at 21 |
+| 1.9.0 | `songs.mjs` — add, move, remove, preview, with inferred titles and ids |
 
 ## Develop
 

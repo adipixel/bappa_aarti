@@ -8,7 +8,12 @@
  * Run: node scripts/build-data.mjs <path-to-legacy-database.json>
  *
  * Lyric normalisation and refrain resolution live in lib/lyrics.mjs, shared
- * with scripts/add-song.mjs.
+ * with scripts/songs.mjs.
+ *
+ * The real database.json is not in this repo, so this script is easy to break
+ * without noticing. fixtures/legacy-sample.json is a stand-in of the same
+ * shape — run against it to check the script still works, but restore
+ * src/data/songs.json afterwards, because it writes over the real thing.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { basename } from 'node:path';
@@ -39,6 +44,13 @@ const RECOVERED_AUDIO = {
 /** The legacy DB has a double-extension typo; the emailed listing is correct. */
 const AUDIO_FIXUPS = { '22-shree-swami-samartha.mp3.mp3': '22-shree-swami-samartha.mp3' };
 
+
+const audioFor = (categoryId, songId, legacyUrl) => {
+  let file = legacyUrl ? basename(legacyUrl) : RECOVERED_AUDIO[categoryId]?.[songId];
+  if (!file) return undefined;
+  file = AUDIO_FIXUPS[file] ?? file;
+  return `${AUDIO_BASE}/${categoryId}/${encodeURIComponent(file)}`;
+};
 
 const sourcePath = process.argv[2];
 if (!sourcePath) {

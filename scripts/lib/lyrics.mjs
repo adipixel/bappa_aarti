@@ -2,7 +2,7 @@
  * The lyric normaliser and the refrain resolver.
  *
  * Extracted from build-data.mjs so that the one-off legacy import and the
- * ongoing `add-song` path share a single implementation. Two copies of the
+ * ongoing `songs.mjs add` path share a single implementation. Two copies of the
  * refrain algorithm would drift, and a song added later would then be laid
  * out differently from the forty-three imported at the start.
  *
@@ -51,13 +51,6 @@ export const cleanLyrics = (raw) =>
     .join('\n')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
-
-const audioFor = (categoryId, songId, legacyUrl) => {
-  let file = legacyUrl ? basename(legacyUrl) : RECOVERED_AUDIO[categoryId]?.[songId];
-  if (!file) return undefined;
-  file = AUDIO_FIXUPS[file] ?? file;
-  return `${AUDIO_BASE}/${categoryId}/${encodeURIComponent(file)}`;
-};
 
 /* ------------------------------------------------------------------ *
  * Refrain resolution
