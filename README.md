@@ -33,12 +33,13 @@ only by the diya, and a song that cannot be paused to fiddle with settings.
 
 | Playlist | Songs |
 | --- | --- |
-| आरत्या (Aarti) | 32 |
+| आरत्या (Aarti) | 34 |
 | गजर (Gajar) | 5 |
 | श्लोक (Shlok) | 10 |
 
-Song order is the curated order from the original collection — `सुखकर्ता दु:खहर्ता`
-first through `घालीन लोटांगण` last — not alphabetical.
+Song order is curated, not alphabetical: `सुखकर्ता दु:खहर्ता` first through
+`घालीन लोटांगण` last, which is the order they are sung in. It came from the
+original collection and has been rearranged since; `songs.mjs reorder` is how.
 
 ### Where the data came from
 
@@ -120,6 +121,8 @@ node scripts/songs.mjs           # the commands, and their flags
 | `preview <file\|->` | Show the layout it would produce, write nothing |
 | `add <file\|->` | Add a song |
 | `move <id> <position>` | Renumber within its playlist |
+| `reorder <file\|->` | Rearrange a whole playlist from a written-out list |
+| `rename <id> --title "..."` | Change the displayed title, keeping the id |
 | `remove <id>` | Take one out |
 
 Adding needs nothing but the lyrics — one verse per block, a blank line between
@@ -152,6 +155,30 @@ Marathi drops internal vowels in ways no letter-by-letter scheme predicts
 node scripts/songs.mjs add lyrics.txt --at 21 \
   --title "अष्टविनायक" --id ashtavinayak
 ```
+
+A song whose words have not been tracked down yet can still hold its place in
+the running order — `--pending` with a title and no lyrics stores the same
+shape the app renders as "लवकरच…":
+
+```bash
+node scripts/songs.mjs add --pending --title "आरती तुकारामा" --at 14
+```
+
+### Rearranging
+
+Paste the list back in the order you want it, one per line — `reorder` ignores
+leading `12.` numbering, so the output of `list` can go straight back in, and
+entries may be titles or ids:
+
+```bash
+node scripts/songs.mjs reorder new-order.txt --playlist aarti --dry-run
+```
+
+It checks the list as a whole before writing anything: **every entry must name
+a song in the playlist, and every song must appear exactly once.** A dropped
+line, a duplicate or a typo fails the command and names the problem, rather
+than quietly losing an aarti — which is the real risk in rearranging thirty of
+them by hand.
 
 **Check the refrain too.** Working out which stanza is the chorus is inference,
 so `add` prints the finished arrangement — verses, the refrain, and each place
@@ -366,6 +393,7 @@ commit it yourself alongside the change.
 | 1.9.1 | Two shloks: `गणाधीश जो ईश`, `वक्रतुंड महाकाय` |
 | 1.10.0 | Support link in the home-screen footer |
 | 1.10.1 | Shlok `नेत्री दोन हिरे` at 8 |
+| 1.11.0 | `reorder`, `rename` and `add --pending`; aartis rearranged |
 
 ## Develop
 

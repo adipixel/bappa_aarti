@@ -2,10 +2,12 @@
 /**
  * The song collection, from the command line.
  *
- *   node scripts/songs.mjs list [playlist]
+ *   node scripts/songs.mjs list    [playlist]
  *   node scripts/songs.mjs preview <file|->
  *   node scripts/songs.mjs add     <file|-> [--at N] [--playlist aarti] [--id x] [--title x]
  *   node scripts/songs.mjs move    <id> <position>
+ *   node scripts/songs.mjs reorder <file|->
+ *   node scripts/songs.mjs rename  <id> --title "..."
  *   node scripts/songs.mjs remove  <id>
  *
  * `add` needs nothing but the lyrics: the playlist defaults to aarti, the
@@ -121,6 +123,35 @@ function summarise(song) {
   }
 }
 
+/**
+ * A song whose lyrics have not been collected yet.
+ *
+ * The app already renders this shape — no blocks, `lyricsPending` set — as
+ * "लवकरच…", so the title can take its place in the running order while the
+ * words are still being tracked down.
+ */
+function composePending(flags, playlist) {
+  const title = flags.title?.trim();
+  if (!title) die('--pending needs a --title, there being no lyrics to read one off');
+  const id = flags.id ?? suggestId(title);
+  if (!id) die(`could not turn "${title}" into an id — pass --id`);
+
+  console.log(`\n  title   ${title}`);
+  console.log(`  id      ${id}${flags.id ? '' : '   (guessed — --id to change)'}`);
+  console.log(`  going into ${playlist.id}, with no lyrics yet`);
+
+  return {
+    song: {
+      id,
+      track: 0,
+      title,
+      titleEn: flags.titleEn?.trim() || romanize(id),
+      lyrics: '',
+      lyricsPending: true,
+    },
+  };
+}
+
 /** Build the song record, reporting which fields were guessed rather than given. */
 function compose(raw, flags, playlist) {
   const lyrics = cleanLyrics(raw);
@@ -184,7 +215,9 @@ async function cmdPreview(data, positional, flags) {
 
 async function cmdAdd(data, positional, flags) {
   const playlist = findPlaylist(data, flags.playlist ?? DEFAULT_PLAYLIST);
-  const { song } = compose(await readLyrics(positional[0]), flags, playlist);
+  const { song } = flags.pending
+    ? composePending(flags, playlist)
+    : compose(await readLyrics(positional[0]), flags, playlist);
 
   if (data.playlists.some((p) => p.songs.some((s) => s.id === song.id))) {
     die(`"${song.id}" already exists — pass --id to pick another`);
@@ -197,8 +230,10 @@ async function cmdAdd(data, positional, flags) {
     die(`--at must be between 1 and ${playlist.songs.length + 1}`);
   }
 
-  printBlocks(song.blocks);
-  summarise(song);
+  if (song.blocks) {
+    printBlocks(song.blocks);
+    summarise(song);
+  }
 
   if (flags['dry-run']) {
     console.log('\n  Dry run — nothing written.\n');
@@ -210,10 +245,80 @@ async function cmdAdd(data, positional, flags) {
   write(data);
 
   // Keep the source text beside the data, so a song can be rebuilt later.
-  mkdirSync(fileURLToPath(LYRICS_DIR), { recursive: true });
-  writeFileSync(new URL(`${song.id}.txt`, LYRICS_DIR), song.lyrics + '\n');
+  if (song.lyrics) {
+    mkdirSync(fileURLToPath(LYRICS_DIR), { recursive: true });
+    writeFileSync(new URL(`${song.id}.txt`, LYRICS_DIR), song.lyrics + '\n');
+  }
 
   console.log(`\n  Added at ${at} of ${playlist.count} in ${playlist.id}.\n`);
+}
+
+function cmdRename(data, [songId], flags) {
+  if (!songId || !flags.title) die('usage: songs.mjs rename <id> --title "..."');
+  const { playlist, song } = locate(data, songId);
+  const was = song.title;
+  song.title = flags.title.trim();
+  if (flags.titleEn) song.titleEn = flags.titleEn.trim();
+  write(data);
+  // The id is deliberately left alone: it is in the URL, and in whatever links
+  // people have already shared. Renaming the display title should not break one.
+  console.log(`\n  ${playlist.id}/${song.id}\n    was  ${was}\n    now  ${song.title}\n`);
+}
+
+/**
+ * Reorder a whole playlist from a written-out list.
+ *
+ * Doing this as thirty separate moves invites a silent mistake, so the list is
+ * checked as a whole before anything is written: every entry has to name a song
+ * in the playlist, and every song in the playlist has to appear exactly once.
+ * A dropped or duplicated line fails the command rather than quietly losing an
+ * aarti.
+ *
+ * Entries may be titles or ids, and leading "12." numbering is ignored, so the
+ * list can be pasted back in the same shape `list` printed it.
+ */
+async function cmdReorder(data, positional, flags) {
+  const playlist = findPlaylist(data, flags.playlist ?? DEFAULT_PLAYLIST);
+  const raw = await readLyrics(positional[0]); // the same file-or-stdin reader
+  const wanted = raw
+    .split('\n')
+    .map((l) => l.replace(/^\s*\d+\s*[.)]\s*/, '').trim())
+    .filter(Boolean);
+
+  const byTitle = new Map(playlist.songs.map((s) => [s.title, s]));
+  const byId = new Map(playlist.songs.map((s) => [s.id, s]));
+
+  const ordered = [];
+  const unknown = [];
+  const repeated = [];
+  for (const entry of wanted) {
+    const song = byTitle.get(entry) ?? byId.get(entry);
+    if (!song) unknown.push(entry);
+    else if (ordered.includes(song)) repeated.push(entry);
+    else ordered.push(song);
+  }
+
+  const missing = playlist.songs.filter((s) => !ordered.includes(s));
+  if (unknown.length || repeated.length || missing.length) {
+    if (unknown.length) console.error(`\n  not in ${playlist.id}:\n${unknown.map((u) => '    ' + u).join('\n')}`);
+    if (repeated.length) console.error(`\n  listed more than once:\n${repeated.map((u) => '    ' + u).join('\n')}`);
+    if (missing.length) {
+      console.error(`\n  in ${playlist.id} but missing from the list:`);
+      for (const s of missing) console.error(`    ${s.title}  (${s.id})`);
+    }
+    die('the list does not account for the playlist exactly once — nothing written');
+  }
+
+  const moved = ordered.filter((s, i) => s.track !== i + 1);
+  if (flags['dry-run']) {
+    console.log(`\n  ${ordered.length} songs, ${moved.length} would move. Dry run — nothing written.\n`);
+    return;
+  }
+
+  playlist.songs = ordered;
+  renumber(playlist);
+  write(data);
+  console.log(`\n  Reordered ${playlist.id}: ${ordered.length} songs, ${moved.length} moved.\n`);
 }
 
 function cmdMove(data, [songId, position]) {
@@ -256,6 +361,8 @@ const USAGE = `
     preview <file|->                show the layout without writing anything
     add     <file|->                add a song
     move    <id> <position>         renumber within its playlist
+    reorder <file|->                reorder a whole playlist from a written-out list
+    rename  <id> --title "..."      change the displayed title, keeping the id
     remove  <id>                    take one out
 
   add / preview flags
@@ -264,7 +371,8 @@ const USAGE = `
     --title  "..."    Devanagari title                (default: from the first line)
     --id     slug     url id                          (default: from the title)
     --titleEn "..."   roman subtitle                  (default: from the id)
-    --dry-run         with add, stop before writing
+    --pending         no lyrics yet; needs --title, shows as "लवकरच…"
+    --dry-run         with add or reorder, stop before writing
 
   Lyrics come from a file, or from stdin when the argument is "-".
   One verse per block, a blank line between verses.
@@ -279,7 +387,7 @@ function parse(argv) {
       continue;
     }
     const name = argv[i].slice(2);
-    if (name === 'dry-run') flags[name] = true;
+    if (name === 'dry-run' || name === 'pending') flags[name] = true;
     else flags[name] = argv[++i];
   }
   return { positional, flags };
@@ -301,6 +409,12 @@ switch (command) {
     break;
   case 'move':
     cmdMove(data, positional);
+    break;
+  case 'reorder':
+    await cmdReorder(data, positional, flags);
+    break;
+  case 'rename':
+    cmdRename(data, positional, flags);
     break;
   case 'remove':
     cmdRemove(data, positional);
