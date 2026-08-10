@@ -36,12 +36,17 @@ export function AudioPlayer({ src, title, onEnded }: Props) {
 
   useEffect(() => {
     if (!('mediaSession' in navigator) || failed) return;
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title,
-      artist: 'Bappa Aarti',
-      album: 'आरती संग्रह',
-      artwork: [{ src: '/icon-512.png', sizes: '512x512', type: 'image/png' }],
-    });
+    try {
+      const iconUrl = new URL('/icon-512.png', window.location.href).href;
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title,
+        artist: 'Bappa Aarti',
+        album: 'आरती संग्रह',
+        artwork: [{ src: iconUrl, sizes: '512x512', type: 'image/png' }],
+      });
+    } catch {
+      // MediaSession or URL construction failed — just skip it
+    }
   }, [title, failed]);
 
   const toggle = async () => {
