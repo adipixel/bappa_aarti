@@ -167,3 +167,55 @@ export function NamasteArt({ size = 44 }: ArtProps) {
     </svg>
   );
 }
+
+/**
+ * Maal — the flower garland of a मंगल occasion, which is what the
+ * mangalashtake are sung at. A strung arc rather than a single bloom: the
+ * curve is what separates it at a glance from the discs of the taal.
+ *
+ * The blooms alternate light and shaded around the string so it reads as
+ * depth rather than a row of identical dots.
+ */
+export function GarlandArt({ size = 44 }: ArtProps) {
+  // Points along the hanging curve, computed once rather than eyeballed.
+  const blooms = [
+    [9, 13],
+    [12.8, 20.9],
+    [16.5, 26.5],
+    [20.3, 29.9],
+    [24, 31],
+    [27.8, 29.9],
+    [31.5, 26.5],
+    [35.3, 20.9],
+    [39, 13],
+  ] as const;
+
+  return (
+    <svg {...canvas(size)}>
+      {/* The string the blooms are threaded on. */}
+      <path
+        d="M9 13Q24 49 39 13"
+        stroke="var(--accent)"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        fill="none"
+      />
+      {blooms.map(([cx, cy], i) => (
+        <g key={i}>
+          <circle
+            cx={cx}
+            cy={cy}
+            r={i === 4 ? 3.6 : 3.2}
+            fill={i % 2 ? 'var(--accent)' : 'var(--accent-strong)'}
+          />
+          {i % 2 === 1 && <circle cx={cx} cy={cy} r={i === 4 ? 3.6 : 3.2} fill={SHADE} />}
+          <circle cx={cx} cy={cy} r={1.1} fill={DEEP} />
+        </g>
+      ))}
+      {/* Two leaves, where the garland is tied. */}
+      <path d="M9 12.6c-2.6-1.4-4.2-3.4-4.4-5.8 2.6.4 4.5 1.9 5.6 4.4z" fill="var(--accent)" />
+      <path d="M39 12.6c2.6-1.4 4.2-3.4 4.4-5.8-2.6.4-4.5 1.9-5.6 4.4z" fill="var(--accent)" />
+      <path d="M39 12.6c2.6-1.4 4.2-3.4 4.4-5.8-2.6.4-4.5 1.9-5.6 4.4z" fill={SHADE} />
+    </svg>
+  );
+}

@@ -1,8 +1,9 @@
 # Bappa Aarti — आरती संग्रह
 
-A mobile-first PWA for singing along during Ganpati puja. Three playlists —
-**आरत्या (Aarti)**, **गजर (Gajar)**, **श्लोक (Shlok)** — with large, readable
-Devanagari lyrics and full offline support.
+A mobile-first PWA for singing along during Ganpati puja. Four playlists —
+**आरत्या (Aarti)**, **गजर (Gajar)**, **श्लोक (Shlok)**, **मंगलाष्टके
+(Mangalashtak)** — with large, readable Devanagari lyrics and full offline
+support.
 
 Built with Vite + React + TypeScript. Deploys to Vercel as a static site.
 
@@ -36,6 +37,7 @@ only by the diya, and a song that cannot be paused to fiddle with settings.
 | आरत्या (Aarti) | 34 |
 | गजर (Gajar) | 5 |
 | श्लोक (Shlok) | 10 |
+| मंगलाष्टके (Mangalashtak) | 11 |
 
 Song order is curated, not alphabetical: `सुखकर्ता दु:खहर्ता` first through
 `घालीन लोटांगण` last, which is the order they are sung in. It came from the
@@ -44,9 +46,18 @@ original collection and has been rearranged since; `songs.mjs reorder` is how.
 ### Where the data came from
 
 Lyrics and playlist order were recovered from the earlier `morya` project's
-`database.json`. Audio filenames were cross-checked against the "Aarti music
-file names" email listing, which corrected one double-extension typo and
-recovered four recordings the database never referenced.
+`database.json`.
+
+That import ran off a hardcoded list of three categories — aarti, gajar,
+shlok — and the file has four. **मंगलाष्टके, eleven songs, was dropped
+silently**: no warning, no count that failed to add up. It went unnoticed for
+the whole of the app's life until someone remembered the songs existed. The
+importer now reads whatever categories the file holds, and
+`fixtures/legacy-sample.json` carries a fourth so a run exercises that.
+
+Audio filenames were cross-checked against the "Aarti music file names" email
+listing, which corrected one double-extension typo and recovered four
+recordings the database never referenced.
 
 The lyrics were collected by hand over years, so the same verse ending appeared
 as `।।१॥`, `॥ १ ॥`, `।। १ ।।` and `॥१॥`. The build normalises all of it to a
@@ -68,9 +79,11 @@ can prove no word moved. Two things it will not touch:
 - a line that is nothing but shorthand (`द्वारकेचा राणा … विठ्ठला..`), which is
   not a verse ending and whose trailing-off is what makes the resolver treat
   that stanza as the refrain at all;
-- **गजर and श्लोक**, which are left as they are. A gajar is a chant, not
-  numbered verses — numbering गजर माला १–२९ would be inventing a structure it
-  does not have — and a shlok is a single stanza with nothing to count.
+- **गजर, श्लोक and मंगलाष्टके**, which are left as they are. A gajar is a
+  chant, not numbered verses — numbering गजर माला १–२९ would be inventing a
+  structure it does not have — a shlok is a single stanza with nothing to
+  count, and a mangalashtak closes on `कुर्यात्‌ सदा मंगलम्‌ / शुभमंगल
+  सावधान`, which is its own convention and not this one.
 
 ### Refrains
 
@@ -431,6 +444,7 @@ commit it yourself alongside the change.
 | 1.16.0 | Playlist cards carry an instrument mark instead of an initial |
 | 1.17.0 | Marks redrawn; the amber badge behind them dropped |
 | 1.18.0 | Playlist marks redrawn as small illustrations |
+| 1.19.0 | मंगलाष्टके recovered from the legacy import and added, 11 songs |
 
 ## Develop
 

@@ -4,7 +4,7 @@ import { AppHeader } from '../components/AppHeader';
 import { InstallCard } from '../components/InstallCard';
 import { SettingsSheet } from '../components/SettingsSheet';
 import { ChevronRight } from '../components/icons';
-import { DholakArt, NamasteArt, TaalArt } from '../components/PlaylistArt';
+import { DholakArt, GarlandArt, NamasteArt, TaalArt } from '../components/PlaylistArt';
 import { playlists } from '../data/songs';
 import { trackPageView, trackSupport } from '../utils/analytics';
 
@@ -26,6 +26,7 @@ const PLAYLIST_ART: Record<string, JSX.Element> = {
   aarti: <DholakArt />,
   gajar: <TaalArt />,
   shlok: <NamasteArt />,
+  mangalashtak: <GarlandArt />,
 };
 
 export function HomePage() {

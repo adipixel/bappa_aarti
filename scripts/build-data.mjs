@@ -21,11 +21,6 @@ import { buildBlocks, cleanLyrics, romanize } from './lib/lyrics.mjs';
 
 const AUDIO_BASE = 'https://adityamhamunkar.com/bappamusic';
 
-const PLAYLISTS = [
-  { id: 'aarti', title: 'आरत्या', titleEn: 'Aarti' },
-  { id: 'gajar', title: 'गजर', titleEn: 'Gajar' },
-  { id: 'shlok', title: 'श्लोक', titleEn: 'Shlok' },
-];
 
 /**
  * Audio the legacy DB never carried, recovered from the emailed file listing.
@@ -59,8 +54,24 @@ if (!sourcePath) {
 }
 const legacy = JSON.parse(readFileSync(sourcePath, 'utf8'));
 
-const playlists = PLAYLISTS.map((meta) => {
-  const entries = Object.entries(legacy[meta.id].list);
+/*
+ * Every category the file holds, in the order it holds them.
+ *
+ * This was a hardcoded list of three — aarti, gajar, shlok. The file has a
+ * fourth, मंगलाष्टके with eleven songs, and the list dropped it silently: no
+ * warning, no count that failed to add up, nothing to notice. Reading the keys
+ * off the file cannot lose a category that way, and the titles are in there
+ * already.
+ */
+const playlists = Object.entries(legacy)
+  .filter(([, category]) => category && typeof category === 'object' && category.list)
+  .map(([playlistId, category]) => {
+  const meta = {
+    id: playlistId,
+    title: category.title?.trim() || playlistId,
+    titleEn: romanize(playlistId),
+  };
+  const entries = Object.entries(category.list);
   const songs = entries.map(([songId, song], index) => {
     const lyrics = cleanLyrics(song.lyrics);
     // "लवकरच..." ("coming soon") is a placeholder, not a lyric.
