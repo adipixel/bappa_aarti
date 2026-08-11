@@ -374,6 +374,43 @@ function cmdMove(data, [songId, position]) {
   console.log(`\n  ${song.title}: ${from} → ${to} in ${playlist.id}.\n`);
 }
 
+/**
+ * Add a playlist.
+ *
+ * The original three are a hardcoded list inside build-data.mjs, which is the
+ * legacy import and cannot be re-run. songs.json is the source of truth now, so
+ * a fourth playlist is made here.
+ *
+ * It arrives empty. The home screen has a drawn mark for each of the original
+ * three and falls back to the first letter of the title for anything else, so a
+ * new playlist shows up looking like the old initial until it is given one.
+ */
+function cmdPlaylist(data, [id], flags) {
+  if (!id || !flags.title) {
+    die('usage: songs.mjs playlist <id> --title "..." [--titleEn "..."] [--at N]');
+  }
+  if (!/^[a-z0-9-]+$/.test(id)) die('a playlist id is lowercase letters, digits and hyphens');
+  if (data.playlists.some((p) => p.id === id)) die(`there is already a "${id}" playlist`);
+
+  const at = flags.at === undefined ? data.playlists.length + 1 : Number(flags.at);
+  if (!Number.isInteger(at) || at < 1 || at > data.playlists.length + 1) {
+    die(`--at must be between 1 and ${data.playlists.length + 1}`);
+  }
+
+  const playlist = {
+    id,
+    title: flags.title.trim(),
+    titleEn: flags.titleEn?.trim() || romanize(id),
+    count: 0,
+    songs: [],
+  };
+  data.playlists.splice(at - 1, 0, playlist);
+  write(data);
+
+  console.log(`\n  ${playlist.title} (${id}) added at ${at} of ${data.playlists.length}.`);
+  console.log('  It is empty — add songs with --playlist ' + id + '.\n');
+}
+
 function cmdRemove(data, [songId]) {
   if (!songId) die('usage: songs.mjs remove <id>');
   const { playlist, index, song } = locate(data, songId);
@@ -397,6 +434,7 @@ const USAGE = `
     rename  <id> --title "..."      change the displayed title, keeping the id
     lyrics  <id> <file|->           give words to a song added with --pending
     remove  <id>                    take one out
+    playlist <id> --title "..."     start a new playlist
 
   add / preview flags
     --at N            position in the playlist        (default: the end)
@@ -451,6 +489,9 @@ switch (command) {
     break;
   case 'lyrics':
     await cmdLyrics(data, positional, flags);
+    break;
+  case 'playlist':
+    cmdPlaylist(data, positional, flags);
     break;
   case 'remove':
     cmdRemove(data, positional);
