@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { InstallCard } from '../components/InstallCard';
 import { SettingsSheet } from '../components/SettingsSheet';
-import { ChevronRight, Dholak, Namaste, Taal } from '../components/icons';
+import { ChevronRight } from '../components/icons';
+import { DholakArt, NamasteArt, TaalArt } from '../components/PlaylistArt';
 import { playlists } from '../data/songs';
 import { trackPageView, trackSupport } from '../utils/analytics';
 
@@ -21,10 +22,10 @@ const SUPPORT_URL = 'https://razorpay.me/@adityamhamunkar';
  * cymbals that carry a gajar, the joined palms a shlok is recited in. Better
  * than the first letter of the title, which is already written beside it.
  */
-const PLAYLIST_ICON: Record<string, JSX.Element> = {
-  aarti: <Dholak />,
-  gajar: <Taal />,
-  shlok: <Namaste />,
+const PLAYLIST_ART: Record<string, JSX.Element> = {
+  aarti: <DholakArt />,
+  gajar: <TaalArt />,
+  shlok: <NamasteArt />,
 };
 
 export function HomePage() {
@@ -49,7 +50,7 @@ export function HomePage() {
           {playlists.map((playlist) => (
             <Link key={playlist.id} className="playlist-card" to={`/${playlist.id}`}>
               <span className="playlist-card__icon" aria-hidden>
-                {PLAYLIST_ICON[playlist.id] ?? playlist.title.charAt(0)}
+                {PLAYLIST_ART[playlist.id] ?? playlist.title.charAt(0)}
               </span>
               <span className="playlist-card__body">
                 <span className="playlist-card__title">{playlist.title}</span>

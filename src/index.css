@@ -354,8 +354,8 @@ a {
 .playlist-card__icon {
   display: grid;
   place-items: center;
-  flex: 0 0 42px;
-  height: 42px;
+  flex: 0 0 44px;
+  height: 44px;
   /* No badge behind it: the mark sits on the card in the accent, which leaves
      the amber to the one thing on the row that is meant to draw the eye. */
   color: var(--accent);
