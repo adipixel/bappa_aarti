@@ -203,8 +203,8 @@ id or position:
 node scripts/songs.mjs lyrics aarti-tukarama words.txt
 ```
 
-Lyrics typed on a keyboard with no danda key are fine: `|` and `||` are read
-as । and ॥.
+Lyrics typed on a keyboard with no danda key are fine: `|`, `||` and a doubled
+letter `ll` are all read as । and ॥.
 
 ### Rearranging
 
@@ -445,6 +445,7 @@ commit it yourself alongside the change.
 | 1.17.0 | Marks redrawn; the amber badge behind them dropped |
 | 1.18.0 | Playlist marks redrawn as small illustrations |
 | 1.19.0 | मंगलाष्टके recovered from the legacy import and added, 11 songs |
+| 1.19.1 | Lyrics for `आरती रामजी तुम्हारी` — every song now has its words |
 
 ## Develop
 

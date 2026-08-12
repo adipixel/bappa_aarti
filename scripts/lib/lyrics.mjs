@@ -27,8 +27,11 @@ export const romanize = (id) =>
 export function formatLine(line) {
   return (
     line
-      // Lyrics get typed on keyboards that have no danda, so `|` and `||` stand
-      // in for । and ॥. Nothing in the collection uses a pipe for anything else.
+      // Lyrics get typed on keyboards that have no danda, so `|`, `||` and a
+      // doubled letter l all stand in for । and ॥. No lyric in the collection
+      // contains a Latin letter, and the word boundaries keep the `ll` rule
+      // off anything that is actually a word.
+      .replace(/\bll\b/gi, '॥')
       .replace(/\|\|/g, '॥')
       .replace(/\|/g, '।')
       // A doubled single danda is a double danda written the long way.
@@ -328,12 +331,22 @@ export function buildBlocks(lyrics) {
         continue;
       }
 
-      // Shorthand for this song's refrain: the cue's letters open it, and stop
-      // short of it. Length alone says nothing — "येई" is as good a pointer to
-      // "येई हो विठ्ठले …" as a longer one would be.
+      // Shorthand for this song's refrain: the cue's letters open it. Length
+      // alone says nothing — "येई" is as good a pointer to "येई हो विठ्ठले …"
+      // as a longer one would be.
+      //
+      // Usually the cue stops short of the refrain's opening line, but it need
+      // not: आरती रामजी तुम्हारी cues its chorus with that whole line, spelled
+      // out and trailing off. A line of nothing but shorthand cannot be the
+      // refrain printing itself — the refrain's own lines are consumed by the
+      // branch above before ever reaching here — so an exact match is allowed
+      // when the whole line is the cue, and only then.
       const cue = cueOf(line);
       const cueKey = cue ? bare(cue.text) : '';
-      const isCue = Boolean(cueKey) && cueKey !== refrainKey && refrainKey.startsWith(cueKey);
+      const isCue =
+        Boolean(cueKey) &&
+        refrainKey.startsWith(cueKey) &&
+        (cueKey !== refrainKey || cue.kind === 'whole');
 
       if (isCue && cue.kind === 'whole') {
         // The whole line is shorthand — replace it with the refrain.
