@@ -203,8 +203,9 @@ id or position:
 node scripts/songs.mjs lyrics aarti-tukarama words.txt
 ```
 
-Lyrics typed on a keyboard with no danda key are fine: `|`, `||` and a doubled
-letter `ll` are all read as । and ॥.
+Lyrics typed on a keyboard with no danda key are fine. The pipe and the letter
+`l` both stand in for one, doubled for ॥ and single for ।, so `l`, `ll`, `|`
+and `||` all come out as dandas.
 
 ### Rearranging
 

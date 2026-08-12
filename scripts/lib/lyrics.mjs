@@ -27,11 +27,13 @@ export const romanize = (id) =>
 export function formatLine(line) {
   return (
     line
-      // Lyrics get typed on keyboards that have no danda, so `|`, `||` and a
-      // doubled letter l all stand in for । and ॥. No lyric in the collection
-      // contains a Latin letter, and the word boundaries keep the `ll` rule
-      // off anything that is actually a word.
+      // Lyrics get typed on keyboards that have no danda key, so the letter l
+      // and the pipe both stand in for one: doubled for ॥, single for ।. No
+      // lyric in the collection contains a Latin letter at all, and the word
+      // boundaries keep the l rules off anything that is actually a word.
+      // `ll` has to go before `l`, or it would be read as two single dandas.
       .replace(/\bll\b/gi, '॥')
+      .replace(/\bl\b/gi, '।')
       .replace(/\|\|/g, '॥')
       .replace(/\|/g, '।')
       // A doubled single danda is a double danda written the long way.
