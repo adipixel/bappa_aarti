@@ -27,6 +27,14 @@ export const romanize = (id) =>
 export function formatLine(line) {
   return (
     line
+      // A zero-width joiner is meaningful right after a virama, where it is
+      // what keeps म् from forming a conjunct with the next letter. Anywhere
+      // else it is a leftover from whatever the lyrics were pasted out of:
+      // invisible, but enough to stop the word matching a search for itself.
+      .replace(/(?<![\u094d])[\u200c\u200d]/g, '')
+      // Verse numbers arrive as 2 as often as २, from keyboards that have no
+      // Devanagari numerals. Every number in the collection is Devanagari.
+      .replace(/[0-9]/g, (d) => '०१२३४५६७८९'[+d])
       // Lyrics get typed on keyboards that have no danda key, so the letter l
       // and the pipe both stand in for one: doubled for ॥, single for ।. No
       // lyric in the collection contains a Latin letter at all, and the word
