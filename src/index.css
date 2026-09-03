@@ -252,6 +252,12 @@ a {
   font-weight: 600;
   line-height: 1.4;
   white-space: nowrap;
+  /* overflow: hidden is here to get the ellipsis, but it clips both axes, and
+     a 1.4 line box leaves a tall Devanagari face under a pixel of headroom —
+     enough that ी and ो lose their tops. Padding moves the clip edge out; the
+     negative margin keeps the outer height, so the header still centres. */
+  padding: 0.22em 0;
+  margin: -0.22em 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -313,7 +319,6 @@ a {
 }
 
 .home__title {
-  margin: 0;
   font-family: var(--font-deva);
   font-size: 46px;
   line-height: 1.25;
@@ -322,6 +327,15 @@ a {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  /* The gradient is painted over this element's box and then clipped to the
+     glyphs, so any part of a letter sitting outside the box is never painted
+     at all. Devanagari matras do sit outside it: ी and ो rise above the line
+     box by up to 0.1em in the faces we fall back to here, and further in
+     Kohinoor Devanagari, which is what iOS actually uses — hence the flat
+     tops. The padding gives the paint area room; the negative margin takes
+     the same space straight back out, so nothing in the hero moves. */
+  padding: 0.3em 0 0.16em;
+  margin: -0.3em 0 -0.16em;
 }
 
 .home__subtitle {
