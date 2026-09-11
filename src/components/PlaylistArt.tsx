@@ -169,6 +169,50 @@ export function NamasteArt({ size = 44 }: ArtProps) {
 }
 
 /**
+ * Vina — the one-stringed drone a warkari carries to Pandharpur, which is what
+ * this bhajan is about. The drum, the cymbals, the joined palms and the garland
+ * are all spoken for, and this shares a silhouette with none of them: a round
+ * gourd with a long neck leaning out of it.
+ *
+ * Drawn upright and then tilted, the way it is actually carried over a
+ * shoulder, which also keeps the neck off the corner of the badge.
+ */
+export function VinaArt({ size = 44 }: ArtProps) {
+  return (
+    <svg {...canvas(size)}>
+      <g transform="rotate(-24 24 24)">
+        {/* Neck, running up out of the gourd. */}
+        <rect x="21.6" y="7" width="4.8" height="26" rx="2.4" fill="var(--accent)" />
+        <rect x="24" y="7" width="2.4" height="26" fill={SHADE} />
+
+        {/* Pegbox, and the two pegs turned out either side of it. */}
+        <rect x="20.2" y="3.4" width="7.6" height="7" rx="2.2" fill="var(--accent-strong)" />
+        <rect x="20.2" y="6.6" width="7.6" height="3.8" fill={SHADE} />
+        <rect x="16.6" y="4.6" width="4.4" height="1.9" rx="0.95" fill={DEEP} />
+        <rect x="27" y="7.6" width="4.4" height="1.9" rx="0.95" fill={DEEP} />
+
+        {/* The gourd. Light on the near side, turning away on the far one. */}
+        <ellipse cx="24" cy="35" rx="10" ry="9.4" fill="var(--accent-strong)" />
+        <path d="M24 25.6a10 9.4 0 0 1 0 18.8 10 9.4 0 0 0 0-18.8z" fill={SHADE} />
+        <path d="M27 26a10 9.4 0 0 1 0 18 8 9 0 0 0 0-18z" fill={SHADE} />
+
+        {/* Sound hole, and the bridge the strings cross. */}
+        <ellipse cx="21.4" cy="33.4" rx="3.2" ry="3" fill={DEEP} />
+        <rect x="19.4" y="39.4" width="9.2" height="1.8" rx="0.9" fill={DEEP} />
+
+        {/* Strings, peg to bridge. */}
+        <path
+          d="M22.8 9.5v30.2M25.2 9.5v30.2"
+          stroke={DEEP}
+          strokeWidth="0.85"
+          strokeLinecap="round"
+        />
+      </g>
+    </svg>
+  );
+}
+
+/**
  * Maal — the flower garland of a मंगल occasion, which is what the
  * mangalashtake are sung at. A strung arc rather than a single bloom: the
  * curve is what separates it at a glance from the discs of the taal.

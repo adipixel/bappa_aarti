@@ -4,7 +4,7 @@ import { AppHeader } from '../components/AppHeader';
 import { InstallCard } from '../components/InstallCard';
 import { SettingsSheet } from '../components/SettingsSheet';
 import { ChevronRight } from '../components/icons';
-import { DholakArt, GarlandArt, NamasteArt, TaalArt } from '../components/PlaylistArt';
+import { DholakArt, GarlandArt, NamasteArt, TaalArt, VinaArt } from '../components/PlaylistArt';
 import { playlists } from '../data/songs';
 import { trackPageView, trackSupport } from '../utils/analytics';
 
@@ -24,6 +24,7 @@ const SUPPORT_URL = 'https://razorpay.me/@adityamhamunkar';
  */
 const PLAYLIST_ART: Record<string, JSX.Element> = {
   aarti: <DholakArt />,
+  bhajan: <VinaArt />,
   gajar: <TaalArt />,
   shlok: <NamasteArt />,
   mangalashtak: <GarlandArt />,
@@ -56,7 +57,7 @@ export function HomePage() {
               <span className="playlist-card__body">
                 <span className="playlist-card__title">{playlist.title}</span>
                 <span className="playlist-card__meta">
-                  {playlist.titleEn} · {playlist.count} songs
+                  {playlist.titleEn} · {playlist.count} {playlist.count === 1 ? 'song' : 'songs'}
                 </span>
               </span>
               <ChevronRight />
