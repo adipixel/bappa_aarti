@@ -29,13 +29,37 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { buildBlocks, cleanLyrics, romanize } from './lib/lyrics.mjs';
 import { suggestId, suggestTitle } from './lib/naming.mjs';
+import { romanText } from './lib/roman.mjs';
 
 const DATA = new URL('../src/data/songs.json', import.meta.url);
 const LYRICS_DIR = new URL('../data/lyrics/', import.meta.url);
 const DEFAULT_PLAYLIST = 'aarti';
 
 const read = () => JSON.parse(readFileSync(DATA, 'utf8'));
-const write = (data) => writeFileSync(DATA, JSON.stringify(data, null, 2) + '\n');
+
+/**
+ * The Roman reading of every song, refreshed from the Devanagari on the way out.
+ *
+ * Derived here rather than in the browser so a clumsy transliteration can be
+ * corrected by hand in the data and stay corrected — and rebuilt on every write
+ * rather than at the point each song is added, so the two scripts cannot drift
+ * apart when a lyric is edited or the transliterator itself is improved.
+ */
+function deriveRoman(data) {
+  for (const playlist of data.playlists) {
+    for (const song of playlist.songs) {
+      if (!song.lyrics) continue;
+      song.lyricsEn = romanText(song.lyrics);
+      if (song.blocks) {
+        song.blocksEn = song.blocks.map((b) => ({ ...b, lines: b.lines.map(romanText) }));
+      }
+    }
+  }
+  return data;
+}
+
+const write = (data) =>
+  writeFileSync(DATA, JSON.stringify(deriveRoman(data), null, 2) + '\n');
 
 const die = (message) => {
   console.error(`\n  error: ${message}\n`);

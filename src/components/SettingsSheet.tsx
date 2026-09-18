@@ -3,6 +3,7 @@ import {
   FONT_MAX,
   FONT_MIN,
   useSettings,
+  type Script,
   type Theme,
 } from '../state/settings';
 import { BUILD, DEBUG_TAPS, debugEnabled, setDebug } from '../config';
@@ -14,8 +15,13 @@ const THEMES: { id: Theme; label: string }[] = [
   { id: 'light', label: 'Light · उजेड' },
 ];
 
+const SCRIPTS: { id: Script; label: string }[] = [
+  { id: 'deva', label: 'देवनागरी' },
+  { id: 'roman', label: 'English' },
+];
+
 export function SettingsSheet({ onClose }: { onClose: () => void }) {
-  const { theme, fontSize, keepAwake, set } = useSettings();
+  const { theme, fontSize, keepAwake, script, set } = useSettings();
   const [debug, setDebugShown] = useState(debugEnabled());
   const taps = useRef(0);
   const tapTimer = useRef<number>();
@@ -94,7 +100,26 @@ export function SettingsSheet({ onClose }: { onClose: () => void }) {
             </button>
           </div>
           <div className="sample" style={{ fontSize }}>
-            जय देव जय देव जय मंगलमुर्ती
+            {script === 'roman' ? 'jay dev jay dev jay mangalmurti' : 'जय देव जय देव जय मंगलमुर्ती'}
+          </div>
+        </div>
+
+        <div className="setting">
+          <div className="setting__head">
+            <div>
+              <div className="setting__label">लिपी · Script</div>
+              <div className="setting__hint">
+                The same words either way — English spells out the Marathi, it does not
+                translate it.
+              </div>
+            </div>
+          </div>
+          <div className="segmented">
+            {SCRIPTS.map((s) => (
+              <button key={s.id} aria-pressed={script === s.id} onClick={() => set('script', s.id)}>
+                {s.label}
+              </button>
+            ))}
           </div>
         </div>
 

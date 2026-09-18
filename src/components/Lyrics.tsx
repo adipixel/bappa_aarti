@@ -21,8 +21,14 @@ import type { Block } from '../data/songs';
  * stays readable for anyone who uses it, but the eye lands on the words.
  */
 
-/** Trailing notation: a danda, optionally a verse number or the ध्रु mark, optionally a closing danda. */
-const TRAILING_NOTATION = /^(.*?)\s*([।॥](?:\s*(?:[०-९]+|ध्रु|धृ))?\s*[।॥]?)$/;
+/**
+ * Trailing notation: a danda, optionally a verse number or the ध्रु mark,
+ * optionally a closing danda. The dandas are kept in the Roman text too — they
+ * are punctuation, not letters — so the number and the mark are matched in
+ * either script.
+ */
+const TRAILING_NOTATION =
+  /^(.*?)\s*([।॥](?:\s*(?:[०-९]+|[0-9]+|ध्रु|धृ|dhru))?\s*[।॥]?)$/;
 
 /** How many opening words a folded refrain shows. Enough to recognise it by. */
 const FOLD_WORDS = 2;

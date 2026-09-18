@@ -14,8 +14,12 @@ export interface Song {
   titleEn: string;
   /** The lyrics as collected — the canonical text, and what search runs over. */
   lyrics: string;
+  /** The same words in Roman letters, derived at build time so they stay fixable. */
+  lyricsEn?: string;
   /** The singing arrangement: the same lyrics with every cued refrain written out. */
   blocks?: Block[];
+  /** blocks, transliterated. Same shape, line for line. */
+  blocksEn?: Block[];
   lyricsPending?: boolean;
   audio?: string;
 }
@@ -63,7 +67,12 @@ export function searchSongs(query: string): SearchHit[] {
     for (const song of playlist.songs) {
       if (song.title.toLowerCase().includes(q) || song.titleEn.toLowerCase().includes(q)) {
         hits.push({ playlist, song, matchedIn: 'title' });
-      } else if (song.lyrics.toLowerCase().includes(q)) {
+      } else if (
+        song.lyrics.toLowerCase().includes(q) ||
+        // The Roman reading is searched whichever script the reader is in, so
+        // typing "sukhakarta" finds the aarti without switching anything first.
+        song.lyricsEn?.toLowerCase().includes(q)
+      ) {
         hits.push({ playlist, song, matchedIn: 'lyrics' });
       }
     }

@@ -15,7 +15,7 @@ import { trackSongView, trackPageView } from '../utils/analytics';
 export function SongPage() {
   const { playlistId, songId } = useParams();
   const navigate = useNavigate();
-  const { fontSize, keepAwake } = useSettings();
+  const { fontSize, keepAwake, script, set } = useSettings();
   const [settingsOpen, setSettingsOpen] = useState(false);
   const scrollerRef = useRef<HTMLElement>(null);
 
@@ -65,11 +65,15 @@ export function SongPage() {
   if (!found) return <Navigate to="/" replace />;
   const { playlist, song, index } = found;
 
+  // Roman is only offered where it exists; a song without it stays Devanagari
+  // rather than falling back to an empty page.
+  const roman = script === 'roman' && !!song.blocksEn;
+
   return (
     <>
       <AppHeader
-        title={song.title}
-        subtitle={`${playlist.title} · ${index + 1}/${playlist.songs.length}`}
+        title={roman ? song.titleEn : song.title}
+        subtitle={`${roman ? playlist.titleEn : playlist.title} · ${index + 1}/${playlist.songs.length}`}
         back={`/${playlist.id}`}
         onOpenSettings={() => setSettingsOpen(true)}
       />
@@ -86,10 +90,12 @@ export function SongPage() {
             {AUDIO_ENABLED && song.audio && ' You can still play the recording above.'}
           </p>
         ) : (
-          <Lyrics blocks={song.blocks ?? []} fontSize={fontSize} />
+          <Lyrics blocks={(roman ? song.blocksEn : song.blocks) ?? []} fontSize={fontSize} />
         )}
 
-        {!song.lyricsPending && <p className="song__end">॥ शुभं भवतु ॥</p>}
+        {!song.lyricsPending && (
+          <p className="song__end">{roman ? '॥ shubham bhavatu ॥' : '॥ शुभं भवतु ॥'}</p>
+        )}
         <div className="song__spacer" />
       </main>
 
@@ -97,13 +103,28 @@ export function SongPage() {
         <div className="song-bar__row">
           <button className="nav-btn" onClick={() => goTo(prev?.id)} disabled={!prev}>
             <ChevronLeft size={18} />
-            <span className="nav-btn__label">{prev ? prev.title : 'सुरुवात'}</span>
+            <span className="nav-btn__label">
+              {prev ? (roman ? prev.titleEn : prev.title) : roman ? 'start' : 'सुरुवात'}
+            </span>
           </button>
 
-          <span className="song-bar__spacer" />
+          <button
+            className="script-btn"
+            onClick={() => set('script', script === 'roman' ? 'deva' : 'roman')}
+            aria-label={
+              script === 'roman' ? 'देवनागरीत वाचा / Read in Devanagari' : 'Read in English letters'
+            }
+            title={script === 'roman' ? 'देवनागरी' : 'English letters'}
+          >
+            <span className={script === 'roman' ? 'script-btn__off' : 'script-btn__on'}>अ</span>
+            <span className="script-btn__sep">/</span>
+            <span className={script === 'roman' ? 'script-btn__on' : 'script-btn__off'}>A</span>
+          </button>
 
           <button className="nav-btn" onClick={() => goTo(next?.id)} disabled={!next}>
-            <span className="nav-btn__label">{next ? next.title : 'समाप्त'}</span>
+            <span className="nav-btn__label">
+              {next ? (roman ? next.titleEn : next.title) : roman ? 'end' : 'समाप्त'}
+            </span>
             <ChevronRight size={18} />
           </button>
         </div>

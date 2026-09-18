@@ -10,15 +10,20 @@ import {
 
 export type Theme = 'dark' | 'light';
 
+/** Which script the lyrics are read in. Not a translation — the same words. */
+export type Script = 'deva' | 'roman';
+
 export interface Settings {
   theme: Theme;
   /** Lyric font size in px. Deliberately large — this is read at arm's length. */
   fontSize: number;
   /** Hold the screen awake while an aarti is open. */
   keepAwake: boolean;
+  /** Devanagari, or the same words spelled in Roman letters. */
+  script: Script;
 }
 
-const DEFAULTS: Settings = { theme: 'dark', fontSize: 26, keepAwake: true };
+const DEFAULTS: Settings = { theme: 'dark', fontSize: 26, keepAwake: true, script: 'deva' };
 
 export const FONT_MIN = 18;
 export const FONT_MAX = 46;

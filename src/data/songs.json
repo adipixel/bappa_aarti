@@ -66,7 +66,62 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/1-sukhakarta-dukhaharta.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/1-sukhakarta-dukhaharta.mp3",
+          "lyricsEn": "sukhakarta dukhaharta varta vighnachi ।\nnuravi puravi prem krupa jayachi ।\nsarwangi sundar uti shendurachi ।\nkanthi jhalake mal muktaphalanchi ॥ 1 ॥\n\njay dev jay dev jay mangalmurti ॥\ndarshanamatre man kamanapurti ॥ dhru ॥\n\nratnakhachit phara tuj gaurikumara ।\nchandanachi uti kunkum keshara ।\nhirejadit mukut shobhato bara ।\nrunajhunati nupure\ncharani ghagariya ॥ jay dev ॥ 2 ॥\n\nlambodar pitambar phanivarabandhana ।\nsaral sond vakra tund trinayana ।\ndas ramacha vat pahe sadana ।\nsankati pavave nirwani rakshave\nsuravar vandana ॥ jay dev ॥ 3 ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "sukhakarta dukhaharta varta vighnachi ।",
+                "nuravi puravi prem krupa jayachi ।",
+                "sarwangi sundar uti shendurachi ।",
+                "kanthi jhalake mal muktaphalanchi ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "lines": [
+                "jay dev jay dev jay mangalmurti ॥",
+                "darshanamatre man kamanapurti ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ratnakhachit phara tuj gaurikumara ।",
+                "chandanachi uti kunkum keshara ।",
+                "hirejadit mukut shobhato bara ।",
+                "runajhunati nupure",
+                "charani ghagariya ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay dev jay dev jay mangalmurti ॥",
+                "darshanamatre man kamanapurti ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "lambodar pitambar phanivarabandhana ।",
+                "saral sond vakra tund trinayana ।",
+                "das ramacha vat pahe sadana ।",
+                "sankati pavave nirwani rakshave",
+                "suravar vandana ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay dev jay dev jay mangalmurti ॥",
+                "darshanamatre man kamanapurti ॥ dhru ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "lavthavti-vikrala",
@@ -143,7 +198,77 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/2-lavthavti-vikrala.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/2-lavthavti-vikrala.mp3",
+          "lyricsEn": "lavthavti vikrala bramhandi mala\nvishe kanth kala trinetri jwala ।\nlavanyasundar mastaki bala\ntethuniya jal nirmal vahe jhulajhula ॥ 1 ॥\njaydev jaydev jay shri shankara\naarti ovalu tuj karpuragaura ॥ dhru ॥\n\nkarpuragaura bhola nayani vishala\nardhangi parwati sumananchya mala ।\nvibhutiche udhalan shitikanth nila\naisa shankar shobhe uma velhala ॥ 2 ॥\njaydev…\n\ndeve daitye sagar manthan pai kele\ntyamaji avachit halahal je uthale ।\nte twa asurapane prashan kele\nnilakanth nam prasiddha jhale ॥ 3 ॥\njaydev…\n\nvyaghrambar phanivaradhar sundar madanari\npanchanan manamohan munijan sukhakari ।\nshatakotiche bij vache ucchari\nraghukulatilak ramadasa antari ॥ 4 ॥\njaydev...",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "lavthavti vikrala bramhandi mala",
+                "vishe kanth kala trinetri jwala ।",
+                "lavanyasundar mastaki bala",
+                "tethuniya jal nirmal vahe jhulajhula ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "lines": [
+                "jaydev jaydev jay shri shankara",
+                "aarti ovalu tuj karpuragaura ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "karpuragaura bhola nayani vishala",
+                "ardhangi parwati sumananchya mala ।",
+                "vibhutiche udhalan shitikanth nila",
+                "aisa shankar shobhe uma velhala ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jaydev jaydev jay shri shankara",
+                "aarti ovalu tuj karpuragaura ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "deve daitye sagar manthan pai kele",
+                "tyamaji avachit halahal je uthale ।",
+                "te twa asurapane prashan kele",
+                "nilakanth nam prasiddha jhale ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jaydev jaydev jay shri shankara",
+                "aarti ovalu tuj karpuragaura ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "vyaghrambar phanivaradhar sundar madanari",
+                "panchanan manamohan munijan sukhakari ।",
+                "shatakotiche bij vache ucchari",
+                "raghukulatilak ramadasa antari ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jaydev jaydev jay shri shankara",
+                "aarti ovalu tuj karpuragaura ॥ dhru ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "durge-durghat",
@@ -203,7 +328,60 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/3-durge-durgahat.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/3-durge-durgahat.mp3",
+          "lyricsEn": "durge durghat bhari tujavin sansari\nanath nathe ambe karuna vistari ।\nvari vari janma maranate vari\nhari padalo aata sankat nivari ॥ 1 ॥\njay devi jay devi mahishasuramardini\nsuravar ishwar varade tarak sanjivani ॥ dhru ॥\n\ntribhuvan bhuvani pahata tuj aisi nahi\nchari shramale parantu n bolave kahi ।\nsahi vivad karita padale pravahi\nte tu bhaktalagi pavasi lavalahi ॥ 2 ॥\njaydev ...\n\nprasanna vadane prasanna hosi nijadasa\nkleshan pasuni sodavi todi bhavapasha ।\nambe tuj vachun kon puravil aasha\nnarahari tallin jhala padapankajalesha ॥ 3 ॥\njaydev ...",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "durge durghat bhari tujavin sansari",
+                "anath nathe ambe karuna vistari ।",
+                "vari vari janma maranate vari",
+                "hari padalo aata sankat nivari ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "lines": [
+                "jay devi jay devi mahishasuramardini",
+                "suravar ishwar varade tarak sanjivani ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tribhuvan bhuvani pahata tuj aisi nahi",
+                "chari shramale parantu n bolave kahi ।",
+                "sahi vivad karita padale pravahi",
+                "te tu bhaktalagi pavasi lavalahi ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay devi jay devi mahishasuramardini",
+                "suravar ishwar varade tarak sanjivani ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "prasanna vadane prasanna hosi nijadasa",
+                "kleshan pasuni sodavi todi bhavapasha ।",
+                "ambe tuj vachun kon puravil aasha",
+                "narahari tallin jhala padapankajalesha ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay devi jay devi mahishasuramardini",
+                "suravar ishwar varade tarak sanjivani ॥ dhru ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "yuge-athavis",
@@ -297,7 +475,94 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/4-yuge-athhavis.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/4-yuge-athhavis.mp3",
+          "lyricsEn": "yuge atthavis vitevari ubha\nvamangi rakhumai dise divya shobha ।\npundalikache bheti parabramha aale ga\ncharani vahe bhima uddhari jaga ॥ 1 ॥\njaydev jaydev jay panduranga\nrakhumai vallabha raichya vallabha pave jivalaga ॥ dhru ॥\n\ntulasimala gala kar theuni kati\nkase pitambar kasturi lallati ।\ndev suravar nitya yeti bheti\ngarud hanumant pudhe ubhe rahati ॥ 2 ॥\njay dev ...\n\ndhanya venunad anukshetrapala\nsuvarnachi kamale vanamala gala ।\nrai rakhumabai raniya sakala\novaliti raja vithoba savala ॥ 3 ॥\njay dev...\n\novalu aartya kurwandya yeti\nchandrabhagemaji soduniya deti ।\ndindya pataka vaishnav nachati\npandharicha mahima varnava kiti ॥ 4 ॥\njay dev ...\n\naashadhi kartiki bhaktajan yeti ho sadhujan yeti\nchandrabhagemaji snane je kariti ।\ndarshan helamatre taya hoy mukti\nkeshavasi namadev madhavasi namadev bhave ovaliti ॥ 5 ॥\njaydev ...",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "yuge atthavis vitevari ubha",
+                "vamangi rakhumai dise divya shobha ।",
+                "pundalikache bheti parabramha aale ga",
+                "charani vahe bhima uddhari jaga ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "lines": [
+                "jaydev jaydev jay panduranga",
+                "rakhumai vallabha raichya vallabha pave jivalaga ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tulasimala gala kar theuni kati",
+                "kase pitambar kasturi lallati ।",
+                "dev suravar nitya yeti bheti",
+                "garud hanumant pudhe ubhe rahati ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jaydev jaydev jay panduranga",
+                "rakhumai vallabha raichya vallabha pave jivalaga ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "dhanya venunad anukshetrapala",
+                "suvarnachi kamale vanamala gala ।",
+                "rai rakhumabai raniya sakala",
+                "ovaliti raja vithoba savala ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jaydev jaydev jay panduranga",
+                "rakhumai vallabha raichya vallabha pave jivalaga ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ovalu aartya kurwandya yeti",
+                "chandrabhagemaji soduniya deti ।",
+                "dindya pataka vaishnav nachati",
+                "pandharicha mahima varnava kiti ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jaydev jaydev jay panduranga",
+                "rakhumai vallabha raichya vallabha pave jivalaga ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "aashadhi kartiki bhaktajan yeti ho sadhujan yeti",
+                "chandrabhagemaji snane je kariti ।",
+                "darshan helamatre taya hoy mukti",
+                "keshavasi namadev madhavasi namadev bhave ovaliti ॥ 5 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jaydev jaydev jay panduranga",
+                "rakhumai vallabha raichya vallabha pave jivalaga ॥ dhru ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "undaravari-baisoni",
@@ -377,6 +642,80 @@
                 "जय देव जय देव जय गणराजा ॥ धृ ॥"
               ]
             }
+          ],
+          "lyricsEn": "undaravari baisoni dudaduda yesi ।\nhati modak ladu gheuniyan khasi ।\nbhaktanche sankati dhavuni pavasi ।\ndas vinaviti tujhiyan charanasi ॥ 1 ॥\n\njay dev jay dev jay ganaraja\nsakal devan aadhi tun dev majha ॥ jay. ॥ dhru ॥\n\nbhadrapadamasi hosi tu bhola ।\naarakta pushpanchya ghaluniya mala ।\nkapali lavuni kasturi tila ।\ntene tu disasi sundar sanvala ॥ jay. ॥ 2 ॥\n\npradoshache divashi chandra shrapila ।\nsamayi deve motha aakant kela ।\nindu yevoni charani lagala ।\nshriram bahut shrap didhala ॥ jay. ॥ 3 ॥\n\nparwatichya suta tu ye gananatha ।\nnetra shinale tujhi vat pahatan ॥\nkiti ant pahasi ba vighnaharta ।\nmala buddhi dei tu gananatha ॥ jay. ॥ 4 ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "undaravari baisoni dudaduda yesi ।",
+                "hati modak ladu gheuniyan khasi ।",
+                "bhaktanche sankati dhavuni pavasi ।",
+                "das vinaviti tujhiyan charanasi ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "lines": [
+                "jay dev jay dev jay ganaraja",
+                "sakal devan aadhi tun dev majha",
+                "jay dev jay dev jay ganaraja ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "bhadrapadamasi hosi tu bhola ।",
+                "aarakta pushpanchya ghaluniya mala ।",
+                "kapali lavuni kasturi tila ।",
+                "tene tu disasi sundar sanvala ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay dev jay dev jay ganaraja",
+                "sakal devan aadhi tun dev majha",
+                "jay dev jay dev jay ganaraja ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "pradoshache divashi chandra shrapila ।",
+                "samayi deve motha aakant kela ।",
+                "indu yevoni charani lagala ।",
+                "shriram bahut shrap didhala ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay dev jay dev jay ganaraja",
+                "sakal devan aadhi tun dev majha",
+                "jay dev jay dev jay ganaraja ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "parwatichya suta tu ye gananatha ।",
+                "netra shinale tujhi vat pahatan ॥",
+                "kiti ant pahasi ba vighnaharta ।",
+                "mala buddhi dei tu gananatha ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay dev jay dev jay ganaraja",
+                "sakal devan aadhi tun dev majha",
+                "jay dev jay dev jay ganaraja ॥ dhru ॥"
+              ]
+            }
           ]
         },
         {
@@ -437,7 +776,60 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/6-nana-marimal.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/6-nana-marimal.mp3",
+          "lyricsEn": "nana parimal durwa shendur shamipatre\nladu modak anne paripurna patre ।\naise pujan kelya vijakshar mantre ।\nashtahi siddhi navavidhi desi kshanamatre ॥ 1 ॥\njaydev jaydev jay mangalmurti\ntujhe gun varnaya maj kaisi sphurti ॥ dhru ॥\n\ntujhe dhyan nirantar je koni kariti\ntyanchi sakalahi pape vighnehi hariti ।\nvaji varan shibika sevak sutayuvati\nsarwahi pavuni anti bhavasagar tarati ॥ 2 ॥ jaydev jaydev...\n\nsharanagat sarwaswe bhajati tav charani\nkirti tayanchi rahe jovar shashi tarani\ntrailokyi te vijayi adabhut he karani\ngosavinandan ratanamasmarani ॥ 3 ॥ jaydev jaydev...",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "nana parimal durwa shendur shamipatre",
+                "ladu modak anne paripurna patre ।",
+                "aise pujan kelya vijakshar mantre ।",
+                "ashtahi siddhi navavidhi desi kshanamatre ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "lines": [
+                "jaydev jaydev jay mangalmurti",
+                "tujhe gun varnaya maj kaisi sphurti ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tujhe dhyan nirantar je koni kariti",
+                "tyanchi sakalahi pape vighnehi hariti ।",
+                "vaji varan shibika sevak sutayuvati",
+                "sarwahi pavuni anti bhavasagar tarati ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jaydev jaydev jay mangalmurti",
+                "tujhe gun varnaya maj kaisi sphurti ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "sharanagat sarwaswe bhajati tav charani",
+                "kirti tayanchi rahe jovar shashi tarani",
+                "trailokyi te vijayi adabhut he karani",
+                "gosavinandan ratanamasmarani ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jaydev jaydev jay mangalmurti",
+                "tujhe gun varnaya maj kaisi sphurti ॥ dhru ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "shendurlal-chadhao",
@@ -497,7 +889,60 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/7-shendurlal-chadhao.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/7-shendurlal-chadhao.mp3",
+          "lyricsEn": "shendur lal chadhayon achchha gajamukhako\ndondil lal viraje sut gauriharako\nhath liye gudaladdu sai suravar ko\nmahima kahe n jay lagat hun padako ॥ 1 ॥\n\njay ji ganaraj vidya sukhadata\ndhanya tumharo darshan mera man ramata ॥ dhru ॥\n\nashtau siddhi dasi sankat ko bairi\nvighnavinashak mangal murat adhikari\nkoti surajaprakash aisi chhabi teri\ngandasthal madamastak jhule shashibihari ॥ 2 ॥\njay ji ...\n\nbhavabhagatase koi sharanagat aave\nsantati sampatti sabahi bharapur pave\naise tum maharaj moko ati bhave\ngosavinandan nishidin gun gave ॥ 3 ॥\njay ji ...",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "shendur lal chadhayon achchha gajamukhako",
+                "dondil lal viraje sut gauriharako",
+                "hath liye gudaladdu sai suravar ko",
+                "mahima kahe n jay lagat hun padako ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "lines": [
+                "jay ji ganaraj vidya sukhadata",
+                "dhanya tumharo darshan mera man ramata ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ashtau siddhi dasi sankat ko bairi",
+                "vighnavinashak mangal murat adhikari",
+                "koti surajaprakash aisi chhabi teri",
+                "gandasthal madamastak jhule shashibihari ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay ji ganaraj vidya sukhadata",
+                "dhanya tumharo darshan mera man ramata ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "bhavabhagatase koi sharanagat aave",
+                "santati sampatti sabahi bharapur pave",
+                "aise tum maharaj moko ati bhave",
+                "gosavinandan nishidin gun gave ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay ji ganaraj vidya sukhadata",
+                "dhanya tumharo darshan mera man ramata ॥ dhru ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "yeio-vithhale",
@@ -574,7 +1019,77 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/8-yeio-vithhale.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/8-yeio-vithhale.mp3",
+          "lyricsEn": "yei ho vitthale majhe mauli ye\nnidhalavari kar theuni vat mi pahe ॥ dhru ॥\n\naaliya geliya hati dhadi nirop\npandharapuri aahe majha mayabap ॥ 1 ॥\nyei …\n\npivala pitambar kaisa gagani jhalakala\ngarudavari baisoni majha kaivari aala ॥ 2 ॥\nyei …\n\nvithobache rajya aamhan nitya dipavali\nvishnudas nama jivembhave onvali ॥ 3 ॥\nyei …\n\naso naso bhav aalo tujhiya thaya\nkrupadrushti pahe majhya pandhariraya ॥ 4 ॥\nyei …",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "yei ho vitthale majhe mauli ye",
+                "nidhalavari kar theuni vat mi pahe ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "aaliya geliya hati dhadi nirop",
+                "pandharapuri aahe majha mayabap ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "yei ho vitthale majhe mauli ye",
+                "nidhalavari kar theuni vat mi pahe ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "pivala pitambar kaisa gagani jhalakala",
+                "garudavari baisoni majha kaivari aala ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "yei ho vitthale majhe mauli ye",
+                "nidhalavari kar theuni vat mi pahe ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "vithobache rajya aamhan nitya dipavali",
+                "vishnudas nama jivembhave onvali ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "yei ho vitthale majhe mauli ye",
+                "nidhalavari kar theuni vat mi pahe ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "aso naso bhav aalo tujhiya thaya",
+                "krupadrushti pahe majhya pandhariraya ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "yei ho vitthale majhe mauli ye",
+                "nidhalavari kar theuni vat mi pahe ॥ dhru ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "vithal-vithal-vithala",
@@ -627,7 +1142,53 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/25-vithal-vithal-vithala.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/25-vithal-vithal-vithala.mp3",
+          "lyricsEn": "vitthal vitthal vitthala pandurang vitthala\nhari om vitthala pandurang vitthala\ndwarakecha rana majha pandurang vitthala..\n\nradha mira rukminichya krushna savalya vitthala\nkanhopatra sant sakhu an janabaichya vitthala ॥ 1 ॥\n\nnivrutti sopan muktai an dnyaniyanchya vitthala\nekanath namadev tukobasi ved lavile vitthala ॥ 2 ॥\n\nchokhamela goroba an damajichya vitthala\npundalikachya hattapayi avatarala ga vitthala ॥ 3 ॥\n\ntuch ram an krushna tuch narayana vitthala\nkausalyecha ram yashodecha ghanashyama vitthala ॥ 4 ॥\n\nbhajan kirtan varakaryanchya sange dolasi vitthala\nvalavanti mukhamukhatun gajar tujha vitthala ॥ 5 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "vitthal vitthal vitthala pandurang vitthala",
+                "hari om vitthala pandurang vitthala",
+                "dwarakecha rana majha pandurang vitthala.."
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "radha mira rukminichya krushna savalya vitthala",
+                "kanhopatra sant sakhu an janabaichya vitthala ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "nivrutti sopan muktai an dnyaniyanchya vitthala",
+                "ekanath namadev tukobasi ved lavile vitthala ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "chokhamela goroba an damajichya vitthala",
+                "pundalikachya hattapayi avatarala ga vitthala ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tuch ram an krushna tuch narayana vitthala",
+                "kausalyecha ram yashodecha ghanashyama vitthala ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "bhajan kirtan varakaryanchya sange dolasi vitthala",
+                "valavanti mukhamukhatun gajar tujha vitthala ॥ 5 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "tu-shukhatarta",
@@ -673,7 +1234,46 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/9-tu-shukhatarta.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/9-tu-shukhatarta.mp3",
+          "lyricsEn": "tu sukhakarta tu dukhaharta\nvighnavinashak moraya ।\nsankati rakshi sharan tula mi\nganpati bappa moraya ॥ 1 ॥\n\nmangalmurti tu gananayak\nvakratund tu siddhivinayak ।\ntujhiya dwari aaj patalo\nde ichchhit maj dyaya ॥ 2 ॥\n\ntu sakalancha bhagya vidhata\ntu vidyecha swamidata ।\ndnyanadip ujaluni aamucha\nnivavi nairashyala ॥ 3 ॥\n\ntu mata tu pita jagi ya\ndnyata tu sarwaswa jagi ya ।\npamar mi swar une bhasati\ntujhi aarti gaya ॥ 4 ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "tu sukhakarta tu dukhaharta",
+                "vighnavinashak moraya ।",
+                "sankati rakshi sharan tula mi",
+                "ganpati bappa moraya ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "mangalmurti tu gananayak",
+                "vakratund tu siddhivinayak ।",
+                "tujhiya dwari aaj patalo",
+                "de ichchhit maj dyaya ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tu sakalancha bhagya vidhata",
+                "tu vidyecha swamidata ।",
+                "dnyanadip ujaluni aamucha",
+                "nivavi nairashyala ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tu mata tu pita jagi ya",
+                "dnyata tu sarwaswa jagi ya ।",
+                "pamar mi swar une bhasati",
+                "tujhi aarti gaya ॥ 4 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "ganaraya-aarti-hi-tujala",
@@ -712,7 +1312,39 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/21-ganaraya-aarti-hi-tujala.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/21-ganaraya-aarti-hi-tujala.mp3",
+          "lyricsEn": "ganaraya aarti hi tujala\nrunajhun payi vajati ghungaru\ngagani dhwani bharala ॥ dhru ॥\n\nbhadrapad masi shukla chaturthishi\npujiti jan tujala ॥ 1 ॥\n\ngandh pushpa dhup dip samarpuni\narpiti pushpala ॥ 2 ॥\n\nbhakta hari ha aathavito rup\ngato tav lila ॥ 3 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "ganaraya aarti hi tujala",
+                "runajhun payi vajati ghungaru",
+                "gagani dhwani bharala ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "bhadrapad masi shukla chaturthishi",
+                "pujiti jan tujala ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "gandh pushpa dhup dip samarpuni",
+                "arpiti pushpala ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "bhakta hari ha aathavito rup",
+                "gato tav lila ॥ 3 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "tuch-sukhakarta",
@@ -764,7 +1396,52 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/23-tuch-sukhakarta.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/23-tuch-sukhakarta.mp3",
+          "lyricsEn": "tuch sukhakarta tuch dukhaharta\navaghya dinanchya natha\nbappa moraya re bappa moraya re\ncharani thevito matha ॥ dhru ॥\n\npaha jhale pure ek varsha\nhoto varshane ekada harsha\ngod annacha hoto re sparsha\nghyava sansaracha paramarsha\npu-ya varshachi sa-ya dukhachi\nvachavi kashi mi gatha ॥ 1 ॥\n\npaha aali kashi aaj vel\nkasa kharchacha basava mel\ngul phutane khobaran ni kelan\nsa-ya prasadachi keli bhel\nkaru bhakshan aani rakshan\ntuch pita tuch mata ॥ 2 ॥\n\nnav kadhu nako tandulache\nkele modak lal gavhache\nhal olakh sa-ya gharache\ndin yetil ka re sukhache\nghyava januni god manuni\ndyava aashirwad aata ॥ 3 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "tuch sukhakarta tuch dukhaharta",
+                "avaghya dinanchya natha",
+                "bappa moraya re bappa moraya re",
+                "charani thevito matha ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "paha jhale pure ek varsha",
+                "hoto varshane ekada harsha",
+                "god annacha hoto re sparsha",
+                "ghyava sansaracha paramarsha",
+                "pu-ya varshachi sa-ya dukhachi",
+                "vachavi kashi mi gatha ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "paha aali kashi aaj vel",
+                "kasa kharchacha basava mel",
+                "gul phutane khobaran ni kelan",
+                "sa-ya prasadachi keli bhel",
+                "karu bhakshan aani rakshan",
+                "tuch pita tuch mata ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "nav kadhu nako tandulache",
+                "kele modak lal gavhache",
+                "hal olakh sa-ya gharache",
+                "din yetil ka re sukhache",
+                "ghyava januni god manuni",
+                "dyava aashirwad aata ॥ 3 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "aarti-dyanaraja",
@@ -802,7 +1479,38 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/10-aarti-dyanaraja.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/10-aarti-dyanaraja.mp3",
+          "lyricsEn": "aarti dnyanaraja ॥ mahakaivalyateja ॥\nseviti sadhusant ॥ manu vedhala majha ॥ dhru ॥\n\nlopale dnyan jagi ॥ hit nenati koni ॥\navatar pandurang ॥ nam thevile dnyani ॥ 1 ॥\n\nkanakache tat kari ॥ ubhya gopika nari ॥\nnarad tumbar ho ॥ sam gayan kari ॥ 2 ॥\n\nprakat guhya bole ॥ vishwa bramhachi kele ॥\nrama janardani ॥ payi mastak thevile ॥ 3 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "aarti dnyanaraja ॥ mahakaivalyateja ॥",
+                "seviti sadhusant ॥ manu vedhala majha ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "lopale dnyan jagi ॥ hit nenati koni ॥",
+                "avatar pandurang ॥ nam thevile dnyani ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "kanakache tat kari ॥ ubhya gopika nari ॥",
+                "narad tumbar ho ॥ sam gayan kari ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "prakat guhya bole ॥ vishwa bramhachi kele ॥",
+                "rama janardani ॥ payi mastak thevile ॥ 3 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "aarti-tukarama",
@@ -893,6 +1601,91 @@
                 "सच्चिदानंद मूर्ती । पायी दाखवीं आम्हां ॥ धृ ॥"
               ]
             }
+          ],
+          "lyricsEn": "aarti tukarama । swami sadgurudhama ।\nsacchidanand murti । payi dakhavin aamhan ॥ dhru ॥\n\nraghaven sagarant । jaise pashan tarile ।\ntaise he tukobache । abhang udakin rakshile ॥ aarti ॥ 1 ॥\n\ntukitan tulanesi । bramha tukasi aalen ।\nmhanoni rameshwaren । charani mastak thevilen ॥ aarti ॥ 2 ॥\n\nchaturwidh mukti । chhakulichya hatin ।\nkay sangu mahimya । tuka aisi khyati ॥ aarti ॥ 3 ॥\n\nrahili bhidesi । mayurabhat sacha ।\nloh lagatanch sonen । kela tuka taisacha ॥ aarti ॥ 4 ॥\n\ndavi payin myan dolan । sukh jhale olhasa ।\nsambhalin charan aatan । das vitthalacha ॥ aarti ॥ 5 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "aarti tukarama । swami sadgurudhama ।",
+                "sacchidanand murti । payi dakhavin aamhan ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "raghaven sagarant । jaise pashan tarile ।",
+                "taise he tukobache । abhang udakin rakshile ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti tukarama । swami sadgurudhama ।",
+                "sacchidanand murti । payi dakhavin aamhan ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tukitan tulanesi । bramha tukasi aalen ।",
+                "mhanoni rameshwaren । charani mastak thevilen ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti tukarama । swami sadgurudhama ।",
+                "sacchidanand murti । payi dakhavin aamhan ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "chaturwidh mukti । chhakulichya hatin ।",
+                "kay sangu mahimya । tuka aisi khyati ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti tukarama । swami sadgurudhama ।",
+                "sacchidanand murti । payi dakhavin aamhan ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "rahili bhidesi । mayurabhat sacha ।",
+                "loh lagatanch sonen । kela tuka taisacha ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti tukarama । swami sadgurudhama ।",
+                "sacchidanand murti । payi dakhavin aamhan ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "davi payin myan dolan । sukh jhale olhasa ।",
+                "sambhalin charan aatan । das vitthalacha ॥ 5 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti tukarama । swami sadgurudhama ।",
+                "sacchidanand murti । payi dakhavin aamhan ॥ dhru ॥"
+              ]
+            }
           ]
         },
         {
@@ -960,6 +1753,67 @@
                 "आपुली भाक । आरती साईबाबा ॥ ७ ॥"
               ]
             }
+          ],
+          "lyricsEn": "aarti saibaba । saukhyadatara jiva । charanarajatali ।\ndyava dasa visava, bhakta visava ॥ dhru ॥\n\njaluniya anang । swaswarupi rahe dang ।\nmumukshujana davi । nij dola shrirang । dola shrirang ॥\naarti saibaba ॥ 1 ॥\n\njaya mani jaisa bhav । taya taisa anubhav ।\ndavisi dayaghana । aisi tujhi hi mav ॥ 2 ॥\n\ntumache nam dhyata । hare sanskruti vyatha\nagadh tavakarani । marga davisi anatha ॥ 3 ॥\n\nkaliyugi avatar । sagunnabramha sachar ।\navatirna jhalase । swami datta digambar ॥ 4 ॥\n\naatha divasa guruvari । bhakta karisi vari ।\nprabhupad pahavaya । bhavabhay nivari ॥ 5 ॥\n\nmajha nij dravya theva । tav charanaraj seva ।\nmagane hechi aata । tumha devadhideva ॥ 6 ॥\n\nichchhit din chatak । nirmal toy nijasukh ।\npajave madhava ya । sambhal aapuli bhak ।\naapuli bhak । aarti saibaba ॥ 7 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "aarti saibaba । saukhyadatara jiva । charanarajatali ।",
+                "dyava dasa visava, bhakta visava ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "jaluniya anang । swaswarupi rahe dang ।",
+                "mumukshujana davi । nij dola shrirang । dola shrirang ॥",
+                "aarti saibaba ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "jaya mani jaisa bhav । taya taisa anubhav ।",
+                "davisi dayaghana । aisi tujhi hi mav ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tumache nam dhyata । hare sanskruti vyatha",
+                "agadh tavakarani । marga davisi anatha ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "kaliyugi avatar । sagunnabramha sachar ।",
+                "avatirna jhalase । swami datta digambar ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "aatha divasa guruvari । bhakta karisi vari ।",
+                "prabhupad pahavaya । bhavabhay nivari ॥ 5 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "majha nij dravya theva । tav charanaraj seva ।",
+                "magane hechi aata । tumha devadhideva ॥ 6 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ichchhit din chatak । nirmal toy nijasukh ।",
+                "pajave madhava ya । sambhal aapuli bhak ।",
+                "aapuli bhak । aarti saibaba ॥ 7 ॥"
+              ]
+            }
           ]
         },
         {
@@ -1012,6 +1866,54 @@
                 "सुख दु:ख मी सांगीन",
                 "साईबाबा माझी सारी",
                 "ती दु:ख निवारील ॥ ४ ॥"
+              ]
+            }
+          ],
+          "lyricsEn": "tula khandayavar ghein\ntula palakhit miravin\nsaibaba mi shirdila\npayi chalat yein ॥ dhru ॥\n\npayi chalat nelaya\nshraddha saburi valyanan\nsai tujhya darshanachi\nmala lagali tahan ॥ 1 ॥\n\nvat ase ti valanachi\naale payala te phod\ntujhya krupechya chhayet\nphod vatati re god ॥ 2 ॥\n\nmajhi bap aani aai\ntuch vitthal rakhumai\ntujhya shirdi nagarat\npandhari ti mi pahin ॥ 3 ॥\n\npayi chalat yein\nsukh dukh mi sangin\nsaibaba majhi sari\nti dukh nivaril ॥ 4 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "tula khandayavar ghein",
+                "tula palakhit miravin",
+                "saibaba mi shirdila",
+                "payi chalat yein ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "payi chalat nelaya",
+                "shraddha saburi valyanan",
+                "sai tujhya darshanachi",
+                "mala lagali tahan ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "vat ase ti valanachi",
+                "aale payala te phod",
+                "tujhya krupechya chhayet",
+                "phod vatati re god ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "majhi bap aani aai",
+                "tuch vitthal rakhumai",
+                "tujhya shirdi nagarat",
+                "pandhari ti mi pahin ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "payi chalat yein",
+                "sukh dukh mi sangin",
+                "saibaba majhi sari",
+                "ti dukh nivaril ॥ 4 ॥"
               ]
             }
           ]
@@ -1149,6 +2051,135 @@
                 "भक्तसंकटी नाना स्वरूपी स्थापिसी स्वधर्म ॥ धृ ॥"
               ]
             }
+          ],
+          "lyricsEn": "aarti saprem jay jay vitthal parabramha ।\nbhaktasankati nana swarupi sthapisi swadharma ॥ dhru ॥\nambarushikarane garbhavas soshisi\nved nele choruni bramhya aanuniya desi\nmatsyarupi narayan saptahi sagar dhundishi\nhasta tujha lagata shankhasura var gheshi ॥ 1 ॥\naarti..\n\nrasatalasi jata pruthwi pathivar ghesi\nparopakarasathi deva kasav jhalasi\ndadhe dharuni pruthwi neta varaharup hosi\npralhadakarane stambhi narahari guragurasi ॥ 2 ॥\naarti..\n\npachave avatari balichya dwarala jashi\nbhikshe sthal maguni balila patala nesi\nsarwa samarpan kele mhanuni prasanna tya hosi\nvamanarup dharuni balichya dwari tishthasi ॥ 3 ॥\naarti..\n\nsahastrarjun matala jamadagnicha vadh kela\nkashti te renuka mhanuni sahastrarjun vadhila\nnikshatri pruthwi dan didhali viprala\nsahava avatar parashuram pragatala ॥ 4 ॥\naarti..\nmatala ravan sarwa upadrav kela\ntehatis koti dev bandi harile sitela\npitruvachanalagi rame vanavas kela\nmiloni vanarasena raja ram pragatala ॥ 5 ॥\naarti..\n\ndevaki vasudev bandimochan twa kele ॥\nnandaghari juni nijasukh gokula didhale ॥\ngorasachori karita navalaksha gopal milavile ॥\ngopikanche prem pahuni shrikrushna bhulale ॥ 6 ॥\naarti..\n\nbauddha kalanki kaliyugi adharma ha avagha ॥\nsoduni didhala dharma mhanuni n disasi deva ॥\nmlenchhmardan karisi mhanuni kalanki keshava ॥\nbahiravi janhavi dyavi nijasukhanandachi seva ॥ 7 ॥\naarti..",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "aarti saprem jay jay vitthal parabramha ।",
+                "bhaktasankati nana swarupi sthapisi swadharma ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ambarushikarane garbhavas soshisi",
+                "ved nele choruni bramhya aanuniya desi",
+                "matsyarupi narayan saptahi sagar dhundishi",
+                "hasta tujha lagata shankhasura var gheshi ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti saprem jay jay vitthal parabramha ।",
+                "bhaktasankati nana swarupi sthapisi swadharma ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "rasatalasi jata pruthwi pathivar ghesi",
+                "paropakarasathi deva kasav jhalasi",
+                "dadhe dharuni pruthwi neta varaharup hosi",
+                "pralhadakarane stambhi narahari guragurasi ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti saprem jay jay vitthal parabramha ।",
+                "bhaktasankati nana swarupi sthapisi swadharma ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "pachave avatari balichya dwarala jashi",
+                "bhikshe sthal maguni balila patala nesi",
+                "sarwa samarpan kele mhanuni prasanna tya hosi",
+                "vamanarup dharuni balichya dwari tishthasi ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti saprem jay jay vitthal parabramha ।",
+                "bhaktasankati nana swarupi sthapisi swadharma ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "sahastrarjun matala jamadagnicha vadh kela",
+                "kashti te renuka mhanuni sahastrarjun vadhila",
+                "nikshatri pruthwi dan didhali viprala",
+                "sahava avatar parashuram pragatala ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti saprem jay jay vitthal parabramha ।",
+                "bhaktasankati nana swarupi sthapisi swadharma ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "matala ravan sarwa upadrav kela",
+                "tehatis koti dev bandi harile sitela",
+                "pitruvachanalagi rame vanavas kela",
+                "miloni vanarasena raja ram pragatala ॥ 5 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti saprem jay jay vitthal parabramha ।",
+                "bhaktasankati nana swarupi sthapisi swadharma ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "devaki vasudev bandimochan twa kele ॥",
+                "nandaghari juni nijasukh gokula didhale ॥",
+                "gorasachori karita navalaksha gopal milavile ॥",
+                "gopikanche prem pahuni shrikrushna bhulale ॥ 6 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti saprem jay jay vitthal parabramha ।",
+                "bhaktasankati nana swarupi sthapisi swadharma ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "bauddha kalanki kaliyugi adharma ha avagha ॥",
+                "soduni didhala dharma mhanuni n disasi deva ॥",
+                "mlenchhmardan karisi mhanuni kalanki keshava ॥",
+                "bahiravi janhavi dyavi nijasukhanandachi seva ॥ 7 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti saprem jay jay vitthal parabramha ।",
+                "bhaktasankati nana swarupi sthapisi swadharma ॥ dhru ॥"
+              ]
+            }
           ]
         },
         {
@@ -1216,7 +2247,67 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/13-om-jaya-jagadhish.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/13-om-jaya-jagadhish.mp3",
+          "lyricsEn": "om jay jagadish hare, swami jay jagadish hare ।\nbhakta jano ke sankat, das jano ke sankat\nkshan me dur kare ॥ dhru ॥\n\njo dhyave phal pave, dukh vinase manaka ।\nsukh sampatti ghar aave, kashta mite tanaka ॥ 1 ॥\n\nmata pita tum mere, sharan padu mai kisaki ।\ntum bin aur n duja, aas karu kisaki ॥ 2 ॥\n\ntum puran paramatma, tum antaryami ।\nparabramha parameshwar, tum sevak swami ॥ 3 ॥\n\ntum karunake sagar, tum palanakarta ।\nmai murakh phalakami, krupa karo bharata ॥ 4 ॥\n\nvishay vikar mitavo, pap haro deva ।\nshraddha bhakti badhao, santan ki seva ॥ 5 ॥\n\ntan man dhan hai tera, sabakuchh hai tera ।\ntera tujhako arpan, kya lage mera ॥ 6 ॥\n\ndinabandhu dukhaharta, rakshak tum mere ।\napane hath uthao, dwar khada tere ॥ 7 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "om jay jagadish hare, swami jay jagadish hare ।",
+                "bhakta jano ke sankat, das jano ke sankat",
+                "kshan me dur kare ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "jo dhyave phal pave, dukh vinase manaka ।",
+                "sukh sampatti ghar aave, kashta mite tanaka ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "mata pita tum mere, sharan padu mai kisaki ।",
+                "tum bin aur n duja, aas karu kisaki ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tum puran paramatma, tum antaryami ।",
+                "parabramha parameshwar, tum sevak swami ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tum karunake sagar, tum palanakarta ।",
+                "mai murakh phalakami, krupa karo bharata ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "vishay vikar mitavo, pap haro deva ।",
+                "shraddha bhakti badhao, santan ki seva ॥ 5 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tan man dhan hai tera, sabakuchh hai tera ।",
+                "tera tujhako arpan, kya lage mera ॥ 6 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "dinabandhu dukhaharta, rakshak tum mere ।",
+                "apane hath uthao, dwar khada tere ॥ 7 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "dhanya-dhanya-ho",
@@ -1308,7 +2399,92 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/15-dhanya-dhanya-ho.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/15-dhanya-dhanya-ho.mp3",
+          "lyricsEn": "dhanya dhanya ho pradakshina sadgururayachi\njhali twara suravara viman utarayachi ॥ dhru ॥\n\npadopadi apar jhalya punyachya rashi\nsarwahi tirthe ghadali aamha aadi karuni kashi ॥ 1 ॥\ndhanya dhanya ...\n\nmrudung tal koti bhakte bhavarthe gati\nnamasankirtane nityanande nachatati ॥ 2 ॥\ndhanya ...\n\nkoti bramha hatya harati karita dandavat\nlotangan ghalita moksha lage payat ॥ 3 ॥\ndhanya ...\n\ngurubhajanacha mahima n kale agama nigamasi\nanubhav te janati je gurupadi rahivashi ॥ 4 ॥\ndhanya ...\n\npradakshina karuni deh bhave haravila\nshrirangatmaj vitthal pudhe ubha rahila ॥ 5 ॥\ndhanya ...",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "dhanya dhanya ho pradakshina sadgururayachi",
+                "jhali twara suravara viman utarayachi ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "padopadi apar jhalya punyachya rashi",
+                "sarwahi tirthe ghadali aamha aadi karuni kashi ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "dhanya dhanya ho pradakshina sadgururayachi",
+                "jhali twara suravara viman utarayachi ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "mrudung tal koti bhakte bhavarthe gati",
+                "namasankirtane nityanande nachatati ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "dhanya dhanya ho pradakshina sadgururayachi",
+                "jhali twara suravara viman utarayachi ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "koti bramha hatya harati karita dandavat",
+                "lotangan ghalita moksha lage payat ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "dhanya dhanya ho pradakshina sadgururayachi",
+                "jhali twara suravara viman utarayachi ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "gurubhajanacha mahima n kale agama nigamasi",
+                "anubhav te janati je gurupadi rahivashi ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "dhanya dhanya ho pradakshina sadgururayachi",
+                "jhali twara suravara viman utarayachi ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "pradakshina karuni deh bhave haravila",
+                "shrirangatmaj vitthal pudhe ubha rahila ॥ 5 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "dhanya dhanya ho pradakshina sadgururayachi",
+                "jhali twara suravara viman utarayachi ॥ dhru ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "rijo-rijo",
@@ -1357,7 +2533,49 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/16-rijo-rijo.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/16-rijo-rijo.mp3",
+          "lyricsEn": "rijo rijo mara ganpati bappa rijo rijo ॥ dhru ॥\n\npila pitambar tamane paharau\nmodak ladu bappa tamane jamadu\nmaph karo lakho aparadh\nrijo rijo ॥ 1 ॥\n\nkanku kesar bappa tamane chadhau\ntel phulel bappa tamane chadhau\nmaph karo ॥ 2 ॥\n\ntara gunagan sara baluda gata\nbol ve bol bappa sane sharamata\nmaph karo ॥ 3 ॥\n\nmor mukut bappa tamane paharau\nkanthi kankan bappa tamane paharau\nmaph karo ॥ 4 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "rijo rijo mara ganpati bappa rijo rijo ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "pila pitambar tamane paharau",
+                "modak ladu bappa tamane jamadu",
+                "maph karo lakho aparadh",
+                "rijo rijo ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "kanku kesar bappa tamane chadhau",
+                "tel phulel bappa tamane chadhau",
+                "maph karo ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tara gunagan sara baluda gata",
+                "bol ve bol bappa sane sharamata",
+                "maph karo ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "mor mukut bappa tamane paharau",
+                "kanthi kankan bappa tamane paharau",
+                "maph karo ॥ 4 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "mujhe-sache-dilse",
@@ -1416,7 +2634,59 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/17-mujhe-sache-dilse.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/17-mujhe-sache-dilse.mp3",
+          "lyricsEn": "mujhe sacche dil se lagan lagi\nbhagavan milenge kabhi n kabhi ॥ dhru ॥\n\nmathura men mile, gokul me mile\nkashi me milenge kabhi n kabhi ॥ 1 ॥\n\nganga me mile, yamuna me mile\nsharayu me milenge kabhi n kabhi ॥ 2 ॥\n\nantar me mile, bhitar me mile\nmandir me milenge kabhi n kabhi ॥ 3 ॥\n\ntan me mile, dhan me mile\nman me milenge kabhi n kabhi ॥ 4 ॥\n\njangal me mile, parbat me mile\nbasti me milenge kabhi n kabhi ॥ 5 ॥\n\nbhajano me mile, haridhun me mile\nbhakto me milenge kabhi n bhi ॥ 6 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "mujhe sacche dil se lagan lagi",
+                "bhagavan milenge kabhi n kabhi ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "mathura men mile, gokul me mile",
+                "kashi me milenge kabhi n kabhi ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ganga me mile, yamuna me mile",
+                "sharayu me milenge kabhi n kabhi ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "antar me mile, bhitar me mile",
+                "mandir me milenge kabhi n kabhi ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tan me mile, dhan me mile",
+                "man me milenge kabhi n kabhi ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "jangal me mile, parbat me mile",
+                "basti me milenge kabhi n kabhi ॥ 5 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "bhajano me mile, haridhun me mile",
+                "bhakto me milenge kabhi n bhi ॥ 6 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "kabhi-ram-banke",
@@ -1473,7 +2743,57 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/19-kabhi-ram-banke.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/19-kabhi-ram-banke.mp3",
+          "lyricsEn": "kabhi ram banake kabhi shyam banake\nchale aana prabhuji chale aana ॥ dhru ॥\n\ntum ram rup me aana\nsita sath leke dhanushya hath leke\nchale aana prabhuji chale aana ॥ 1 ॥\n\ntum shyam rup me aana\nradha sath leke murali hath leke\nchale aana prabhuji chale aana ॥ 2 ॥\n\ntum shiv rup me aana\ngale sap leke damaru hath leke\nchale aana prabhuji chale aana ॥ 3 ॥\n\ntum vishnu rup me aana\nlakshmi sath leke chakra hath leke\nchale aana prabhuji chale aana ॥ 4 ॥\n\ntum ganesh rup me aana\nriddhi sath leke siddhi sath leke\nchale aana prabhuji chale aana ॥ 5 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "kabhi ram banake kabhi shyam banake",
+                "chale aana prabhuji chale aana ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tum ram rup me aana",
+                "sita sath leke dhanushya hath leke",
+                "chale aana prabhuji chale aana ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tum shyam rup me aana",
+                "radha sath leke murali hath leke",
+                "chale aana prabhuji chale aana ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tum shiv rup me aana",
+                "gale sap leke damaru hath leke",
+                "chale aana prabhuji chale aana ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tum vishnu rup me aana",
+                "lakshmi sath leke chakra hath leke",
+                "chale aana prabhuji chale aana ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tum ganesh rup me aana",
+                "riddhi sath leke siddhi sath leke",
+                "chale aana prabhuji chale aana ॥ 5 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "aarti-ramji-tumhari",
@@ -1539,6 +2859,65 @@
                 "प्राणानाथ रघुनाथ मुरारी ॥ धृ ॥"
               ]
             }
+          ],
+          "lyricsEn": "aarti ramaji tumhari\njay jay aarti ramaji tumhari\nprananath raghunath murari ॥ dhru ॥\n\naarti ramaji tumhari …\n\nmeghambar tanu shal dushela\ntulashihar gala vaijayanti mala ॥ 1 ॥\n\naarti ramaji tumhari …\n\ncharan kamal mohe rahe sita\naarti gheun aali kausalyamata ॥ 2 ॥\n\naarti ramaji tumhari …\n\nsanamukh thaye hanuman vir\naarti karit aahe das kabir ॥ 3 ॥\n\naarti ramaji tumhari …",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "aarti ramaji tumhari",
+                "jay jay aarti ramaji tumhari",
+                "prananath raghunath murari ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "meghambar tanu shal dushela",
+                "tulashihar gala vaijayanti mala ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti ramaji tumhari",
+                "jay jay aarti ramaji tumhari",
+                "prananath raghunath murari ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "charan kamal mohe rahe sita",
+                "aarti gheun aali kausalyamata ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti ramaji tumhari",
+                "jay jay aarti ramaji tumhari",
+                "prananath raghunath murari ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "sanamukh thaye hanuman vir",
+                "aarti karit aahe das kabir ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "aarti ramaji tumhari",
+                "jay jay aarti ramaji tumhari",
+                "prananath raghunath murari ॥ dhru ॥"
+              ]
+            }
           ]
         },
         {
@@ -1584,7 +2963,45 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/20-rama-rama-rama.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/20-rama-rama-rama.mp3",
+          "lyricsEn": "rama rama rama raghunandana raghunandana\nrama rama rama rama kulabhushana ॥ 1 ॥\n\nrama rama rama rama janakipate janakipate\nrama rama rama rama vimalate ॥ 2 ॥\n\nrama rama rama rama dinavatsala bhaktavatsala\nramadas mhane tujhi agamya lila ॥ 3 ॥\n\nrama rama rama rama ram rama ho ram rama ho\ntari tari tari tari tari aamha ho ॥ 4 ॥\n\ntodi todi todi todi todi bhavapash todi bhavapash\nananya sharan rami ramadas ॥ 5 ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "rama rama rama raghunandana raghunandana",
+                "rama rama rama rama kulabhushana ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "rama rama rama rama janakipate janakipate",
+                "rama rama rama rama vimalate ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "rama rama rama rama dinavatsala bhaktavatsala",
+                "ramadas mhane tujhi agamya lila ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "rama rama rama rama ram rama ho ram rama ho",
+                "tari tari tari tari tari aamha ho ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "todi todi todi todi todi bhavapash todi bhavapash",
+                "ananya sharan rami ramadas ॥ 5 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "trighunatmak-trimurti",
@@ -1661,7 +3078,77 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/5-trighunatmak-trimurti.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/5-trighunatmak-trimurti.mp3",
+          "lyricsEn": "trigunatmak traimurti datta ha jana\ntriguni avatar trailokya rana ।\nneti neti shabda n ye anumana\nsuravar munijan yogi samadhi n ye dhyana ॥ 1 ॥\njay dev jay dev jay shri gurudatta\naarti ovalita harali bhavachinta ॥ dhru ॥\n\nsabahya abhyantari tu ek datta\nabhagyasi kaisi kalel hi mat ।\nparahi paratali yethe kaicha het\njanmamaranacha puralase ant ॥ 2 ॥\njay dev ...\n\ndatta yeuniya ubha thakala\nsadabhave sashtange pranipat kela ।\nprasanna houni aashirwad didhala\njanma maranacha phera chukavila ॥ 3 ॥\njay dev ...\n\ndatta datta aise lagale dhyan\nharapale man jhale unman\nmi tu panachi jhali bolavan\neka janardani shridatta jan ॥ 4 ॥\njay dev ...",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "trigunatmak traimurti datta ha jana",
+                "triguni avatar trailokya rana ।",
+                "neti neti shabda n ye anumana",
+                "suravar munijan yogi samadhi n ye dhyana ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "lines": [
+                "jay dev jay dev jay shri gurudatta",
+                "aarti ovalita harali bhavachinta ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "sabahya abhyantari tu ek datta",
+                "abhagyasi kaisi kalel hi mat ।",
+                "parahi paratali yethe kaicha het",
+                "janmamaranacha puralase ant ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay dev jay dev jay shri gurudatta",
+                "aarti ovalita harali bhavachinta ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "datta yeuniya ubha thakala",
+                "sadabhave sashtange pranipat kela ।",
+                "prasanna houni aashirwad didhala",
+                "janma maranacha phera chukavila ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay dev jay dev jay shri gurudatta",
+                "aarti ovalita harali bhavachinta ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "datta datta aise lagale dhyan",
+                "harapale man jhale unman",
+                "mi tu panachi jhali bolavan",
+                "eka janardani shridatta jan ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay dev jay dev jay shri gurudatta",
+                "aarti ovalita harali bhavachinta ॥ dhru ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "jai-jai-dindayala",
@@ -1796,6 +3283,135 @@
                 "जय जय दिनदयाळा सत्यनारायण देवा ॥ धृ ॥"
               ]
             }
+          ],
+          "lyricsEn": "jay jay dinadayala satyanarayan deva\npancharati ovalu shripati tuj bhaktibhava ॥ jay jay ॥ dhru ॥\nvidhiyukta pujuni kariti puran shravan\nparimaladravya sahit pushpamala arpun\nghrutayukta sharkaramishrit godhumachurna\nprasad bhakshan karita prasanna tu narayan ॥ 1 ॥\n\nshatanandavipre purwi vrat he aacharile\ndaridra davaduni anti tyate mokshapada nele\ntyapasuni he vrat ya kaliyugi sakala shrut jhale\nbhavarthe pujita sarwa ichchhit labhale ॥ 2 ॥\njay jay ..\n\nsadhuvaishye santatisathi tujala prarthiyale\nichchhit purata madandh houni vrat n aacharile\ntya papane sankati paduni dukhahi bhogile\nsmruti houni aacharita vrat tya tuvanchi uddharile ॥ 3 ॥\njay jay ..\n\nprasad visaruni patibhetila kalavati geli\nkshobh tujha hotanch tayachi nauka budali\nangadhwajarayachi yapari dukhasthiti aali\nmrutavarta shataputranchi satwar karni pasarali ॥ 4 ॥\njay jay ..\n\npunarupi pujuni prasad bhakshan karita tatkshani\npatichi nauka tarali dekhe kalavati nayani\nangadhwajarayasi putra bhetati yeuni\naisa bhakta sankati pavasi tu chakrapani ॥ 5 ॥\njay jay ..\n\nananyabhave pujuni he vrat je jan aacharati\nichchhit puravisi tyate deuni santati\nsanharati bhavadurite sarwahi bandhane tutati\nraja ranka saman manuni pavasi shripati ॥ 6 ॥\njay jay ..\n\naisa tav vrat mahima apar varnu mi kaisa\nbhaktipurassar aacharati tya pavasi jagadisha\nbhaktancha kanavalu kalpadrum tu sarwesha\nmoreshwarasut vasudev tuj vinavi bhavanasha\njay jay dinadayala satyanarayan deva ॥ 7 ॥\njay jay ..",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "jay jay dinadayala satyanarayan deva",
+                "pancharati ovalu shripati tuj bhaktibhava",
+                "jay jay dinadayala satyanarayan deva ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "vidhiyukta pujuni kariti puran shravan",
+                "parimaladravya sahit pushpamala arpun",
+                "ghrutayukta sharkaramishrit godhumachurna",
+                "prasad bhakshan karita prasanna tu narayan ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "shatanandavipre purwi vrat he aacharile",
+                "daridra davaduni anti tyate mokshapada nele",
+                "tyapasuni he vrat ya kaliyugi sakala shrut jhale",
+                "bhavarthe pujita sarwa ichchhit labhale ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay jay dinadayala satyanarayan deva",
+                "pancharati ovalu shripati tuj bhaktibhava",
+                "jay jay dinadayala satyanarayan deva ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "sadhuvaishye santatisathi tujala prarthiyale",
+                "ichchhit purata madandh houni vrat n aacharile",
+                "tya papane sankati paduni dukhahi bhogile",
+                "smruti houni aacharita vrat tya tuvanchi uddharile ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay jay dinadayala satyanarayan deva",
+                "pancharati ovalu shripati tuj bhaktibhava",
+                "jay jay dinadayala satyanarayan deva ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "prasad visaruni patibhetila kalavati geli",
+                "kshobh tujha hotanch tayachi nauka budali",
+                "angadhwajarayachi yapari dukhasthiti aali",
+                "mrutavarta shataputranchi satwar karni pasarali ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay jay dinadayala satyanarayan deva",
+                "pancharati ovalu shripati tuj bhaktibhava",
+                "jay jay dinadayala satyanarayan deva ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "punarupi pujuni prasad bhakshan karita tatkshani",
+                "patichi nauka tarali dekhe kalavati nayani",
+                "angadhwajarayasi putra bhetati yeuni",
+                "aisa bhakta sankati pavasi tu chakrapani ॥ 5 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay jay dinadayala satyanarayan deva",
+                "pancharati ovalu shripati tuj bhaktibhava",
+                "jay jay dinadayala satyanarayan deva ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ananyabhave pujuni he vrat je jan aacharati",
+                "ichchhit puravisi tyate deuni santati",
+                "sanharati bhavadurite sarwahi bandhane tutati",
+                "raja ranka saman manuni pavasi shripati ॥ 6 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay jay dinadayala satyanarayan deva",
+                "pancharati ovalu shripati tuj bhaktibhava",
+                "jay jay dinadayala satyanarayan deva ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "aisa tav vrat mahima apar varnu mi kaisa",
+                "bhaktipurassar aacharati tya pavasi jagadisha",
+                "bhaktancha kanavalu kalpadrum tu sarwesha",
+                "moreshwarasut vasudev tuj vinavi bhavanasha",
+                "jay jay dinadayala satyanarayan deva ॥ 7 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "jay jay dinadayala satyanarayan deva",
+                "pancharati ovalu shripati tuj bhaktibhava",
+                "jay jay dinadayala satyanarayan deva ॥ dhru ॥"
+              ]
+            }
           ]
         },
         {
@@ -1849,7 +3465,53 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/22-shree-swami-samartha.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/22-shree-swami-samartha.mp3",
+          "lyricsEn": "shri swami samartha jay jay swami samartha\nmaharaj shri swami samartha jay jay swami samartha ॥ 1 ॥\n\nswamiraj mauli g may majhi\nswamiraj mauli ॥\nbhaktanchi savali g may majhi\nswamiraj mauli ॥ dhru ॥\n\ntu asata ge sangati\npath sare ujaluni yeti\npahat hi jahali\ng may majhi swamiraj mauli ॥ 2 ॥\n\ntan hindo bramhandat\nman ramate tujhya mathat\nhakela dhavali\ng may majhi swamiraj mauli ॥ 3 ॥\n\nswami samartha gata gata\ntav nami tallin hota\nkalpalata bhetali\ng may majhi swamiraj mauli ॥ 4 ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "shri swami samartha jay jay swami samartha",
+                "maharaj shri swami samartha jay jay swami samartha ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "refrain",
+              "lines": [
+                "swamiraj mauli g may majhi",
+                "swamiraj mauli ॥",
+                "bhaktanchi savali g may majhi",
+                "swamiraj mauli ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tu asata ge sangati",
+                "path sare ujaluni yeti",
+                "pahat hi jahali",
+                "g may majhi swamiraj mauli ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tan hindo bramhandat",
+                "man ramate tujhya mathat",
+                "hakela dhavali",
+                "g may majhi swamiraj mauli ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "swami samartha gata gata",
+                "tav nami tallin hota",
+                "kalpalata bhetali",
+                "g may majhi swamiraj mauli ॥ 4 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "ambemaate-chi-aarti",
@@ -1891,6 +3553,44 @@
               "lines": [
                 "आई ग अंबे माते केस सोनियाचा तारा",
                 "सोनियाच्या तारा वैरी कापे थरथरा ॥ ५ ॥"
+              ]
+            }
+          ],
+          "lyricsEn": "aai g ambe mate tujha sonyacha jhuba\ntujhya g darshanala raja kolhapuracha ubha ॥ 1 ॥\n\nkolhapuracha raja raja phirato jataret\nphirato jataret phule padati padarat ॥ 2 ॥\n\ntal vale dada tal vajav jomanan\nvajav jomanan ang bhijalan ghamanan ॥ 3 ॥\n\ndhol vale dada dhol vajav jorat\nvajav jorat aai hasate galat ॥ 4 ॥\n\naai g ambe mate kes soniyacha tara\nsoniyachya tara vairi kape tharathara ॥ 5 ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "aai g ambe mate tujha sonyacha jhuba",
+                "tujhya g darshanala raja kolhapuracha ubha ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "kolhapuracha raja raja phirato jataret",
+                "phirato jataret phule padati padarat ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tal vale dada tal vajav jomanan",
+                "vajav jomanan ang bhijalan ghamanan ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "dhol vale dada dhol vajav jorat",
+                "vajav jorat aai hasate galat ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "aai g ambe mate kes soniyacha tara",
+                "soniyachya tara vairi kape tharathara ॥ 5 ॥"
               ]
             }
           ]
@@ -1951,6 +3651,58 @@
                 "देव आहे एकच जाणू ॥ ६ ॥"
               ]
             }
+          ],
+          "lyricsEn": "namo gajanan namo hanuman\ngajanan hanuman doghe balavan ॥ dhru ॥\n\ngajanan mhane mi riddhi siddhi dhari\nhanuman mhane mi bal bramhachari ॥ 1 ॥\n\ngajanan mhane majhya janavyacha doda\nhanuman mhane majhya payat toda ॥ 2 ॥\n\ngajanan mhane majhya naivyedayala ladu\nhanuman mhane mala telacha gadu ॥ 3 ॥\n\ngajanan mhane mi shivagad pahila\nhanuman mhane mi lankagad jalila ॥ 4 ॥\n\ngajanan mhane mi shivacha baccha\nhanuman mhane mi ramacha shishya ॥ 5 ॥\n\nramadas mhane mi konala manu\ndev aahe ekach janu ॥ 6 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "namo gajanan namo hanuman",
+                "gajanan hanuman doghe balavan ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "gajanan mhane mi riddhi siddhi dhari",
+                "hanuman mhane mi bal bramhachari ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "gajanan mhane majhya janavyacha doda",
+                "hanuman mhane majhya payat toda ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "gajanan mhane majhya naivyedayala ladu",
+                "hanuman mhane mala telacha gadu ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "gajanan mhane mi shivagad pahila",
+                "hanuman mhane mi lankagad jalila ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "gajanan mhane mi shivacha baccha",
+                "hanuman mhane mi ramacha shishya ॥ 5 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ramadas mhane mi konala manu",
+                "dev aahe ekach janu ॥ 6 ॥"
+              ]
+            }
           ]
         },
         {
@@ -1989,7 +3741,38 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/26-hari-chala-mandira.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/26-hari-chala-mandira.mp3",
+          "lyricsEn": "hari chala mandira aisha mhanati gopika mhanati radhika\nbhave bhakti ovaliti yadav kulatilaka ॥ 1 ॥\n\nekikade rai ekikade rakhumai\nbhave ovalita hari jhala do thai ॥ 2 ॥\n\nashtadhik sola sahastra jyachya sundara\njya jyanni prarthila gela tayanchiya ghara ॥ 3 ॥\n\neka janardani hari tu laghavi hoshi\nitukyahi bhoguni brahmachari mhanavishi ॥ 4 ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "hari chala mandira aisha mhanati gopika mhanati radhika",
+                "bhave bhakti ovaliti yadav kulatilaka ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ekikade rai ekikade rakhumai",
+                "bhave ovalita hari jhala do thai ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ashtadhik sola sahastra jyachya sundara",
+                "jya jyanni prarthila gela tayanchiya ghara ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "eka janardani hari tu laghavi hoshi",
+                "itukyahi bhoguni brahmachari mhanavishi ॥ 4 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "dhupadipa-jhala-aata",
@@ -2034,7 +3817,45 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/28-dhupadipa-jhala-aata.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/28-dhupadipa-jhala-aata.mp3",
+          "lyricsEn": "dhupadip jhala aata karpur aarti\nratnajadit sinhasani\nshri mangalmurti ॥ dhru ॥\n\nkarpuravadisam manas majhe\nnirmal rahu de\nkarpuravadisam bhavabhakticha\nsugandh daravalu de ॥ 1 ॥\n\nmukhi nam netri dhyan\nhrudayi tav murti\nkarpurachi lavuni jyoti\npahin tav murti ॥ 2 ॥\n\ndnyan kalena dhyan kalena\nna kale kahi\nshabdarupi gumphuni mala\nvahato tav payi ॥ 3 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "dhupadip jhala aata karpur aarti",
+                "ratnajadit sinhasani",
+                "shri mangalmurti ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "karpuravadisam manas majhe",
+                "nirmal rahu de",
+                "karpuravadisam bhavabhakticha",
+                "sugandh daravalu de ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "mukhi nam netri dhyan",
+                "hrudayi tav murti",
+                "karpurachi lavuni jyoti",
+                "pahin tav murti ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "dnyan kalena dhyan kalena",
+                "na kale kahi",
+                "shabdarupi gumphuni mala",
+                "vahato tav payi ॥ 3 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "aata-swami-sukhe-nidra",
@@ -2093,7 +3914,59 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/14-aata-swami-sukhe-nidra.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/14-aata-swami-sukhe-nidra.mp3",
+          "lyricsEn": "aata swami sukhe nidra kara avadhuta kara avadhuta\nchinmay sukhadhama, jauni pahuda ekanta ॥ dhru ॥\n\nvairagyacha kuncha gheuni chauk jhadila\ntayavari supremacha shidakava didhala ॥ 1 ॥\n\npayaghadya ghatalya sundar navavidha bhakti\ndnyanachya samaya ujaluni laviyalya jyoti ॥ 2 ॥\n\naasha trushna kalpanancha sanduni galabala\ndaya kshama shanti dasi ubhya sevela ॥ 3 ॥\n\ndwaitache kapat lavuni ekachi kele\ndurbuddhichya gathi soduni padade sodiyale ॥ 4 ॥\n\nbhavarthacha manchak hrudayakashi tangila\nmanachi sumane joduni kele shejela ॥ 5 ॥\n\nalakshya unmani ghevuni najuk dushela\nniranjani sadguru majha niji nijela ॥ 6 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "aata swami sukhe nidra kara avadhuta kara avadhuta",
+                "chinmay sukhadhama, jauni pahuda ekanta ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "vairagyacha kuncha gheuni chauk jhadila",
+                "tayavari supremacha shidakava didhala ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "payaghadya ghatalya sundar navavidha bhakti",
+                "dnyanachya samaya ujaluni laviyalya jyoti ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "aasha trushna kalpanancha sanduni galabala",
+                "daya kshama shanti dasi ubhya sevela ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "dwaitache kapat lavuni ekachi kele",
+                "durbuddhichya gathi soduni padade sodiyale ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "bhavarthacha manchak hrudayakashi tangila",
+                "manachi sumane joduni kele shejela ॥ 5 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "alakshya unmani ghevuni najuk dushela",
+                "niranjani sadguru majha niji nijela ॥ 6 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "shevat-god-kari",
@@ -2134,7 +4007,41 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/29-shevat-god-kari.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/29-shevat-god-kari.mp3",
+          "lyricsEn": "shevat god kari\nbappa shevat god kari ॥ dhru ॥\n\ntan man dhan aasha\narpili charani\nkartutwa nahi uri ॥ 1 ॥\n\nn lage bhakti\nn lage mukti\nbhajani prit khari ॥ 2 ॥\n\ngajavadana tu\nswami bappa\nharimaj nen kari ॥ 3 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "shevat god kari",
+                "bappa shevat god kari ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tan man dhan aasha",
+                "arpili charani",
+                "kartutwa nahi uri ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "n lage bhakti",
+                "n lage mukti",
+                "bhajani prit khari ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "gajavadana tu",
+                "swami bappa",
+                "harimaj nen kari ॥ 3 ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "jahale-bhajan",
@@ -2176,6 +4083,44 @@
               "lines": [
                 "निरंतर आमुची चिंता तुम्हां असावी चिंता तुम्हा असावी",
                 "आम्हां सर्वांची लज्जा देवा तुम्ही रक्षावी ॥ ४ ॥"
+              ]
+            }
+          ],
+          "lyricsEn": "jahale bhajan aamhi namito tav charan ।\nvaruniya vighne deva rakshave dina ॥ dhru ॥\n\ndas tujhe aamhi deva tujalachi dhyato\npreme karuniya deva gun tujhechi gato ॥ 1 ॥\n\nmagane te deva ekachi aahe aata ekachi aahe\ntaruniyan sakalan aamhan krupadrushti pahe ॥ 2 ॥\n\nvaruniya sankate aata aamuchi sari aata aamuchi sari\nkrupechi sauli deva dinavari kari ॥ 3 ॥\n\nnirantar aamuchi chinta tumhan asavi chinta tumha asavi\naamhan sarwanchi lajja deva tumhi rakshavi ॥ 4 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "jahale bhajan aamhi namito tav charan ।",
+                "varuniya vighne deva rakshave dina ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "das tujhe aamhi deva tujalachi dhyato",
+                "preme karuniya deva gun tujhechi gato ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "magane te deva ekachi aahe aata ekachi aahe",
+                "taruniyan sakalan aamhan krupadrushti pahe ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "varuniya sankate aata aamuchi sari aata aamuchi sari",
+                "krupechi sauli deva dinavari kari ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "nirantar aamuchi chinta tumhan asavi chinta tumha asavi",
+                "aamhan sarwanchi lajja deva tumhi rakshavi ॥ 4 ॥"
               ]
             }
           ]
@@ -2233,7 +4178,55 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/aarti/30-ghalin-lotangan.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/aarti/30-ghalin-lotangan.mp3",
+          "lyricsEn": "ghalin lotangan vandin charan ।\ndolyanni pahin rup tujhe ॥\npreme aalingan aanande pujin ।\nbhave ovalin mhane nama ॥ 1 ॥\n\ntwamev mata ch pita twamev ।\ntwamev bandhushcha sakha twamev ॥\ntwamev vidya dravidam twamev ।\ntwamev sarwa mam dev dev ॥ 2 ॥\n\nkayen vacha manasendriyayairwa ।\nbudhyatmana va prakrutiswabhavat ॥\nkaroni yadyat sakalan parasmai ।\nnarayanayeti samarpayami ॥ 3 ॥\n\nachyutan keshavan ramanarayan ।\nkrushna damodaran vasudevan harim ॥\nshridharan madhavan gopikavallabhan ।\njanakinayakan ramachandram bhaje ॥ 4 ॥\n\nhare ram hare ram\nram ram hare hare ।\nhare krushna hare krushna\nkrushna krushna hare hare ॥ 5 ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "ghalin lotangan vandin charan ।",
+                "dolyanni pahin rup tujhe ॥",
+                "preme aalingan aanande pujin ।",
+                "bhave ovalin mhane nama ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "twamev mata ch pita twamev ।",
+                "twamev bandhushcha sakha twamev ॥",
+                "twamev vidya dravidam twamev ।",
+                "twamev sarwa mam dev dev ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "kayen vacha manasendriyayairwa ।",
+                "budhyatmana va prakrutiswabhavat ॥",
+                "karoni yadyat sakalan parasmai ।",
+                "narayanayeti samarpayami ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "achyutan keshavan ramanarayan ।",
+                "krushna damodaran vasudevan harim ॥",
+                "shridharan madhavan gopikavallabhan ।",
+                "janakinayakan ramachandram bhaje ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "hare ram hare ram",
+                "ram ram hare hare ।",
+                "hare krushna hare krushna",
+                "krushna krushna hare hare ॥ 5 ॥"
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2279,6 +4272,40 @@
                 "नामदेव चोखामेळा संत थोर झाले",
                 "भोळी भक्ती तुकोबाची वैकुंठाला गेले",
                 "दास विनवी देवा जोडुनी तुजला हात ॥ ३ ॥"
+              ]
+            }
+          ],
+          "lyricsEn": "vahe chandrabhaga tuka dang bhajanat\npandharichya natha tula majha dandavat ॥ dhru ॥\n\naashadhi kartiki ekadashila\nsadhusant yeti deva tujhya darshanala\nabir bukka vahu deva tujhya charanat ॥ 1 ॥\n\nyethe tal mrudungacha hoto gajar\ndumadumala re deva tujha darabar\nlakho sant yeti deva tujhya devalat ॥ 2 ॥\n\nnamadev chokhamela sant thor jhale\nbholi bhakti tukobachi vaikunthala gele\ndas vinavi deva joduni tujala hat ॥ 3 ॥",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "vahe chandrabhaga tuka dang bhajanat",
+                "pandharichya natha tula majha dandavat ॥ dhru ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "aashadhi kartiki ekadashila",
+                "sadhusant yeti deva tujhya darshanala",
+                "abir bukka vahu deva tujhya charanat ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "yethe tal mrudungacha hoto gajar",
+                "dumadumala re deva tujha darabar",
+                "lakho sant yeti deva tujhya devalat ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "namadev chokhamela sant thor jhale",
+                "bholi bhakti tukobachi vaikunthala gele",
+                "das vinavi deva joduni tujala hat ॥ 3 ॥"
               ]
             }
           ]
@@ -2347,7 +4374,58 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/gajar/1-ashthavinayak.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/gajar/1-ashthavinayak.mp3",
+          "lyricsEn": "moraya moraya moreshwar moraya\n\nmoraya moraya chintamani moraya\n\nmoraya moraya siddhivinayak moraya\n\nmoraya moraya mahaganapati moraya\n\nmoraya moraya vighneshwar moraya\n\nmoraya moraya girijatmaj moraya\n\nmoraya moraya varadavinayak moraya\n\nmoraya moraya ballaleshwar moraya",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "moraya moraya moreshwar moraya"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "moraya moraya chintamani moraya"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "moraya moraya siddhivinayak moraya"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "moraya moraya mahaganapati moraya"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "moraya moraya vighneshwar moraya"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "moraya moraya girijatmaj moraya"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "moraya moraya varadavinayak moraya"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "moraya moraya ballaleshwar moraya"
+              ]
+            }
+          ]
         },
         {
           "id": "gajar-mala",
@@ -2575,6 +4653,228 @@
                 "करा राम राम ।"
               ]
             }
+          ],
+          "lyricsEn": "ganpati aale ghara ।\nmanobhave puja kara ।\n\nundaravar baisoni\nindrachya darabari ।\nghasaruni padali swari\n\nchandra hasala bhari ।\n\nkapali keshari gandh ganesha tujha mala chhand\n\nparwatichya nandana moraya gajanana ba gajanana\n\ntu gajavadana tu mushakavana parwatichya sukumar re\ntula modak aavade phar re\n\ndam dam damaru vaje damaruchya talavar moraya nache\nghan ghan ghanta vaje ghantechya talavar moraya nache\n\npavana shambho pavana shambho\npavana shambhu patit pavana shambho\n\npavana bappa pavana bappa\npavana bappa patit pavana bappa\n\nye vanamali savalya narayan hari\nya bhaktajananchya payi\nsavalya ye vanamali\n\nvandila jo jo vandila jo jo\nvandila jo aaj mya vandi jo jo\n\nhari bhajani mor nachato angani payakade pahuni\n\ngovind bolo hari gopal bolo ।\nradha raman hari gopal bolo ।\n\nraghupati raghav rajaram ।\npatit pavan sitaram ।\n\nram lakshman janaki ।\njay bolo hanuman ki ।\n\nudala udala lanka jalun aala to ha maruti\n\nkaravir vasini ambe ambe yei ho jagadambe..\n\nradheshyam radheshyam\nsitaram sitaram\ntu radheshyam radhe sham radhe sham bol\ntu sitaram sitaram sitaram bol\n\ngajanana ba dayasagara\nkrupa kari majavari\nkrupa kari majavari\nhe mastak thevito charananvari ।\n\ntal vaje vina vaje\nvaje mrudung\ntalachya nadat gajanan\nnachanyat dang ।\n\ngajananachi aavad mothi\ndhavat aalo aaratisathi\n\nhirava chapha pivali phule\ntyat gumphala tura ।\nparwaticha putra gajanan\ntyachi seva kara ।\n\nom gan ganapataye namo nam\nsiddhivinayak namo nam\nashtavinayak namo nam\nganapati bappa moraya\n\nchandrabhagela pur aala\npani lagale kathala ।\nparwati mhane shankarala\nganpati majha nighala ।\n\nkiti aanand re kiti aanand re\nsangu re herambha ।\ntujhya namachi re tujhya namachi re\njhulajhul vahe ganga ।\n\ndeva ho deva ganpati deva\nbhakti aahe thor tujhi bhakti aahe thor ।\n\ndeva ho deva ganpati deva\nteri jayajayakar । deva teri jayajayakar ।\naaj tumhare bhaktajanome\nkar do beda par ।\n\ngajanana ba dayasagara\nde aamha varadan\nde aamha varadan\nakhand raho hindusthan ।\n\nvarakari ho santamandali\nkara evadhe kam\nsahakarachya ya ganapatila\nkara ram ram ।",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "ganpati aale ghara ।",
+                "manobhave puja kara ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "undaravar baisoni",
+                "indrachya darabari ।",
+                "ghasaruni padali swari"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "chandra hasala bhari ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "kapali keshari gandh ganesha tujha mala chhand"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "parwatichya nandana moraya gajanana ba gajanana"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tu gajavadana tu mushakavana parwatichya sukumar re",
+                "tula modak aavade phar re"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "dam dam damaru vaje damaruchya talavar moraya nache",
+                "ghan ghan ghanta vaje ghantechya talavar moraya nache"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "pavana shambho pavana shambho",
+                "pavana shambhu patit pavana shambho"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "pavana bappa pavana bappa",
+                "pavana bappa patit pavana bappa"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ye vanamali savalya narayan hari",
+                "ya bhaktajananchya payi",
+                "savalya ye vanamali"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "vandila jo jo vandila jo jo",
+                "vandila jo aaj mya vandi jo jo"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "hari bhajani mor nachato angani payakade pahuni"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "govind bolo hari gopal bolo ।",
+                "radha raman hari gopal bolo ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "raghupati raghav rajaram ।",
+                "patit pavan sitaram ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ram lakshman janaki ।",
+                "jay bolo hanuman ki ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "udala udala lanka jalun aala to ha maruti"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "karavir vasini ambe ambe yei ho jagadambe.."
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "radheshyam radheshyam",
+                "sitaram sitaram",
+                "tu radheshyam radhe sham radhe sham bol",
+                "tu sitaram sitaram sitaram bol"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "gajanana ba dayasagara",
+                "krupa kari majavari",
+                "krupa kari majavari",
+                "he mastak thevito charananvari ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "tal vaje vina vaje",
+                "vaje mrudung",
+                "talachya nadat gajanan",
+                "nachanyat dang ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "gajananachi aavad mothi",
+                "dhavat aalo aaratisathi"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "hirava chapha pivali phule",
+                "tyat gumphala tura ।",
+                "parwaticha putra gajanan",
+                "tyachi seva kara ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "om gan ganapataye namo nam",
+                "siddhivinayak namo nam",
+                "ashtavinayak namo nam",
+                "ganapati bappa moraya"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "chandrabhagela pur aala",
+                "pani lagale kathala ।",
+                "parwati mhane shankarala",
+                "ganpati majha nighala ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "kiti aanand re kiti aanand re",
+                "sangu re herambha ।",
+                "tujhya namachi re tujhya namachi re",
+                "jhulajhul vahe ganga ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "deva ho deva ganpati deva",
+                "bhakti aahe thor tujhi bhakti aahe thor ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "deva ho deva ganpati deva",
+                "teri jayajayakar । deva teri jayajayakar ।",
+                "aaj tumhare bhaktajanome",
+                "kar do beda par ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "gajanana ba dayasagara",
+                "de aamha varadan",
+                "de aamha varadan",
+                "akhand raho hindusthan ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "varakari ho santamandali",
+                "kara evadhe kam",
+                "sahakarachya ya ganapatila",
+                "kara ram ram ।"
+              ]
+            }
           ]
         },
         {
@@ -2653,6 +4953,78 @@
                 "या संतांचा संतांचा मेळा गोपाळांचा डाव मांडीला ।"
               ]
             }
+          ],
+          "lyricsEn": "vithucha gajar harinamacha jhenda rovila...\n\nya vithucha gajar harinamacha jhenda rovila ।\nya santancha santancha mela gopalancha dav mandila ।\nya vithucha...\n\nkaul ghetala lihun shambhar varshe jan\nnangar dharila satwacha bail man pavanacha\ndav mandila...\nya vithucha...\n\nukhalna premachi kadhali\nswastha basuni sadgurujavali\npyala ghetala dnyanacha toch amrutacha\ndav mandila...\nya vithucha...\n\npanchatatwanchi gophan krodh pakhare\njan dhonda ghetala dnyanacha karitase jagaran\nkeshavadas mhane santancha\nmela gopalacha\n\ndav mandila...\nya vithucha...",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "vithucha gajar harinamacha jhenda rovila..."
+              ]
+            },
+            {
+              "role": "refrain",
+              "lines": [
+                "ya vithucha gajar harinamacha jhenda rovila ।",
+                "ya santancha santancha mela gopalancha dav mandila ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "kaul ghetala lihun shambhar varshe jan",
+                "nangar dharila satwacha bail man pavanacha",
+                "dav mandila..."
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "ya vithucha gajar harinamacha jhenda rovila ।",
+                "ya santancha santancha mela gopalancha dav mandila ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ukhalna premachi kadhali",
+                "swastha basuni sadgurujavali",
+                "pyala ghetala dnyanacha toch amrutacha",
+                "dav mandila..."
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "ya vithucha gajar harinamacha jhenda rovila ।",
+                "ya santancha santancha mela gopalancha dav mandila ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "panchatatwanchi gophan krodh pakhare",
+                "jan dhonda ghetala dnyanacha karitase jagaran",
+                "keshavadas mhane santancha",
+                "mela gopalacha"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "dav mandila..."
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "ya vithucha gajar harinamacha jhenda rovila ।",
+                "ya santancha santancha mela gopalancha dav mandila ।"
+              ]
+            }
           ]
         },
         {
@@ -2694,6 +5066,41 @@
                 "वंदिला जो जो"
               ]
             }
+          ],
+          "lyricsEn": "pavana shambho pavana shambho\npavana shambho patit pavana shambho\n\npavana bappa pavana bappa\npavana bappa patit pavana bappa\n\nye ye vanamali\nsavalya narayan hari\nya bhakta janachya payi\nsavalya ye ye vanamali\n\nvandila jo jo\nvandila jo jo\nvandila jo jo aaj mya\nvandila jo jo",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "pavana shambho pavana shambho",
+                "pavana shambho patit pavana shambho"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "pavana bappa pavana bappa",
+                "pavana bappa patit pavana bappa"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ye ye vanamali",
+                "savalya narayan hari",
+                "ya bhakta janachya payi",
+                "savalya ye ye vanamali"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "vandila jo jo",
+                "vandila jo jo",
+                "vandila jo jo aaj mya",
+                "vandila jo jo"
+              ]
+            }
           ]
         },
         {
@@ -2713,6 +5120,21 @@
                 "बात बात पे बात लडाई",
                 "इसी बातोंका मचा दिया शोर",
                 "तू राधेश्याम … ।"
+              ]
+            }
+          ],
+          "lyricsEn": "radheshyam\nsitaram\nnatkhat hai kisan kanhai\narjun ko tune gita suni\nbat bat pe bat ladai\nisi batonka macha diya shor\ntu radheshyam … ।",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "radheshyam",
+                "sitaram",
+                "natkhat hai kisan kanhai",
+                "arjun ko tune gita suni",
+                "bat bat pe bat ladai",
+                "isi batonka macha diya shor",
+                "tu radheshyam … ।"
               ]
             }
           ]
@@ -2742,7 +5164,19 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/shlok/1-sada-sarvada.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/shlok/1-sada-sarvada.mp3",
+          "lyricsEn": "sada sarwada yog tujha ghadava\ntujhe karani deh majha padava ।\nupekshu nako gunavanta ananta\nraghunayaka magane hechi aata ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "sada sarwada yog tujha ghadava",
+                "tujhe karani deh majha padava ।",
+                "upekshu nako gunavanta ananta",
+                "raghunayaka magane hechi aata ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "morya-morya",
@@ -2761,7 +5195,19 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/shlok/2-moraya-moraya.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/shlok/2-moraya-moraya.mp3",
+          "lyricsEn": "moraya moraya mi bal tanhen\ntujhich seva karu kay jane ।\nanyay majhe kotyanakoti\nmoreshwara ba tu ghal poti ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "moraya moraya mi bal tanhen",
+                "tujhich seva karu kay jane ।",
+                "anyay majhe kotyanakoti",
+                "moreshwara ba tu ghal poti ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "kailas-rana",
@@ -2777,6 +5223,18 @@
                 "फणींद्र माथा मुकुटी झळाळी ।",
                 "कारुण्य सिंधू भवदु:खहारी",
                 "तुजवीण शंभो मज कोण तारी ॥"
+              ]
+            }
+          ],
+          "lyricsEn": "kailas rana shiv chandramauli\nphanindra matha mukuti jhalali ।\nkarunya sindhu bhavadukhahari\ntujavin shambho maj kon tari ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "kailas rana shiv chandramauli",
+                "phanindra matha mukuti jhalali ।",
+                "karunya sindhu bhavadukhahari",
+                "tujavin shambho maj kon tari ॥"
               ]
             }
           ]
@@ -2795,6 +5253,18 @@
                 "तिथे नांदतो ज्ञानराजा सुपात्र ।",
                 "तया आठविता महापुण्यराशी",
                 "नमस्कार माझा सदगुरु ज्ञानेश्वराशी ॥"
+              ]
+            }
+          ],
+          "lyricsEn": "alankapuri punya bhumi pavitra\ntithe nandato dnyanaraja supatra ।\ntaya aathavita mahapunyarashi\nnamaskar majha sadaguru dnyaneshwarashi ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "alankapuri punya bhumi pavitra",
+                "tithe nandato dnyanaraja supatra ।",
+                "taya aathavita mahapunyarashi",
+                "namaskar majha sadaguru dnyaneshwarashi ॥"
               ]
             }
           ]
@@ -2816,7 +5286,19 @@
               ]
             }
           ],
-          "audio": "https://adityamhamunkar.com/bappamusic/shlok/5-jya-jya-thikani.mp3"
+          "audio": "https://adityamhamunkar.com/bappamusic/shlok/5-jya-jya-thikani.mp3",
+          "lyricsEn": "jya jya thikani man jay majhe\ntya tya thikani nijarup tujhe ।\nmi thevito mastak jya thikani\ntethe tujhe sadaguru pay donhi ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "jya jya thikani man jay majhe",
+                "tya tya thikani nijarup tujhe ।",
+                "mi thevito mastak jya thikani",
+                "tethe tujhe sadaguru pay donhi ॥"
+              ]
+            }
+          ]
         },
         {
           "id": "ganadhish-jo-ish",
@@ -2832,6 +5314,18 @@
                 "मुळारंभ आरंभ तो निर्गुणाचा ॥",
                 "नमूं शारदा मूळ चत्वार वाचा ।",
                 "गमूं पंथ आनंत या राघवाचा ॥ १ ॥"
+              ]
+            }
+          ],
+          "lyricsEn": "ganadhish jo ish sarwan gunancha ।\nmularambh aarambh to nirgunacha ॥\nnamun sharada mul chatwar vacha ।\ngamun panth aanant ya raghavacha ॥ 1 ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "ganadhish jo ish sarwan gunancha ।",
+                "mularambh aarambh to nirgunacha ॥",
+                "namun sharada mul chatwar vacha ।",
+                "gamun panth aanant ya raghavacha ॥ 1 ॥"
               ]
             }
           ]
@@ -2850,6 +5344,16 @@
                 "निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥"
               ]
             }
+          ],
+          "lyricsEn": "vakratund mahakay suryakoti samaprabh ।\nnirwighnan kuru me dev sarwakaryeshu sarwada ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "vakratund mahakay suryakoti samaprabh ।",
+                "nirwighnan kuru me dev sarwakaryeshu sarwada ॥"
+              ]
+            }
           ]
         },
         {
@@ -2866,6 +5370,18 @@
                 "माथा शेंदूर पाझरे वरी वरे, दूर्वांकुरांचे तुरे ॥",
                 "माझे चित्त विरे मनोरथ पुरे, देखोनी चिंता हरे ।",
                 "गोसावीसुत वासुदेव कवी रे, त्या मोरयाला स्मरे ॥"
+              ]
+            }
+          ],
+          "lyricsEn": "netri don hire prakash pasare, atyant te sajire ।\nmatha shendur pajhare vari vare, durwankuranche ture ॥\nmajhe chitta vire manorath pure, dekhoni chinta hare ।\ngosavisut vasudev kavi re, tya morayala smare ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "netri don hire prakash pasare, atyant te sajire ।",
+                "matha shendur pajhare vari vare, durwankuranche ture ॥",
+                "majhe chitta vire manorath pure, dekhoni chinta hare ।",
+                "gosavisut vasudev kavi re, tya morayala smare ॥"
               ]
             }
           ]
@@ -2933,6 +5449,65 @@
                 "तस्य विद्या भवेत्सर्वा गणेशस्य प्रसादत: ॥ ८ ॥"
               ]
             }
+          ],
+          "lyricsEn": "pranamyan shirasa dev gauriputran vinayakam ।\nbhaktavasan smarainityammayukamarthasiddhaye ॥ 1 ॥\n\nprathaman vakratundanch ekadantan dwitiyakam ।\ntrutiyan krushnan pinakshan gajavaktran chaturthakam ॥ 2 ॥\n\nlambodaran panchaman ch shashthan vikatamev ch ।\nsaptaman vighnarajendran dhumravarna tathashtakam ॥ 3 ॥\n\nnavaman bhalachandran ch dashaman tu vinayakam ।\nekadashan ganapatin dwadashan tu gajananam ॥ 4 ॥\n\ndwadashaitani namani trisandhya y pathennar ।\nn ch vighnabhayan tasya sarwasiddhikaran prabho ॥ 5 ॥\n\nvidyarthi labhate vidyan dhanarthi labhate dhanam ।\nputrarthi labhate putran moksharthi labhate gatim ॥ 6 ॥\n\njapedwaganapatistotran shadbhirmasai phalan labhet ।\nsanvatsaren siddhin ch labhate natra sanshay ॥ 7 ॥\n\nashtabhyo brahmanebhyashcha likhitwan y samarpayet ।\ntasya vidya bhavetsarwa ganeshasya prasadat ॥ 8 ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "pranamyan shirasa dev gauriputran vinayakam ।",
+                "bhaktavasan smarainityammayukamarthasiddhaye ॥ 1 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "prathaman vakratundanch ekadantan dwitiyakam ।",
+                "trutiyan krushnan pinakshan gajavaktran chaturthakam ॥ 2 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "lambodaran panchaman ch shashthan vikatamev ch ।",
+                "saptaman vighnarajendran dhumravarna tathashtakam ॥ 3 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "navaman bhalachandran ch dashaman tu vinayakam ।",
+                "ekadashan ganapatin dwadashan tu gajananam ॥ 4 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "dwadashaitani namani trisandhya y pathennar ।",
+                "n ch vighnabhayan tasya sarwasiddhikaran prabho ॥ 5 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "vidyarthi labhate vidyan dhanarthi labhate dhanam ।",
+                "putrarthi labhate putran moksharthi labhate gatim ॥ 6 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "japedwaganapatistotran shadbhirmasai phalan labhet ।",
+                "sanvatsaren siddhin ch labhate natra sanshay ॥ 7 ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ashtabhyo brahmanebhyashcha likhitwan y samarpayet ।",
+                "tasya vidya bhavetsarwa ganeshasya prasadat ॥ 8 ॥"
+              ]
+            }
           ]
         },
         {
@@ -2979,6 +5554,46 @@
                 "मंत्रपुष्पांजली समर्पयामि ॥"
               ]
             }
+          ],
+          "lyricsEn": "om yadnyen yadnyamayajanta devastani dharmani prathamanyasan ।\n\nte h nakan mahiman  sachant yatra purwe sadhya  santi deva  ॥\nom rajadhirajay prasahya sahine ।\nnamo vayan vaishravanay kurmahe ।\ns me kaman kam kamay mahyan ।\nkameshrwaro vaishravano dadatu kuberay vaishravanay ।\nmaharajay nam ।\nom swasti । samrajyan bhaujyan swarajyan\nvairajyan parameshthyan rajyan maharajyamadhipatyamayan\nsamantaparyayisyat sarwabhaim sarwayush aan\ntadaparardhat pruthivyai samudraparyantaya ekaraliti\ntadapyesh shloko bhigito marut pariveshtaro\nmarutasyavasan gruhe ।\naavikshitasya kamaprerwishrwedeva sabhasad iti ॥\n\nekadantayavighmahe vakratunday dhimahi ।\ntannodanti prachodayat ।\n\nmantrapushpanjali samarpayami ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "om yadnyen yadnyamayajanta devastani dharmani prathamanyasan ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "te h nakan mahiman  sachant yatra purwe sadhya  santi deva  ॥",
+                "om rajadhirajay prasahya sahine ।",
+                "namo vayan vaishravanay kurmahe ।",
+                "s me kaman kam kamay mahyan ।",
+                "kameshrwaro vaishravano dadatu kuberay vaishravanay ।",
+                "maharajay nam ।",
+                "om swasti । samrajyan bhaujyan swarajyan",
+                "vairajyan parameshthyan rajyan maharajyamadhipatyamayan",
+                "samantaparyayisyat sarwabhaim sarwayush aan",
+                "tadaparardhat pruthivyai samudraparyantaya ekaraliti",
+                "tadapyesh shloko bhigito marut pariveshtaro",
+                "marutasyavasan gruhe ।",
+                "aavikshitasya kamaprerwishrwedeva sabhasad iti ॥"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ekadantayavighmahe vakratunday dhimahi ।",
+                "tannodanti prachodayat ।"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "mantrapushpanjali samarpayami ॥"
+              ]
+            }
           ]
         }
       ]
@@ -3010,6 +5625,23 @@
                 "शुभमंगल सावधान..."
               ]
             }
+          ],
+          "lyricsEn": "swastishri gananayakan gajamukhan,\nmoreshwaran siddhidam‌\nballalan murudan vinayak madhan,\nchintamanin thevaram‌\nlenyandrin girijatmajan suvaradan,\nvighneshwaran ojharam‌\ngramoranjan sansthito ganpati,\nkuryat‌ sada mangalam‌\nshubhmangal savadhan...",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "swastishri gananayakan gajamukhan,",
+                "moreshwaran siddhidam‌",
+                "ballalan murudan vinayak madhan,",
+                "chintamanin thevaram‌",
+                "lenyandrin girijatmajan suvaradan,",
+                "vighneshwaran ojharam‌",
+                "gramoranjan sansthito ganpati,",
+                "kuryat‌ sada mangalam‌",
+                "shubhmangal savadhan..."
+              ]
+            }
           ]
         },
         {
@@ -3031,6 +5663,23 @@
                 "पाचूचे पदक स्थळी स्मरमनी,",
                 "श्री देवकीनंदना",
                 "शुभमंगल सावधान..."
+              ]
+            }
+          ],
+          "lyricsEn": "malakar paraspare kar gala,\nghaloni gopangana\ngati nachati pahati avaghiya,\neka jagajjivana\nsonyache mani ovile bhujaguni,\ngorya shashankanana\npachuche padak sthali smaramani,\nshri devakinandana\nshubhmangal savadhan...",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "malakar paraspare kar gala,",
+                "ghaloni gopangana",
+                "gati nachati pahati avaghiya,",
+                "eka jagajjivana",
+                "sonyache mani ovile bhujaguni,",
+                "gorya shashankanana",
+                "pachuche padak sthali smaramani,",
+                "shri devakinandana",
+                "shubhmangal savadhan..."
               ]
             }
           ]
@@ -3056,6 +5705,23 @@
                 "शुभमंगल सावधान..."
               ]
             }
+          ],
+          "lyricsEn": "mothe dond kati phanindra barava,\nbhali shashi shobhato\nhasti ankush laddu padam parashu ,\ndanti hira jhalakato\npayi painjan ghagari runajhuni,\npreme bara nachato\naisa dev ganesh to vadhuvara,\nkuryat sada mangalam\nshubhmangal savadhan...",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "mothe dond kati phanindra barava,",
+                "bhali shashi shobhato",
+                "hasti ankush laddu padam parashu ,",
+                "danti hira jhalakato",
+                "payi painjan ghagari runajhuni,",
+                "preme bara nachato",
+                "aisa dev ganesh to vadhuvara,",
+                "kuryat sada mangalam",
+                "shubhmangal savadhan..."
+              ]
+            }
           ]
         },
         {
@@ -3076,6 +5742,22 @@
                 "ख्याता गया गंडकी",
                 "पूर्णा पूर्ण जलैः समुद्र सरिता,",
                 "कुर्यातसदा मंगलम..."
+              ]
+            }
+          ],
+          "lyricsEn": "ganga sindhu saraswati ch yamuna,\ngodavari narmada\nkaveri sharayu mahendratanaya\nsharmanwati vedika\nkshipra vetravati mahasur nadi,\nkhyata gaya gandaki\npurna purna jalai samudra sarita,\nkuryatasada mangalam...",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "ganga sindhu saraswati ch yamuna,",
+                "godavari narmada",
+                "kaveri sharayu mahendratanaya",
+                "sharmanwati vedika",
+                "kshipra vetravati mahasur nadi,",
+                "khyata gaya gandaki",
+                "purna purna jalai samudra sarita,",
+                "kuryatasada mangalam..."
               ]
             }
           ]
@@ -3101,6 +5783,23 @@
                 "शुभमंगल सावधान..."
               ]
             }
+          ],
+          "lyricsEn": "aali lagnaghati samip navara,\nghevoni yava ghara\ngruhayokte madhuparka pujan kara,\naantarapata te dhara\ndrushta drushta vadhuvara n karata,\ndoghe karavi ubhi\nvajantren bahu galabala n karane,\nkuryat sada mangalam\nshubhmangal savadhan...",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "aali lagnaghati samip navara,",
+                "ghevoni yava ghara",
+                "gruhayokte madhuparka pujan kara,",
+                "aantarapata te dhara",
+                "drushta drushta vadhuvara n karata,",
+                "doghe karavi ubhi",
+                "vajantren bahu galabala n karane,",
+                "kuryat sada mangalam",
+                "shubhmangal savadhan..."
+              ]
+            }
           ]
         },
         {
@@ -3119,6 +5818,20 @@
                 "दिरांना आपुलेच बंधू समजे, जावा नंणदासवे",
                 "ऐशाने तुजलाच लोक म्हणती, आदर्श आहे खरी",
                 "शुभमंगल सावधान"
+              ]
+            }
+          ],
+          "lyricsEn": "lagnacha shubhayog aaj ghadato, ye balike vatsale\njaisi tu pitaya gruhech aapulya, aaisave rahili\ntaisi tu swasuragruhech aapulya, sasusave rahije\ndiranna aapulech bandhu samaje, java nannadasave\naishane tujalach lok mhanati, aadarsha aahe khari\nshubhmangal savadhan",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "lagnacha shubhayog aaj ghadato, ye balike vatsale",
+                "jaisi tu pitaya gruhech aapulya, aaisave rahili",
+                "taisi tu swasuragruhech aapulya, sasusave rahije",
+                "diranna aapulech bandhu samaje, java nannadasave",
+                "aishane tujalach lok mhanati, aadarsha aahe khari",
+                "shubhmangal savadhan"
               ]
             }
           ]
@@ -3140,6 +5853,19 @@
                 "शुभमंगल सावधान"
               ]
             }
+          ],
+          "lyricsEn": "sonyacha din ha aaj ugavala, tumachya ase jivani\nsansari ramuni tumhi ubhayata, aanand theva mani\nramachi sakhi janaki tashich tu, -------- s ya shobhili\nrani houni rajya tya gruhi kari, kuryat sada mangalam\nshubhmangal savadhan",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "sonyacha din ha aaj ugavala, tumachya ase jivani",
+                "sansari ramuni tumhi ubhayata, aanand theva mani",
+                "ramachi sakhi janaki tashich tu, -------- s ya shobhili",
+                "rani houni rajya tya gruhi kari, kuryat sada mangalam",
+                "shubhmangal savadhan"
+              ]
+            }
           ]
         },
         {
@@ -3159,6 +5885,19 @@
                 "शुभमंगल सावधान"
               ]
             }
+          ],
+          "lyricsEn": "vaje ti sanai tatha chaughada, darat to manjul\naale aapta sakhe vivah samayi, chintavaya mangal\npahoni ubhayata ithe vadhuvara, aanandali mandali\ndeti aashish ladakya vadhuvara, kuryat sada mangalam\nshubhmangal savadhan",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "vaje ti sanai tatha chaughada, darat to manjul",
+                "aale aapta sakhe vivah samayi, chintavaya mangal",
+                "pahoni ubhayata ithe vadhuvara, aanandali mandali",
+                "deti aashish ladakya vadhuvara, kuryat sada mangalam",
+                "shubhmangal savadhan"
+              ]
+            }
           ]
         },
         {
@@ -3176,6 +5915,19 @@
                 "पाहोनी अजी मंडपी वधुवरा, जो हर्ष झाला मनी",
                 "संसारी सुखरूप होऊनी रहा, कुर्यात सदा मंगलम",
                 "शुभमंगल सावधान"
+              ]
+            }
+          ],
+          "lyricsEn": "sitaram rames madhav jasa, ti parwati shankara\ntaisi hi navari suyogya banuni, lakshmich yete ghara\npahoni aji mandapi vadhuvara, jo harsha jhala mani\nsansari sukharup houni raha, kuryat sada mangalam\nshubhmangal savadhan",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "sitaram rames madhav jasa, ti parwati shankara",
+                "taisi hi navari suyogya banuni, lakshmich yete ghara",
+                "pahoni aji mandapi vadhuvara, jo harsha jhala mani",
+                "sansari sukharup houni raha, kuryat sada mangalam",
+                "shubhmangal savadhan"
               ]
             }
           ]
@@ -3221,6 +5973,45 @@
                 "गुंफूनी कर ते करात उभयता नांदा सुखे सर्वदा",
                 "पाहोनी मंडपी वधुवरा आज हर्ष झाला मनी",
                 "केला व्यक्त काव्य करुनी इवले आनंद ठेवा मनी"
+              ]
+            }
+          ],
+          "lyricsEn": "virangana karu ganesha mangalmurti dayaghana\nvakratund gananayak gajamukh bhalachandra dayaghana\nsanaichya saptasuratun __ chi shiv dumadumali\ndhol lejhim vajati pataka lagnamandapi shobhali\n\nkuni var may kuni var mai koni mama mami ase\nvar dave sarwa sakhe sobati kuni mandapi ubhi ase\nmata pityachya kushit vadhali __ mayene bharavali\nkartavyasathi sodun tayanna parakya ghari chalali\n\ngunavantichya god aathavani aathavati mata pita\nnayana madhuni ashru dhalati tichya gunanchya guni katha\ndon jivanchi lagna gath hi ganesh krupene bandhali\n__ aani __ yanchi soyarik tu sadhali\n\nsanaichya surat sur misale daricha to chaughada\ngumphuni kar te karat ubhayata nanda sukhe sarwada\npahoni mandapi vadhuvara aaj harsha jhala mani\nkela vyakta kavya karuni ivale aanand theva mani",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "virangana karu ganesha mangalmurti dayaghana",
+                "vakratund gananayak gajamukh bhalachandra dayaghana",
+                "sanaichya saptasuratun __ chi shiv dumadumali",
+                "dhol lejhim vajati pataka lagnamandapi shobhali"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "kuni var may kuni var mai koni mama mami ase",
+                "var dave sarwa sakhe sobati kuni mandapi ubhi ase",
+                "mata pityachya kushit vadhali __ mayene bharavali",
+                "kartavyasathi sodun tayanna parakya ghari chalali"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "gunavantichya god aathavani aathavati mata pita",
+                "nayana madhuni ashru dhalati tichya gunanchya guni katha",
+                "don jivanchi lagna gath hi ganesh krupene bandhali",
+                "__ aani __ yanchi soyarik tu sadhali"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "sanaichya surat sur misale daricha to chaughada",
+                "gumphuni kar te karat ubhayata nanda sukhe sarwada",
+                "pahoni mandapi vadhuvara aaj harsha jhala mani",
+                "kela vyakta kavya karuni ivale aanand theva mani"
               ]
             }
           ]
@@ -3292,6 +6083,71 @@
               "lines": [
                 "कानी पडती मंगल स्वर हे सुरेल सनईचे",
                 "मंगल अक्षत उधळीत सारे देती आशिषाते"
+              ]
+            }
+          ],
+          "lyricsEn": "pratham vanduni nimantrile tya girija putrate\nshubhmangal vratabandh batuche aaj yojile he..\n\njamali sari aapta mandali gruh harshe bharale\nmata-pityache hat aajala swagatas sajale\naanandane bharale dole\naanandane bharale dole alaka aaiche\nshubhmangal vratabandh batuche aaj yojile he..\n\nmatrubhojani mata bharavi preme putrate\nvian re tav aaj pasuni balya sarayache\ngayatrichya mantra bale tuj pudhech janyache\nshubhmangal vratabandh batuche aaj yojile he..\n\nisha dharati komal haste mangal kalashate\nmangal akshat udhalit sare deti aashishate\nchar shabda aashish par urmila aaji det ase\nshubhmangal vratabandh batuche aaj yojile he..\n\nkanamantra ha pita detase\npita prathamesh mantra det ase bala vian re\ndharmadnyeche karuni palan uchali paulate\nbalashali an kirtivant tuj jagi vhavayache\nshubhmangal vratabandh batuche aaj yojile he..\n\npratham aashrami taki paul gheun dandate\nbhiksha pahili maganyas tu na dhari lajjete\ndise batu ha gojiravana\ndise vian gojiravana rup savalyache\nshubhmangal vratabandh batuche aaj yojile he..\n\nkani padati mangal swar he surel sanaiche\nmangal akshat udhalit sare deti aashishate",
+          "blocksEn": [
+            {
+              "role": "refrain",
+              "lines": [
+                "pratham vanduni nimantrile tya girija putrate",
+                "shubhmangal vratabandh batuche aaj yojile he.."
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "jamali sari aapta mandali gruh harshe bharale",
+                "mata-pityache hat aajala swagatas sajale",
+                "aanandane bharale dole",
+                "aanandane bharale dole alaka aaiche",
+                "shubhmangal vratabandh batuche aaj yojile he.."
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "matrubhojani mata bharavi preme putrate",
+                "vian re tav aaj pasuni balya sarayache",
+                "gayatrichya mantra bale tuj pudhech janyache",
+                "shubhmangal vratabandh batuche aaj yojile he.."
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "isha dharati komal haste mangal kalashate",
+                "mangal akshat udhalit sare deti aashishate",
+                "char shabda aashish par urmila aaji det ase",
+                "shubhmangal vratabandh batuche aaj yojile he.."
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "kanamantra ha pita detase",
+                "pita prathamesh mantra det ase bala vian re",
+                "dharmadnyeche karuni palan uchali paulate",
+                "balashali an kirtivant tuj jagi vhavayache",
+                "shubhmangal vratabandh batuche aaj yojile he.."
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "pratham aashrami taki paul gheun dandate",
+                "bhiksha pahili maganyas tu na dhari lajjete",
+                "dise batu ha gojiravana",
+                "dise vian gojiravana rup savalyache",
+                "shubhmangal vratabandh batuche aaj yojile he.."
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "kani padati mangal swar he surel sanaiche",
+                "mangal akshat udhalit sare deti aashishate"
               ]
             }
           ]
