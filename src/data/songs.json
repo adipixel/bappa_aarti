@@ -5145,7 +5145,7 @@
       "id": "shlok",
       "title": "श्लोक",
       "titleEn": "Shlok",
-      "count": 10,
+      "count": 11,
       "songs": [
         {
           "id": "sada-sarvada",
@@ -5511,8 +5511,34 @@
           ]
         },
         {
-          "id": "mantrapushpanjli",
+          "id": "karpur-gauram",
           "track": 10,
+          "title": "कर्पूरगौरं",
+          "titleEn": "Karpur Gauram",
+          "lyrics": "कर्पूरगौरं करुणावतारं संसारसारं भुजगेन्द्रहारम् ।\nसदा वसन्तं हृदयारविन्दे भवं भवानीसहितं नमामि ॥",
+          "blocks": [
+            {
+              "role": "verse",
+              "lines": [
+                "कर्पूरगौरं करुणावतारं संसारसारं भुजगेन्द्रहारम् ।",
+                "सदा वसन्तं हृदयारविन्दे भवं भवानीसहितं नमामि ॥"
+              ]
+            }
+          ],
+          "lyricsEn": "karpuragauram karunavataram sansarasaram bhujagendraharam ।\nsada vasantam hrudayaravinde bhavam bhavanisahitam namami ॥",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "karpuragauram karunavataram sansarasaram bhujagendraharam ।",
+                "sada vasantam hrudayaravinde bhavam bhavanisahitam namami ॥"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mantrapushpanjli",
+          "track": 11,
           "title": "मंत्रपुष्पांजली",
           "titleEn": "Mantrapushpanjli",
           "lyrics": "ॐ यज्ञेन यज्ञमयजन्त देवास्तनि धर्माणि प्रथमान्यासन् ।\n\nते ह नाकं महिमान : सचंत यत्र पूर्वे साध्या : संति देवा : ॥\nॐ राजाधिराजाय प्रसह्य साहिने ।\nनमो वयं वैश्रवणाय कुर्महे ।\nस मे कामान् काम कामाय मह्यं ।\nकामेश्र्वरो वैश्रवणो ददातु कुबेराय वैश्रवणाय ।\nमहाराजाय नम: ।\nॐ स्वस्ति । साम्राज्यं भौज्यं स्वाराज्यं\nवैराज्यं पारमेष्ठ्यं राज्यं महाराज्यमाधिपत्यमयं\nसमंतपर्यायीस्यात् सार्वभैम: सार्वायुष आं\nतादापरार्धात् पृथिव्यै समुद्रपर्यंताया एकराळिति\nतदप्येष: श्लोको भिगीतो मरूत: परिवेष्टारो\nमरूतस्यावसन् गृहे ।\nआविक्षितस्य कामप्रेर्विश्र्वेदेवा: सभासद इति ॥\n\nएकदंतायविघ्महे वक्रतुण्डाय धीमहि ।\nतन्नोदंती प्रचोदयात् ।\n\nमंत्रपुष्पांजली समर्पयामि ॥",

@@ -92,6 +92,11 @@ const EXCEPTIONS = {
   जयदेव: 'jaydev', गणपती: 'ganpati', गणपतीची: 'ganpatichi',
   मंगलमूर्ती: 'mangalmurti', मंगलमुर्ती: 'mangalmurti',
   लवथवती: 'lavthavti', शुभमंगल: 'shubhmangal',
+  // Sanskrit, where a final ं is an m rather than the Marathi nasalisation.
+  कर्पूरगौरं: 'karpuragauram', करुणावतारं: 'karunavataram',
+  संसारसारं: 'sansarasaram', 'वसन्तं': 'vasantam',
+  भवं: 'bhavam', भवानीसहितं: 'bhavanisahitam',
+  शुभं: 'shubham', मंगलं: 'mangalam',
 };
 
 /**
@@ -171,7 +176,12 @@ function word(src) {
     }
 
     if (ch === ANUSVARA || ch === CHANDRABINDU) {
-      // Look past the mark to the letter it assimilates to.
+      // Look past the mark to the letter it assimilates to. At the end of a
+      // word it has no letter to assimilate to, and what it does there depends
+      // on the language, not the spelling: Sanskrit closes the lips (शुभं is
+      // "shubham") while Marathi only nasalises (आम्हां is "aamhan", केलं is
+      // "kelan"). The two are written identically, so the common Marathi
+      // reading wins and the Sanskrit words are listed in EXCEPTIONS.
       push(LABIALS.has(src[i + 1]) ? 'm' : 'n');
       continue;
     }
