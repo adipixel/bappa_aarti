@@ -4234,7 +4234,7 @@
       "id": "bhajan",
       "title": "भजने",
       "titleEn": "Bhajan",
-      "count": 1,
+      "count": 2,
       "songs": [
         {
           "id": "vahe-chandrabhaga",
@@ -4306,6 +4306,156 @@
                 "namadev chokhamela sant thor jhale",
                 "bholi bhakti tukobachi vaikunthala gele",
                 "das vinavi deva joduni tujala hat ॥ 3 ॥"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mi-nighalo",
+          "track": 2,
+          "title": "मी निघालो तुम्ही येता का",
+          "titleEn": "Mi Nighalo",
+          "lyrics": "मी निघालो तुम्ही येता का\nमाझ्या साईला भेटायला तुम्ही येता का\n\nधाडलं बोलावणं जणू साईनं\nयेर म्हणाला तो पालखी घेऊन\nकेली त्यानं आज्ञा मला\nमी निघालो तुम्ही येता का…\n\nराम नवमीचा सण आला हो आला\nपालख्या निघाल्या आज पायी शिर्डीला\nधाडलं बोलावणं जणू साईनं…\n\nवाट सजली शिर्डीची भक्तांनी सारी\nभगवे झेंडे फडकती त्या हो अंबरी\nधाडलं बोलावणं जणू साईनं…\n\nनाचणे गाणे अवघा आनंदी आनंद\nश्रावण बाळांसंगे सारे भजनी दंग\nधाडलं बोलावणं जणू साईनं…",
+          "blocks": [
+            {
+              "role": "verse",
+              "lines": [
+                "मी निघालो तुम्ही येता का",
+                "माझ्या साईला भेटायला तुम्ही येता का"
+              ]
+            },
+            {
+              "role": "refrain",
+              "lines": [
+                "धाडलं बोलावणं जणू साईनं",
+                "येर म्हणाला तो पालखी घेऊन",
+                "केली त्यानं आज्ञा मला"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "मी निघालो तुम्ही येता का…"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "राम नवमीचा सण आला हो आला",
+                "पालख्या निघाल्या आज पायी शिर्डीला"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "धाडलं बोलावणं जणू साईनं",
+                "येर म्हणाला तो पालखी घेऊन",
+                "केली त्यानं आज्ञा मला"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "वाट सजली शिर्डीची भक्तांनी सारी",
+                "भगवे झेंडे फडकती त्या हो अंबरी"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "धाडलं बोलावणं जणू साईनं",
+                "येर म्हणाला तो पालखी घेऊन",
+                "केली त्यानं आज्ञा मला"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "नाचणे गाणे अवघा आनंदी आनंद",
+                "श्रावण बाळांसंगे सारे भजनी दंग"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "धाडलं बोलावणं जणू साईनं",
+                "येर म्हणाला तो पालखी घेऊन",
+                "केली त्यानं आज्ञा मला"
+              ]
+            }
+          ],
+          "lyricsEn": "mi nighalo tumhi yeta ka\nmajhya saila bhetayala tumhi yeta ka\n\ndhadalan bolavanan janu sainan\nyer mhanala to palakhi gheun\nkeli tyanan aadnya mala\nmi nighalo tumhi yeta ka…\n\nram navamicha san aala ho aala\npalakhya nighalya aaj payi shirdila\ndhadalan bolavanan janu sainan…\n\nvat sajali shirdichi bhaktanni sari\nbhagave jhende phadakati tya ho ambari\ndhadalan bolavanan janu sainan…\n\nnachane gane avagha aanandi aanand\nshravan balansange sare bhajani dang\ndhadalan bolavanan janu sainan…",
+          "blocksEn": [
+            {
+              "role": "verse",
+              "lines": [
+                "mi nighalo tumhi yeta ka",
+                "majhya saila bhetayala tumhi yeta ka"
+              ]
+            },
+            {
+              "role": "refrain",
+              "lines": [
+                "dhadalan bolavanan janu sainan",
+                "yer mhanala to palakhi gheun",
+                "keli tyanan aadnya mala"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "mi nighalo tumhi yeta ka…"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "ram navamicha san aala ho aala",
+                "palakhya nighalya aaj payi shirdila"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "dhadalan bolavanan janu sainan",
+                "yer mhanala to palakhi gheun",
+                "keli tyanan aadnya mala"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "vat sajali shirdichi bhaktanni sari",
+                "bhagave jhende phadakati tya ho ambari"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "dhadalan bolavanan janu sainan",
+                "yer mhanala to palakhi gheun",
+                "keli tyanan aadnya mala"
+              ]
+            },
+            {
+              "role": "verse",
+              "lines": [
+                "nachane gane avagha aanandi aanand",
+                "shravan balansange sare bhajani dang"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
+                "dhadalan bolavanan janu sainan",
+                "yer mhanala to palakhi gheun",
+                "keli tyanan aadnya mala"
               ]
             }
           ]
@@ -6050,9 +6200,14 @@
           "lyrics": "प्रथम वंदुनी निमंत्रिले त्या गिरीजा पुत्राते\nशुभमंगल व्रतबंध बटूचे आज योजिले हे..\n\nजमली सारी आप्त मंडळी गृह हर्षे भरले\nमाता-पित्याचे हात आजला स्वागतास सजले\nआनंदाने भरले डोळे\nआनंदाने भरले डोळे अलका आईचे\nशुभमंगल व्रतबंध बटूचे आज योजिले हे..\n\nमातृभोजनी माता भरवी प्रेमे पूत्राते\nविआन रे तव आज पासुनी बाल्य सरायाचे\nगायत्रीच्या मंत्र बळे तुज पुढेच जाण्याचे\nशुभमंगल व्रतबंध बटूचे आज योजिले हे..\n\nईशा धरती कोमल हस्ते मंगल कलशाते\nमंगल अक्षत उधळीत सारे देती आशिषाते\nचार शब्द आशिष पर उर्मिला आजी देत असे\nशुभमंगल व्रतबंध बटूचे आज योजिले हे..\n\nकानमंत्र हा पिता देतसे\nपिता प्रथमेश मंत्र देत असे बाळा विआन रे\nधर्माज्ञेचे करुनी पालन उचली पाऊलाते\nबलशाली अन किर्तीवंत तुज जगी व्हावयाचे\nशुभमंगल व्रतबंध बटूचे आज योजिले हे..\n\nप्रथम आश्रमी टाकी पाऊल घेऊन दंडाते\nभिक्षा पहिली मागण्यास तू ना धरी लज्जेते\nदिसे बटू हा गोजिरवाणा\nदिसे विआन गोजिरवाणा रूप सावळ्याचे\nशुभमंगल व्रतबंध बटूचे आज योजिले हे..\n\nकानी पडती मंगल स्वर हे सुरेल सनईचे\nमंगल अक्षत उधळीत सारे देती आशिषाते",
           "blocks": [
             {
+              "role": "verse",
+              "lines": [
+                "प्रथम वंदुनी निमंत्रिले त्या गिरीजा पुत्राते"
+              ]
+            },
+            {
               "role": "refrain",
               "lines": [
-                "प्रथम वंदुनी निमंत्रिले त्या गिरीजा पुत्राते",
                 "शुभमंगल व्रतबंध बटूचे आज योजिले हे.."
               ]
             },
@@ -6062,7 +6217,13 @@
                 "जमली सारी आप्त मंडळी गृह हर्षे भरले",
                 "माता-पित्याचे हात आजला स्वागतास सजले",
                 "आनंदाने भरले डोळे",
-                "आनंदाने भरले डोळे अलका आईचे",
+                "आनंदाने भरले डोळे अलका आईचे"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
                 "शुभमंगल व्रतबंध बटूचे आज योजिले हे.."
               ]
             },
@@ -6071,7 +6232,13 @@
               "lines": [
                 "मातृभोजनी माता भरवी प्रेमे पूत्राते",
                 "विआन रे तव आज पासुनी बाल्य सरायाचे",
-                "गायत्रीच्या मंत्र बळे तुज पुढेच जाण्याचे",
+                "गायत्रीच्या मंत्र बळे तुज पुढेच जाण्याचे"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
                 "शुभमंगल व्रतबंध बटूचे आज योजिले हे.."
               ]
             },
@@ -6080,7 +6247,13 @@
               "lines": [
                 "ईशा धरती कोमल हस्ते मंगल कलशाते",
                 "मंगल अक्षत उधळीत सारे देती आशिषाते",
-                "चार शब्द आशिष पर उर्मिला आजी देत असे",
+                "चार शब्द आशिष पर उर्मिला आजी देत असे"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
                 "शुभमंगल व्रतबंध बटूचे आज योजिले हे.."
               ]
             },
@@ -6090,7 +6263,13 @@
                 "कानमंत्र हा पिता देतसे",
                 "पिता प्रथमेश मंत्र देत असे बाळा विआन रे",
                 "धर्माज्ञेचे करुनी पालन उचली पाऊलाते",
-                "बलशाली अन किर्तीवंत तुज जगी व्हावयाचे",
+                "बलशाली अन किर्तीवंत तुज जगी व्हावयाचे"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
                 "शुभमंगल व्रतबंध बटूचे आज योजिले हे.."
               ]
             },
@@ -6100,7 +6279,13 @@
                 "प्रथम आश्रमी टाकी पाऊल घेऊन दंडाते",
                 "भिक्षा पहिली मागण्यास तू ना धरी लज्जेते",
                 "दिसे बटू हा गोजिरवाणा",
-                "दिसे विआन गोजिरवाणा रूप सावळ्याचे",
+                "दिसे विआन गोजिरवाणा रूप सावळ्याचे"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
                 "शुभमंगल व्रतबंध बटूचे आज योजिले हे.."
               ]
             },
@@ -6115,9 +6300,14 @@
           "lyricsEn": "pratham vanduni nimantrile tya girija putrate\nshubhmangal vratabandh batuche aaj yojile he..\n\njamali sari aapta mandali gruh harshe bharale\nmata-pityache hat aajala swagatas sajale\naanandane bharale dole\naanandane bharale dole alaka aaiche\nshubhmangal vratabandh batuche aaj yojile he..\n\nmatrubhojani mata bharavi preme putrate\nvian re tav aaj pasuni balya sarayache\ngayatrichya mantra bale tuj pudhech janyache\nshubhmangal vratabandh batuche aaj yojile he..\n\nisha dharati komal haste mangal kalashate\nmangal akshat udhalit sare deti aashishate\nchar shabda aashish par urmila aaji det ase\nshubhmangal vratabandh batuche aaj yojile he..\n\nkanamantra ha pita detase\npita prathamesh mantra det ase bala vian re\ndharmadnyeche karuni palan uchali paulate\nbalashali an kirtivant tuj jagi vhavayache\nshubhmangal vratabandh batuche aaj yojile he..\n\npratham aashrami taki paul gheun dandate\nbhiksha pahili maganyas tu na dhari lajjete\ndise batu ha gojiravana\ndise vian gojiravana rup savalyache\nshubhmangal vratabandh batuche aaj yojile he..\n\nkani padati mangal swar he surel sanaiche\nmangal akshat udhalit sare deti aashishate",
           "blocksEn": [
             {
+              "role": "verse",
+              "lines": [
+                "pratham vanduni nimantrile tya girija putrate"
+              ]
+            },
+            {
               "role": "refrain",
               "lines": [
-                "pratham vanduni nimantrile tya girija putrate",
                 "shubhmangal vratabandh batuche aaj yojile he.."
               ]
             },
@@ -6127,7 +6317,13 @@
                 "jamali sari aapta mandali gruh harshe bharale",
                 "mata-pityache hat aajala swagatas sajale",
                 "aanandane bharale dole",
-                "aanandane bharale dole alaka aaiche",
+                "aanandane bharale dole alaka aaiche"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
                 "shubhmangal vratabandh batuche aaj yojile he.."
               ]
             },
@@ -6136,7 +6332,13 @@
               "lines": [
                 "matrubhojani mata bharavi preme putrate",
                 "vian re tav aaj pasuni balya sarayache",
-                "gayatrichya mantra bale tuj pudhech janyache",
+                "gayatrichya mantra bale tuj pudhech janyache"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
                 "shubhmangal vratabandh batuche aaj yojile he.."
               ]
             },
@@ -6145,7 +6347,13 @@
               "lines": [
                 "isha dharati komal haste mangal kalashate",
                 "mangal akshat udhalit sare deti aashishate",
-                "char shabda aashish par urmila aaji det ase",
+                "char shabda aashish par urmila aaji det ase"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
                 "shubhmangal vratabandh batuche aaj yojile he.."
               ]
             },
@@ -6155,7 +6363,13 @@
                 "kanamantra ha pita detase",
                 "pita prathamesh mantra det ase bala vian re",
                 "dharmadnyeche karuni palan uchali paulate",
-                "balashali an kirtivant tuj jagi vhavayache",
+                "balashali an kirtivant tuj jagi vhavayache"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
                 "shubhmangal vratabandh batuche aaj yojile he.."
               ]
             },
@@ -6165,7 +6379,13 @@
                 "pratham aashrami taki paul gheun dandate",
                 "bhiksha pahili maganyas tu na dhari lajjete",
                 "dise batu ha gojiravana",
-                "dise vian gojiravana rup savalyache",
+                "dise vian gojiravana rup savalyache"
+              ]
+            },
+            {
+              "role": "refrain",
+              "repeat": true,
+              "lines": [
                 "shubhmangal vratabandh batuche aaj yojile he.."
               ]
             },

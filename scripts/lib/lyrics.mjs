@@ -177,7 +177,15 @@ export function findRefrain(stanzas) {
     if (!key) continue;
 
     const anchors = flat.filter(
-      (f) => !(f.si === si && f.li === li) && bare(f.line).startsWith(key) && bare(f.line).length > key.length,
+      (f) =>
+        !(f.si === si && f.li === li) &&
+        bare(f.line).startsWith(key) &&
+        // Normally the printing says more than the cue does. A whole-line cue
+        // is nothing but shorthand and an ellipsis, though, so a line of
+        // exactly the same letters is the printing it points back to rather
+        // than a rival meaning — it cannot be the cue repeating itself.
+        (bare(f.line).length > key.length ||
+          (cue.kind === 'whole' && bare(f.line).length === key.length)),
     );
     if (!anchors.length) continue; // Unresolvable shorthand — leave the line alone.
 
