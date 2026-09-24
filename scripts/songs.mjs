@@ -27,7 +27,7 @@
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { buildBlocks, cleanLyrics, romanize } from './lib/lyrics.mjs';
+import { buildBlocks, cleanLyrics, locateRefrain, romanize, stanzasOf } from './lib/lyrics.mjs';
 import { suggestId, suggestTitle } from './lib/naming.mjs';
 import { romanText } from './lib/roman.mjs';
 
@@ -65,6 +65,20 @@ const die = (message) => {
   console.error(`\n  error: ${message}\n`);
   process.exit(1);
 };
+
+/**
+ * A --refrain hint has to name a line that is actually there. Falling back to
+ * inference on a typo would look like the flag simply did nothing.
+ */
+function checkRefrain(lyrics, hint) {
+  if (hint === undefined) return undefined;
+  const text = hint.trim();
+  if (!text) die('--refrain needs the opening words of the chorus');
+  if (!locateRefrain(stanzasOf(lyrics), text)) {
+    die(`no line in these lyrics opens with "${text}" — --refrain must quote the chorus as printed`);
+  }
+  return text;
+}
 
 /** Track numbers mirror array position; never trust the incoming value. */
 function renumber(playlist) {
@@ -195,6 +209,9 @@ function compose(raw, flags, playlist) {
   console.log(`  roman   ${flags.titleEn ?? romanize(id)}`);
   console.log(`  going into ${playlist.id}`);
 
+  const refrain = checkRefrain(lyrics, flags.refrain);
+  if (refrain) console.log(`  refrain  ${refrain}   (pinned)`);
+
   return {
     lyrics,
     song: {
@@ -203,7 +220,8 @@ function compose(raw, flags, playlist) {
       title,
       titleEn: flags.titleEn?.trim() || romanize(id),
       lyrics,
-      blocks: buildBlocks(lyrics),
+      ...(refrain ? { refrain } : {}),
+      blocks: buildBlocks(lyrics, refrain),
     },
   };
 }
@@ -290,7 +308,11 @@ async function cmdLyrics(data, [songId, source], flags) {
   const lyrics = cleanLyrics(await readLyrics(source));
   if (!lyrics) die('those lyrics are empty once cleaned up');
 
-  const updated = { ...song, lyrics, blocks: buildBlocks(lyrics) };
+  // A new --refrain replaces the stored one; without the flag the song keeps
+  // whatever it was pinned to, so re-deriving never silently loses it.
+  const refrain = checkRefrain(lyrics, flags.refrain) ?? song.refrain;
+  const updated = { ...song, lyrics, blocks: buildBlocks(lyrics, refrain) };
+  if (refrain) updated.refrain = refrain;
   delete updated.lyricsPending;
 
   console.log(`\n  ${playlist.id}/${song.id} — ${song.title}`);
@@ -466,6 +488,8 @@ const USAGE = `
     --title  "..."    Devanagari title                (default: from the first line)
     --id     slug     url id                          (default: from the title)
     --titleEn "..."   roman subtitle                  (default: from the id)
+    --refrain "..."   pin the chorus by its opening words, when the
+                      layout guesses wrong
     --pending         no lyrics yet; needs --title, shows as "लवकरच…"
     --dry-run         with add or reorder, stop before writing
 

@@ -230,6 +230,22 @@ it is repeated (`↻`) — and says so loudly when it found no refrain at all. U
 whose chorus is cued in an unfamiliar shape usually needs its lyrics file
 adjusted rather than the resolver changed.
 
+**When it picks the wrong one, say which it is.** Resolution counts cues and
+takes the line most of them point at, and some songs nest two choruses — three
+verses cue an inner one, which itself cues back to the outer one the song opens
+with. Counting picks the inner one and no amount of counting would pick the
+other; only someone who knows the song can say. Quote its opening words as
+printed:
+
+```bash
+node scripts/songs.mjs add words.txt --playlist bhajan --refrain "मी निघालो तुम्ही येता का"
+```
+
+The choice is stored on the song, so rebuilding its layout later keeps it, and
+`lyrics --refrain "..."` changes it on a song already in the collection. A hint
+matching no line in the lyrics fails the command rather than quietly falling
+back to inference.
+
 Normalisation and refrain resolution live in `scripts/lib/lyrics.mjs`, shared
 with the legacy import, so a song added today is laid out exactly like the ones
 that came in at the start. Naming lives in `scripts/lib/naming.mjs`.

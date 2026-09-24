@@ -4318,14 +4318,14 @@
           "lyrics": "मी निघालो तुम्ही येता का\nमाझ्या साईला भेटायला तुम्ही येता का\n\nधाडलं बोलावणं जणू साईनं\nयेर म्हणाला तो पालखी घेऊन\nकेली त्यानं आज्ञा मला\nमी निघालो तुम्ही येता का…\n\nराम नवमीचा सण आला हो आला\nपालख्या निघाल्या आज पायी शिर्डीला\nधाडलं बोलावणं जणू साईनं…\n\nवाट सजली शिर्डीची भक्तांनी सारी\nभगवे झेंडे फडकती त्या हो अंबरी\nधाडलं बोलावणं जणू साईनं…\n\nनाचणे गाणे अवघा आनंदी आनंद\nश्रावण बाळांसंगे सारे भजनी दंग\nधाडलं बोलावणं जणू साईनं…",
           "blocks": [
             {
-              "role": "verse",
+              "role": "refrain",
               "lines": [
                 "मी निघालो तुम्ही येता का",
                 "माझ्या साईला भेटायला तुम्ही येता का"
               ]
             },
             {
-              "role": "refrain",
+              "role": "verse",
               "lines": [
                 "धाडलं बोलावणं जणू साईनं",
                 "येर म्हणाला तो पालखी घेऊन",
@@ -4333,71 +4333,49 @@
               ]
             },
             {
-              "role": "verse",
+              "role": "refrain",
+              "repeat": true,
               "lines": [
-                "मी निघालो तुम्ही येता का…"
+                "मी निघालो तुम्ही येता का",
+                "माझ्या साईला भेटायला तुम्ही येता का"
               ]
             },
             {
               "role": "verse",
               "lines": [
                 "राम नवमीचा सण आला हो आला",
-                "पालख्या निघाल्या आज पायी शिर्डीला"
-              ]
-            },
-            {
-              "role": "refrain",
-              "repeat": true,
-              "lines": [
-                "धाडलं बोलावणं जणू साईनं",
-                "येर म्हणाला तो पालखी घेऊन",
-                "केली त्यानं आज्ञा मला"
+                "पालख्या निघाल्या आज पायी शिर्डीला",
+                "धाडलं बोलावणं जणू साईनं…"
               ]
             },
             {
               "role": "verse",
               "lines": [
                 "वाट सजली शिर्डीची भक्तांनी सारी",
-                "भगवे झेंडे फडकती त्या हो अंबरी"
-              ]
-            },
-            {
-              "role": "refrain",
-              "repeat": true,
-              "lines": [
-                "धाडलं बोलावणं जणू साईनं",
-                "येर म्हणाला तो पालखी घेऊन",
-                "केली त्यानं आज्ञा मला"
+                "भगवे झेंडे फडकती त्या हो अंबरी",
+                "धाडलं बोलावणं जणू साईनं…"
               ]
             },
             {
               "role": "verse",
               "lines": [
                 "नाचणे गाणे अवघा आनंदी आनंद",
-                "श्रावण बाळांसंगे सारे भजनी दंग"
-              ]
-            },
-            {
-              "role": "refrain",
-              "repeat": true,
-              "lines": [
-                "धाडलं बोलावणं जणू साईनं",
-                "येर म्हणाला तो पालखी घेऊन",
-                "केली त्यानं आज्ञा मला"
+                "श्रावण बाळांसंगे सारे भजनी दंग",
+                "धाडलं बोलावणं जणू साईनं…"
               ]
             }
           ],
           "lyricsEn": "mi nighalo tumhi yeta ka\nmajhya saila bhetayala tumhi yeta ka\n\ndhadalan bolavanan janu sainan\nyer mhanala to palakhi gheun\nkeli tyanan aadnya mala\nmi nighalo tumhi yeta ka…\n\nram navamicha san aala ho aala\npalakhya nighalya aaj payi shirdila\ndhadalan bolavanan janu sainan…\n\nvat sajali shirdichi bhaktanni sari\nbhagave jhende phadakati tya ho ambari\ndhadalan bolavanan janu sainan…\n\nnachane gane avagha aanandi aanand\nshravan balansange sare bhajani dang\ndhadalan bolavanan janu sainan…",
           "blocksEn": [
             {
-              "role": "verse",
+              "role": "refrain",
               "lines": [
                 "mi nighalo tumhi yeta ka",
                 "majhya saila bhetayala tumhi yeta ka"
               ]
             },
             {
-              "role": "refrain",
+              "role": "verse",
               "lines": [
                 "dhadalan bolavanan janu sainan",
                 "yer mhanala to palakhi gheun",
@@ -4405,60 +4383,39 @@
               ]
             },
             {
-              "role": "verse",
+              "role": "refrain",
+              "repeat": true,
               "lines": [
-                "mi nighalo tumhi yeta ka…"
+                "mi nighalo tumhi yeta ka",
+                "majhya saila bhetayala tumhi yeta ka"
               ]
             },
             {
               "role": "verse",
               "lines": [
                 "ram navamicha san aala ho aala",
-                "palakhya nighalya aaj payi shirdila"
-              ]
-            },
-            {
-              "role": "refrain",
-              "repeat": true,
-              "lines": [
-                "dhadalan bolavanan janu sainan",
-                "yer mhanala to palakhi gheun",
-                "keli tyanan aadnya mala"
+                "palakhya nighalya aaj payi shirdila",
+                "dhadalan bolavanan janu sainan…"
               ]
             },
             {
               "role": "verse",
               "lines": [
                 "vat sajali shirdichi bhaktanni sari",
-                "bhagave jhende phadakati tya ho ambari"
-              ]
-            },
-            {
-              "role": "refrain",
-              "repeat": true,
-              "lines": [
-                "dhadalan bolavanan janu sainan",
-                "yer mhanala to palakhi gheun",
-                "keli tyanan aadnya mala"
+                "bhagave jhende phadakati tya ho ambari",
+                "dhadalan bolavanan janu sainan…"
               ]
             },
             {
               "role": "verse",
               "lines": [
                 "nachane gane avagha aanandi aanand",
-                "shravan balansange sare bhajani dang"
-              ]
-            },
-            {
-              "role": "refrain",
-              "repeat": true,
-              "lines": [
-                "dhadalan bolavanan janu sainan",
-                "yer mhanala to palakhi gheun",
-                "keli tyanan aadnya mala"
+                "shravan balansange sare bhajani dang",
+                "dhadalan bolavanan janu sainan…"
               ]
             }
-          ]
+          ],
+          "refrain": "मी निघालो तुम्ही येता का"
         }
       ]
     },

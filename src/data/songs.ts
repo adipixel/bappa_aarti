@@ -16,6 +16,8 @@ export interface Song {
   lyrics: string;
   /** The same words in Roman letters, derived at build time so they stay fixable. */
   lyricsEn?: string;
+  /** Opening words of the chorus, where the layout had to be told rather than inferred. */
+  refrain?: string;
   /** The singing arrangement: the same lyrics with every cued refrain written out. */
   blocks?: Block[];
   /** blocks, transliterated. Same shape, line for line. */

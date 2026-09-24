@@ -318,9 +318,40 @@ function expandSelfCue(lines) {
  * Turns lyrics into the blocks the app renders: verses, the refrain, and a
  * copy of the refrain wherever it was only cued.
  */
-export function buildBlocks(lyrics) {
-  const stanzas = lyrics.split(/\n{2,}/).filter(Boolean).map((s) => s.split('\n'));
-  const refrain = findRefrain(stanzas);
+/**
+ * Pin the refrain by its opening words instead of inferring it.
+ *
+ * Inference counts cues and takes the line most of them point at, which is
+ * usually right and sometimes cannot be. मी निघालो तुम्ही येता का has two
+ * choruses nested: three verses cue धाडलं बोलावणं, and धाडलं बोलावणं itself
+ * cues back to मी निघालो. Counting votes picks the inner one, 3 to 1, and no
+ * amount of counting would pick the outer one — only someone who knows the
+ * song can say which it is. So they can say it.
+ *
+ * Matched against the printing rather than a cue: the line that opens the
+ * chorus, not one of the shorthands trailing off to it.
+ */
+export function locateRefrain(stanzas, hint) {
+  const key = bare(hint ?? '');
+  if (!key) return null;
+  for (let si = 0; si < stanzas.length; si++) {
+    for (let li = 0; li < stanzas[si].length; li++) {
+      const line = stanzas[si][li];
+      if (bare(line).startsWith(key) && !cueOf(line)) {
+        return { si, from: li, to: refrainEnd(stanzas[si], li) };
+      }
+    }
+  }
+  return null;
+}
+
+/** Split lyrics into stanzas, the way buildBlocks does, so a caller can check a hint. */
+export const stanzasOf = (lyrics) =>
+  lyrics.split(/\n{2,}/).filter(Boolean).map((s) => s.split('\n'));
+
+export function buildBlocks(lyrics, refrainHint) {
+  const stanzas = stanzasOf(lyrics);
+  const refrain = locateRefrain(stanzas, refrainHint) ?? findRefrain(stanzas);
   if (!refrain) return stanzas.map((lines) => ({ role: 'verse', lines }));
 
   const refrainLines = expandSelfCue(stanzas[refrain.si].slice(refrain.from, refrain.to + 1));
